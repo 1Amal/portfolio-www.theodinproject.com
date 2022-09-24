@@ -1,0 +1,23 @@
+.odd_number 
+{
+background-color:pink;
+font-family:verdana,"DejaVu Sans",sans-serif;
+}
+
+#number_2
+{
+color:rgb(22, 84, 218);  
+font-size:36px;  
+}
+
+.number_3
+{
+font-size:36px;
+}
+
+#number_4 
+{
+background:rgb(143, 228, 126);
+font-size:24px;
+font-weight:bold;    
+}
