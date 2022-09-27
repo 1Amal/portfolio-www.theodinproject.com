@@ -23,3 +23,42 @@ Quick tip: in VS Code, you can change which format colors are displayed in RGB, 
 - Do the odd numbered `p` elements share a class?
 - Do the even numbered `div` elements have unique IDs?
 - Does the Number 3 element have multiple classes?
+
+
+## Class Selectors
+
+Class selectors will select all elements with the given class, which is just an attribute you place on an HTML element. Here’s how you add a class to an HTML tag and select it in CSS:
+```
+<!-- index.html -->
+
+<div class="alert-text">
+  Please agree to our terms of service.
+</div>
+```
+```
+/* styles.css */
+
+.alert-text {
+  color: red;
+}
+```
+Note the syntax for class selectors: a period immediately followed by the case-sensitive value of the class attribute. Classes aren’t required to be unique, so you can use the same class on as many elements as you want.
+
+Another thing you can do with the class attribute is to add multiple classes to a single element as a space-separated list, such as class="alert-text severe-alert". Since whitespace is used to separate class names like this, you should never use spaces for multi-worded names and should use a hyphen instead.
+ID Selectors
+
+ID selectors are similar to class selectors. They select an element with the given ID, which is another attribute you place on an HTML element:
+```
+<!-- index.html -->
+
+<div id="title">My Awesome 90's Page</div>
+
+/* styles.css */
+
+#title {
+  background-color: red;
+}
+```
+Instead of a period, we use a hashtag immediately followed by the case-sensitive value of the ID attribute. A common pitfall is people overusing the ID attribute when they don’t necessarily need to, and when classes will suffice. While there are cases where using an ID makes sense or is needed, such as taking advantage of specificity or having links redirect to a section on the current page, you should use IDs sparingly (if at all).
+
+The major difference between classes and IDs is that an element can only have one ID. An ID cannot be repeated on a single page, and the ID attribute should not contain any whitespace at all.
