@@ -18,3 +18,38 @@ This will help you further practice adding classes and using class selectors, so
 - Does each element have a unique class name?
 - Did you use the grouping selector for styles that both elements share?
 - Did you make separate rules for the styles unique to each element?
+
+
+## Grouping Selector
+
+What if we have two groups of elements that share some of their style declarations?
+```
+.read {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+
+.unread {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+```
+Both our .read and .unread selectors share the color: white; and background-color: black; declarations, but otherwise have several of their own unique declarations. To cut down on the repetition, we can group these two selectors together as a comma-separated list:
+```
+.read,
+.unread {
+  color: white;
+  background-color: black;
+}
+
+.read {
+  /* several unique declarations */
+}
+
+.unread {
+  /* several unique declarations */
+}
+```
+Both of the examples above (with and without grouping) will have the same result, but the second example reduces the repetition of declarations and makes it easier to edit either the color or background-color for both classes at once.
