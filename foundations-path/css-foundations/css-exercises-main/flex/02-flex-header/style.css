@@ -1,19 +1,54 @@
-.header  {
+.header  
+{
   font-family: monospace;
   background: papayawhip;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+
+ 
+
+
+ 
+
 }
 
-.logo {
+.header .left-links 
+{
+
+  flex: 0 1 auto;
+
+
+}
+
+.header .right-links
+{
+
+
+  /* width:100%; */
+
+}
+
+.header .logo 
+{
   font-size: 48px;
   font-weight: 900;
   color: tomato;
   background: white;
   padding: 4px 32px;
+ align-self:center;
+
 }
 
-ul {
+ul 
+{
   /* this removes the dots on the list items*/
   list-style-type: none;
+  display:flex;
+  gap:8px;
+  
+
 }
 
 a {
@@ -22,4 +57,5 @@ a {
   padding: 8px;
   /* this removes the line under the links */
   text-decoration: none;
+
 }
