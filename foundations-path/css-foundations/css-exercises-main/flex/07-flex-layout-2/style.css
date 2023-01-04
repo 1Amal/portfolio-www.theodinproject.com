@@ -28,6 +28,7 @@ body {
 .card {
   display:flex;/*Enable Flexbox*/
   flex-direction: row;
+  flex:1;
   /* flex-wrap: wrap; */
   row-gap:1000px;
   /* flex-grow: 1; */
@@ -40,11 +41,9 @@ body {
   display:flex;/*Enable Flexbox*/
   flex-direction: column; /* Set flex direction to column so footer can be moved down*/
   align-items: center;/*Center the text*/
-  /* align-content: flex-end; */
-  /* flex-grow: 0; */
-  /* flex-basis: auto; */
-  flex-shrink: 0;
-  height: 72px;
+  justify-content: center; /*Justify the content*/
+  flex:0;
+  padding: 30px;
   background: #eee;
   color: darkmagenta;
 }
