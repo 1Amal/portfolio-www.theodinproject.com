@@ -5,28 +5,31 @@ body {
 }
 
 .header {
-  display:flex;
-  padding: 0px 0px 0px 16px;
+  display:flex; /*Enable Flexbox*/
+  padding: 0px 0px 0px 16px; /*Set left padding*/
   height: 72px;
   background: darkmagenta;
   color: white;
-  font-size:32px ;
-  font-weight: 900;
-  align-items:center;
+  font-size:32px ; /*Set font size*/
+  font-weight: 900; /*Set font weight*/
+  align-items:center; /*Center text*/
 }
 
 .footer {
+  display:flex;/*Enable Flexbox*/
   height: 72px;
   background: #eee;
   color: darkmagenta;
 }
 
 .sidebar {
+  display:flex;/*Enable Flexbox*/
   width: 300px;
   background: royalblue;
 }
 
 .card {
+  display:flex;/*Enable Flexbox*/
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;

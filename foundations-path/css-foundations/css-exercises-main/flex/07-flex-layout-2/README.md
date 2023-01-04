@@ -21,8 +21,8 @@ On a smaller screen it will look like this:
 ![smaller](./desired-outcome-smaller.png)
 
 ### Self Check
-- The header text is size 32px and weight 900.
-- The header text is vertically centered and 16px from the edge of the screen.
+- The header text is size 32px and weight 900.: Done
+- The header text is vertically centered and 16px from the edge of the screen.: Done
 - The footer is pushed to the bottom of the screen (the footer may go _below_ the bottom of the screen if the content of the 'cards' section overflows and/or if your screen is shorter).
 - The footer text is centered horizontally and vertically.
 - The sidebar and cards take up all available space above the footer.
