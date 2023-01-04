@@ -5,11 +5,14 @@ body {
 }
 
 .header {
+  display:flex;
+  padding: 0px 0px 0px 16px;
   height: 72px;
   background: darkmagenta;
   color: white;
   font-size:32px ;
   font-weight: 900;
+  align-items:center;
 }
 
 .footer {
