@@ -23,8 +23,16 @@ body {
   
   width: 300px;
   background: royalblue;
+  
 }
 
+a{
+  text-decoration: none; /*Remove underline from hyperlinks*/
+}
+
+ul{
+  list-style-type: none; /*Remove bullet point*/
+}
 .card {
   display:flex;/*Enable Flexbox*/
   flex-direction: row;
