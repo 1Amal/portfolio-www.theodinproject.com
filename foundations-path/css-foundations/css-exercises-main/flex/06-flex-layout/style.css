@@ -5,7 +5,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
-  display:flex;
+  /* display:flex; */
 
 }
 
@@ -44,15 +44,16 @@ list-style-type:none;
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-self: flex-start;
+  justify-content: space-between;
+  /* align-self: flex-start; */
 }
 
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-self: flex-end;
+  justify-content: space-between;
+  /* align-self: flex-end; */
+  background-color:#eeeeee;
 }
 
 .left-links {
@@ -75,4 +76,5 @@ gap:10px;
   display:flex;
   flex-direction:column;
   align-self:center;
+  justify-content: center;
 }
