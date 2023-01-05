@@ -17,25 +17,34 @@ body {
   align-items:center; /*Center text*/
 }
 
+.mid-section{
+  display: flex;
+  flex-direction: row;
+}
 
 .sidebar {
   display:flex;/*Enable Flexbox*/
+  flex-direction: column;
   
   width: 300px;
   background: royalblue;
+  font-size: 24px;
+  
   
 }
 
 a{
   text-decoration: none; /*Remove underline from hyperlinks*/
+  color: #eee;
 }
 
 ul{
   list-style-type: none; /*Remove bullet point*/
+  padding:5px;
 }
 .card {
   display:flex;/*Enable Flexbox*/
-  flex-direction: row;
+  flex-direction: column;
   flex:1;
   /* flex-wrap: wrap; */
   row-gap:1000px;
@@ -44,6 +53,8 @@ ul{
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
 }
+
+
 
 .footer {
   display:flex;/*Enable Flexbox*/
