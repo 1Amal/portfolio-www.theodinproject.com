@@ -41,14 +41,18 @@ return console.log(product);
 }
 
 //Excercise 3
-// const publication = "freeCodeCamp";
-// publication[0].toUpperCase() + publication.substring(1);
-
-
 function capitalize(string1){
-let lowerCase= string1.toLowerCase();
-let stringOut=lowerCase[0].toUpperCase() + lowerCase.substring(1);
+let lowerCase= string1.toLowerCase(); //First convert the whole string to lower case using .toLowerCase();
+let stringOut=lowerCase[0].toUpperCase() + lowerCase.substring(1); // Then convert the index 0 of the string to upper letter and add to original string from index 1
 return console.log(stringOut);
+}
+
+//Excercise 4
+
+function lastLetter(string1) {
+const lastChar=string1.at(-1); //Show the string from last character using a negative index number usin .at()
+return console.log(lastChar);
+
 
 }
   </script>
