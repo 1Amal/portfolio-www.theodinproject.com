@@ -72,15 +72,19 @@ You’re going to use what you return later on, so let’s test this function by
     -Scissors beat paper
     -Paper beats rock
     -If both players throw the same object, it’s a tie. In this situation
--If playerSelection = Rock and computerSelection=Scissors then Player wins
--If playerSelection = Scissors and computerSelection=paper then Player wins
--If playerSelection = Paper and computerSelection=rock then Player wins
--If playerSelection = Paper and computerSelection=Paper then Draw
--If playerSelection = Scissors and computerSelection=Scissors then Draw
--If playerSelection = rock and computerSelection=rock then Draw
 
+-If playerSelection = 'rock' and computerSelection='rock' then Draw
+-If playerSelection = 'rock' and computerSelection='paper' then computer wins
+-If playerSelection = 'rock' and computerSelection='scissors' then Player wins
 
+-If playerSelection = 'paper' and computerSelection='rock' then Player wins
+-If playerSelection = 'paper' and computerSelection='paper' then Draw
+-If playerSelection = 'paper' and computerSelection='scissors' then Computer wins
 
+-If playerSelection = 'scissors' and computerSelection='rock' then Computer wins
+-If playerSelection = 'scissors' and computerSelection='paper' then Player wins
+-If playerSelection = 'scissors' and computerSelection='scissors' then Draw
+End of Psuedo code for playRound
 */
     }
      
@@ -107,7 +111,8 @@ If not, don’t worry! Just call your playRound function 5 times in a row. Loops
 //     Use prompt() to get input from the user. Read the docs here if you need to.
 
 
-//     Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return value to something more useful.
+//     Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return 
+value to something more useful.
 
 
 
