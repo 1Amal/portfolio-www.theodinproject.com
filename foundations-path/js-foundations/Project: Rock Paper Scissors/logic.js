@@ -28,18 +28,18 @@ let randomNumber=Math.floor(Math.random()*3);
 //Following code will run conditional statements to give out Rock, Paper or Scisors based on the random number generated
 let choice;
 if (randomNumber ==0) {
-    let choice="Rock"
+    let choice="rock"
     return choice;
 }
 
 else if (randomNumber == 1) {
-    let choice="Paper"
+    let choice="paper"
     return choice;
 
 }
 
 else if (randomNumber==2){
-    let choice="Scissor"
+    let choice="scissor"
     return choice;
 }
 
@@ -61,9 +61,16 @@ You’re going to use what you return later on, so let’s test this function by
 
 */
 
+//This function will prompt for user input
+function playerAnswer(){
+let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or Scissors)");
+let playerSelection=playerSelectionRaw.toLowerCase()
+console.log(playerSelection);
+}
 
 
-    function playRound(playerSelection, computerSelection) {
+
+    function playRound(playerSelectin, computerSelection) {
 /*Psuedo code for playRound
 -Ask for player choice and also recive computerSelection value from getComputerChoice()
 -compare the player choice with the computer choice
@@ -86,8 +93,11 @@ You’re going to use what you return later on, so let’s test this function by
 -If playerSelection = 'scissors' and computerSelection='scissors' then Draw
 End of Psuedo code for playRound
 */
+playerAnswer()
+
     }
-     
+
+ playRound ();
 //     const playerSelection = "rock";
 //     const computerSelection = getComputerChoice();
 //     console.log(playRound(playerSelection, computerSelection));
