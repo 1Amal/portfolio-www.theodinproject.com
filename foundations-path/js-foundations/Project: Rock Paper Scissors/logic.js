@@ -3,11 +3,11 @@
 // Don’t forget to commit early & often! You can reference the Commit Message lesson here!
 
 
-console.log("*.*.*.*.*.Welcome to Rock Paper Scissors Game.*.*.*.*.*.")
+console.log("*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.")
 
 /* Your game is going to play against the computer, so begin with a function called getComputerChoice that will randomly 
 return either 
-‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this function in the game to make the computer’s play. 
+‘Rock’, ‘Paper’ or ‘scissors’. We’ll use this function in the game to make the computer’s play. 
 Tip: use the console to make sure this is returning the expected output before moving to the next step!
 */
 
@@ -18,7 +18,7 @@ Pseudocode for getComputerChoice
 -Following can be used to link the random number to the choice
 Rock=0
 Paper=1
-Scissors=2
+scissors=2
 
 */
 
@@ -41,7 +41,7 @@ else if (randomNumber == 1) {
 }
 
 else if (randomNumber==2){
-    choice="scissor"
+    choice="scissors"
     return choice;
 }
 
@@ -52,7 +52,7 @@ else if (randomNumber==2){
 
 /*
 
-Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - 
+Write a function that plays a single round of Rock Paper scissors. The function should take two parameters - 
 the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: 
 "You Lose! Paper beats Rock"
  Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or 
@@ -64,7 +64,7 @@ You’re going to use what you return later on, so let’s test this function by
 
 //This function will prompt for user input
 function playerAnswer(){
-let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or Scissors)"); //This will prmompt for player choice
+let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or scissors)"); //This will prmompt for player choice
 let playerSelection=playerSelectionRaw.toLowerCase() // This will turn anything entered into lower case
 
 return playerSelection;
@@ -78,7 +78,7 @@ return playerSelection;
 -compare the player choice with the computer choice
 -Use this logic to decide who is the winner
     -Rock beats scissors
-    -Scissors beat paper
+    -scissors beat paper
     -Paper beats rock
     -If both players throw the same object, it’s a tie. In this situation
 
@@ -106,26 +106,62 @@ console.log("Computer Selection: "+ computerSelection)
 //         return console.log("Both computer and user entered rock, hence it is a draw")
 //     }
 
-if (playerSelection=="rock")
+if (playerSelection=="rock") // Following logic will decide what the outcome is if user select rock
     {
         if (computerSelection=="rock")
         {
-            return console.log("You selected rock and Computer Selected rock so it's a draw !")
+            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
         }
         
         else if (computerSelection=="paper")
         {
-            return console.log("You selected rock and Computer Selected Paper so computer wins !")
+            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
         }
 
         else (computerSelection=="scissors")
         {
-            return console.log("You selected rock and Computer Selected scissors so You win !")
+            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
         }
-
-        
         
     }    
+
+else if (playerSelection=="paper") // Following logic will decide what the outcome is if user select paper
+    {
+        if (computerSelection=="rock")
+        {
+            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
+        }
+
+        else if (computerSelection=="paper")
+        {
+            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+        }
+
+        else (computerSelection=="scissors")
+        {
+            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So computer wins!")
+        }
+
+    }
+
+else (playerSelection=="scissors")
+{
+    if (computerSelection=="rock")
+    {
+        return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+    }
+
+    else if (computerSelection=="paper")
+    {
+        return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !")
+    }
+
+    else (computerSelection=="scissors")
+    {
+        return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+    }
+
+}
         
 }
 
