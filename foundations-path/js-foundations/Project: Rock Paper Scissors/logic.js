@@ -22,13 +22,13 @@ Scissors=2
 
 */
 
-function computerSelection()
+function getComputerChoice(choice)
 {
 /* Below code will randomly generate a number between 0 and 1 and multiply by three and rounded to nearest number
 in order to give a full number between 0 and 2 */
 let randomNumber=Math.floor(Math.random()*3); 
 //Following code will run conditional statements to give out Rock, Paper or Scisors based on the random number generated
-let choice;
+
 if (randomNumber ==0) {
     choice="rock"
     return choice;
@@ -67,7 +67,9 @@ function playerAnswer(){
 let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or Scissors)");
 let playerSelection=playerSelectionRaw.toLowerCase()
 
-console.log(playerSelection);
+return playerSelection;
+
+
 }
 
 
@@ -95,17 +97,17 @@ End of Psuedo code for playRound
 */
 // console.log(computerSelection());
 
-function playRound(playerSelectin, computerSelection) {
-playerAnswer();
+function playRound(playerSelection, computerSelection) {
+
 
 
     }
-    console.log(computerSelection());
- playRound ();
-//     const playerSelection = "rock";
-//     const computerSelection = getComputerChoice();
-//     console.log(playRound(playerSelection, computerSelection));
 
+
+console.log(getComputerChoice()); 
+console.log(playerAnswer())  
+//  playRound ();
+//  playerAnswer();
 
 
 
