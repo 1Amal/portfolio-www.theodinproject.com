@@ -10,8 +10,7 @@ return either
 ‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this function in the game to make the computer’s play. 
 Tip: use the console to make sure this is returning the expected output before moving to the next step!
 */
-function getComputerChoice()
-{
+
 /* 
 Pseudocode for getComputerChoice
 -We have three choices so generate three random numbers
@@ -22,31 +21,33 @@ Paper=1
 Scissors=2
 
 */
+
+function computerSelection()
+{
 /* Below code will randomly generate a number between 0 and 1 and multiply by three and rounded to nearest number
 in order to give a full number between 0 and 2 */
 let randomNumber=Math.floor(Math.random()*3); 
 //Following code will run conditional statements to give out Rock, Paper or Scisors based on the random number generated
 let choice;
 if (randomNumber ==0) {
-    let choice="rock"
+    choice="rock"
     return choice;
 }
 
 else if (randomNumber == 1) {
-    let choice="paper"
+    choice="paper"
     return choice;
 
 }
 
 else if (randomNumber==2){
-    let choice="scissor"
+    choice="scissor"
     return choice;
 }
 
-
 }
 
-console.log(getComputerChoice());
+
 
 
 /*
@@ -65,12 +66,11 @@ You’re going to use what you return later on, so let’s test this function by
 function playerAnswer(){
 let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or Scissors)");
 let playerSelection=playerSelectionRaw.toLowerCase()
+
 console.log(playerSelection);
 }
 
 
-
-    function playRound(playerSelectin, computerSelection) {
 /*Psuedo code for playRound
 -Ask for player choice and also recive computerSelection value from getComputerChoice()
 -compare the player choice with the computer choice
@@ -93,10 +93,14 @@ console.log(playerSelection);
 -If playerSelection = 'scissors' and computerSelection='scissors' then Draw
 End of Psuedo code for playRound
 */
-playerAnswer()
+// console.log(computerSelection());
+
+function playRound(playerSelectin, computerSelection) {
+playerAnswer();
+
 
     }
-
+    console.log(computerSelection());
  playRound ();
 //     const playerSelection = "rock";
 //     const computerSelection = getComputerChoice();
