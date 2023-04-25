@@ -64,8 +64,8 @@ You’re going to use what you return later on, so let’s test this function by
 
 //This function will prompt for user input
 function playerAnswer(){
-let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or Scissors)");
-let playerSelection=playerSelectionRaw.toLowerCase()
+let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or Scissors)"); //This will prmompt for player choice
+let playerSelection=playerSelectionRaw.toLowerCase() // This will turn anything entered into lower case
 
 return playerSelection;
 
@@ -98,16 +98,17 @@ End of Psuedo code for playRound
 // console.log(computerSelection());
 
 function playRound(playerSelection, computerSelection) {
-
-
-
+// console.log(getComputerChoice()); 
+// console.log(playerAnswer()) 
+//  playerAnswer();
+console.log(playerSelection)
+console.log(computerSelection)
     }
 
 
-console.log(getComputerChoice()); 
-console.log(playerAnswer())  
-//  playRound ();
-//  playerAnswer();
+ 
+ playRound (playerAnswer(),getComputerChoice());
+
 
 
 
