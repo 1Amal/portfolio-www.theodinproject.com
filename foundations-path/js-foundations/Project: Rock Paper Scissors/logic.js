@@ -114,6 +114,7 @@ if (playerSelection=="rock") // Following logic will decide what the outcome is 
         else if (computerSelection=="paper")
         {
             console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+            return computerScore+=1; // This code will add 1 to Computer score
             
             
         }
@@ -121,7 +122,7 @@ if (playerSelection=="rock") // Following logic will decide what the outcome is 
         else (computerSelection=="scissors")
         {
             console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
-            return playerScore+=1;
+            return playerScore+=1; // This code will add 1 to Player score
         }
         
     }    
@@ -130,7 +131,8 @@ else if (playerSelection=="paper") // Following logic will decide what the outco
     {
         if (computerSelection=="rock")
         {
-            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
+            console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
+            return playerScore+=1; // This code will add 1 to Player score
         }
 
         else if (computerSelection=="paper")
@@ -140,7 +142,8 @@ else if (playerSelection=="paper") // Following logic will decide what the outco
 
         else (computerSelection=="scissors")
         {
-            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So computer wins!")
+            console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So computer wins!")
+            return computerScore+=1; // This code will add 1 to Computer score
         }
 
     }
@@ -149,12 +152,14 @@ else (playerSelection=="scissors")
 {
     if (computerSelection=="rock")
     {
-        return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+        console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+        return computerScore+=1; // This code will add 1 to Computer score
     }
 
     else if (computerSelection=="paper")
     {
-        return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !")
+        console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !")
+        return playerScore+=1; // This code will add 1 to Player score
     }
 
     else (computerSelection=="scissors")
