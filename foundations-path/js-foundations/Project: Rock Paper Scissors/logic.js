@@ -47,9 +47,6 @@ else if (randomNumber==2){
 
 }
 
-
-
-
 /*
 
 Write a function that plays a single round of Rock Paper scissors. The function should take two parameters - 
@@ -167,7 +164,6 @@ else (playerSelection=="scissors")
 
 
  
- playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
 
 // console.log(getComputerChoice()); 
 // console.log(playerAnswer()) 
@@ -179,22 +175,23 @@ else (playerSelection=="scissors")
 //     You have not officially learned how to “loop” over code to repeat function calls… 
 if you already know about loops from somewhere else (or if you feel like doing some more learning) feel free to use them. 
 If not, don’t worry! Just call your playRound function 5 times in a row. Loops are covered in the next lesson.
-
-
-
 //     At this point you should be using console.log() to display the results of each round and the winner at the end.
-
-
-
 //     Use prompt() to get input from the user. Read the docs here if you need to.
-
-
 //     Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return 
 value to something more useful.
-
-
-
-
 //     Feel free to create more “helper” functions if you think it would be useful.
-
 */
+
+function game()
+{
+    playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
+    let playerScore=0;
+    let computerScore=0;
+    let currentRound=1;
+    
+    console.log("Current round is: " + currentRound)
+    console.log("Current Player score is: " + playerScore)
+    console.log("Current Computer score is: " + computerScore)
+}
+
+game();
