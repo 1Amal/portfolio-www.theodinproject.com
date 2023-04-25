@@ -98,18 +98,43 @@ End of Psuedo code for playRound
 // console.log(computerSelection());
 
 function playRound(playerSelection, computerSelection) {
-// console.log(getComputerChoice()); 
-// console.log(playerAnswer()) 
-//  playerAnswer();
-console.log(playerSelection)
-console.log(computerSelection)
-    }
+
+console.log("Player selection: " + playerSelection)
+console.log("Computer Selection: "+ computerSelection)
+// if (playerSelection=="rock" && computerSelection=="rock")
+//     {
+//         return console.log("Both computer and user entered rock, hence it is a draw")
+//     }
+
+if (playerSelection=="rock")
+    {
+        if (computerSelection=="rock")
+        {
+            return console.log("You selected rock and Computer Selected rock so it's a draw !")
+        }
+        
+        else if (computerSelection=="paper")
+        {
+            return console.log("You selected rock and Computer Selected Paper so computer wins !")
+        }
+
+        else (computerSelection=="scissors")
+        {
+            return console.log("You selected rock and Computer Selected scissors so You win !")
+        }
+
+        
+        
+    }    
+        
+}
 
 
  
- playRound (playerAnswer(),getComputerChoice());
+ playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
 
-
+// console.log(getComputerChoice()); 
+// console.log(playerAnswer()) 
 
 
 /*
