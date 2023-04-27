@@ -178,15 +178,13 @@ else (playerSelection=="scissors")
 
 
 /*
-// Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that
- keeps score and reports a winner or loser at the end.
+// Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 //     You have not officially learned how to “loop” over code to repeat function calls… 
 if you already know about loops from somewhere else (or if you feel like doing some more learning) feel free to use them. 
-If not, don’t worry! let currentRound=1;Just call your playRound function 5 times in a row. Loops are covered in the next lesson.
+If not, don’t worry! Just call your playRound function 5 times in a row. Loops are covered in the next lesson.
 //     At this point you should be using console.log() to display the results of each round and the winner at the end.
 //     Use prompt() to get input from the user. Read the docs here if you need to.
-//     Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return 
-value to something more useful.
+//     Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return value to something more useful.
 //     Feel free to create more “helper” functions if you think it would be useful.
 */
 let currentRound=0;
@@ -203,4 +201,9 @@ function game()
     console.log("Current Computer score is: " + computerScore)
 }
 
-game();
+
+//Below code will run the game for five times
+for (let i = 0; i < 5; i++) 
+{
+    game();
+}
