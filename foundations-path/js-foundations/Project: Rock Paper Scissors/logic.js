@@ -1,7 +1,9 @@
 // https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
 
 // Don’t forget to commit early & often! You can reference the Commit Message lesson here!
-
+let currentRound=1;
+let playerScore=0;
+let computerScore=0;
 
 console.log("*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.")
 
@@ -187,9 +189,7 @@ If not, don’t worry! Just call your playRound function 5 times in a row. Loops
 //     Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return value to something more useful.
 //     Feel free to create more “helper” functions if you think it would be useful.
 */
-let currentRound=0;
-let playerScore=0;
-let computerScore=0;
+
 function game()
 {
     playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
@@ -205,5 +205,17 @@ function game()
 //Below code will run the game for five times
 for (let i = 0; i < 5; i++) 
 {
-    game();
+    if (i<5)
+    {
+        console.log("************Round " + currentRound + "***********");
+        game();
+        
+
+    }
+
+    // else (i==5)
+    // {
+    //     console.log("Game over");
+    // }
+    
 }
