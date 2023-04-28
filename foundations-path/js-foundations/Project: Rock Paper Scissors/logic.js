@@ -206,19 +206,32 @@ function game()
 
 
 //Below code will run the game for five times
-for (let i = 0; i < 5; i++) 
+for (let i = 0; i < 6; i++) 
 {
     if (i<5)
     {
         game();
         
+        
 
     }
 
-    else (i==5)
+    else
     {
-        console.log(i);
-        console.log("Game Over")
+        
+        console.log("**********Game Over**********")
+
+        if (playerScore < computerScore) 
+        {
+            console.log("Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore);
+        }
+
+        else if (playerScore > computerScore) 
+        {
+            console.log("Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore);
+        }
+
+
 
     }
     
