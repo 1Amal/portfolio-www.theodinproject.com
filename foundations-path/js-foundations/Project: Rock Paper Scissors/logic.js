@@ -1,7 +1,7 @@
 // https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
 
 // Don’t forget to commit early & often! You can reference the Commit Message lesson here!
-let currentRound=1;
+let currentRound=0;
 let playerScore=0;
 let computerScore=0;
 
@@ -97,7 +97,7 @@ End of Psuedo code for playRound
 // console.log(computerSelection());
 
 function playRound(playerSelection, computerSelection) {
-currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
+
 
 console.log("Player selection: " + playerSelection)
 console.log("Computer Selection: "+ computerSelection)
@@ -192,11 +192,14 @@ If not, don’t worry! Just call your playRound function 5 times in a row. Loops
 
 function game()
 {
+    currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
+    console.log("************Round " + currentRound + "***********");
     playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
 
     
     
     console.log("Current round is: " + currentRound)
+    
     console.log("Current Player score is: " + playerScore)
     console.log("Current Computer score is: " + computerScore)
 }
@@ -207,15 +210,16 @@ for (let i = 0; i < 5; i++)
 {
     if (i<5)
     {
-        console.log("************Round " + currentRound + "***********");
         game();
         
 
     }
 
-    // else (i==5)
-    // {
-    //     console.log("Game over");
-    // }
+    else (i==5)
+    {
+        console.log(i);
+        console.log("Game Over")
+
+    }
     
 }
