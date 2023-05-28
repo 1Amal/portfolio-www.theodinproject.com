@@ -30,8 +30,16 @@ container.appendChild(header3);
 const container2=document.querySelector('#container');
 const content2=document.createElement('div');
 content2.classList.add('content2');
-content.style.border.color='black';
-content.style.background.color='pink';
+// content2.textContent="This is a test";
+const header1=document.createElement('h1');
+header1.textContent="I’m in a div";
+const paragraph1=document.createElement('p');
+paragraph1.textContent="ME TOO!";
+content2.style.border='1px solid black';
+content2.style.backgroundColor='pink';
 
 
+content2.appendChild(header1);
+content2.appendChild(paragraph1);
 container.appendChild(content2);
+ 
