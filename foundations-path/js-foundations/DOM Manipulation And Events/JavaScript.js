@@ -43,3 +43,32 @@ content2.appendChild(header1);
 content2.appendChild(paragraph1);
 container.appendChild(content2);
  
+// Event Listeners lesson
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World");
+
+const btn3 = document.querySelector('#btn3');
+btn3.addEventListener('click', () => {
+  alert("Hello World");
+});
+
+// function alertFunction() {
+//     alert("YAY! YOU DID IT!");
+//   }
+
+// btn.onclick = alertFunction();
+
+// btn.addEventListener('click', alertFunction);
+
+
+// btn.addEventListener('click', function (e) {
+//     console.log(e);
+//   });
+
+//   btn.addEventListener('click', function (e) {
+//     console.log(e.target);
+//   });
+
+btn.addEventListener('click', function (e) {
+    e.target.style.background = 'green';
+  });
