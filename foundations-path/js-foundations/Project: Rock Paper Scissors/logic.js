@@ -194,7 +194,7 @@ function game()
 {
     currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
     console.log("************Round " + currentRound + "***********");
-    playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
+    // playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
 
     
     
