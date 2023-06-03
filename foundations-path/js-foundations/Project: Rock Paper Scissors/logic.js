@@ -63,8 +63,27 @@ You’re going to use what you return later on, so let’s test this function by
 
 //This function will prompt for user input
 function playerAnswer(){
-let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or scissors)"); //This will prmompt for player choice
-let playerSelection=playerSelectionRaw.toLowerCase() // This will turn anything entered into lower case
+    alert("Welcome to Rock Paper Scissors, please make your selection by clicking the buttons")
+// let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or scissors)"); //This will prmompt for player choice
+// let playerSelection=playerSelectionRaw.toLowerCase() // This will turn anything entered into lower case
+let playerSelection='';
+const rock=document.querySelector('#rock');
+rock.addEventListener('click',()=>{
+    console.log("Clicked Rock");
+
+                                });
+
+const paper=document.querySelector('#paper');
+paper.addEventListener('click',()=>{
+    console.log('Clicked Paper')
+                                });
+
+const scissors=document.querySelector('#scissors');
+scissors.addEventListener('click',()=>{
+    console.log('clicked Scissors')
+                                });
+
+
 
 return playerSelection;
 
@@ -194,7 +213,7 @@ function game()
 {
     currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
     console.log("************Round " + currentRound + "***********");
-    // playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
+    playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
 
     
     
@@ -206,7 +225,8 @@ function game()
 
 
 //Below code will run the game for five times
-for (let i = 0; i < 6; i++) 
+function gameRounds(){
+    for (let i = 0; i < 6; i++) 
 {
     if (i<5)
     {
@@ -236,3 +256,12 @@ for (let i = 0; i < 6; i++)
     }
     
 }
+
+
+                    }
+
+// gameRounds();
+
+game();
+
+
