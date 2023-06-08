@@ -8,9 +8,9 @@
 </head>
 
 <body>
-<h1>Odin Project Foundations Course: Rock Paper Scissors using browser console</h1>
+<h1>Odin Project Foundations Course: Revisiting Rock Paper Scissors, V2.0</h1>
 <h2><a href=https://www.theodinproject.com/lessons/foundations-rock-paper-scissors>Odin Project instructions</a></h2>
-<p>This game will play entirely from the console so make sure to open the console</p>
+<p>In the last lesstion this game could only be able to play entirely from the console this version will allow the game to play from the Browser UI</p>
 <!-- 
 // https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
 
@@ -18,9 +18,35 @@
 
 //     Start a new Git repo for your project.
 //     Create a blank HTML document with a script tag (Hint: it is best practice to link an external .js file). This game is going to be played completely from the console, so don’t worry about putting anything else in there. -->
+<div>
+    <h2>Instructions to play the game</h2>
+<ul>
+    <li>Gamer will have five rounds to play against the computer and in the end it will be shown who won the completion</li>
+    <li>Click on the below three buttons to select Rock, Paper or Scissors</li>
+    <li>Computer will randomly generate a choice and will be compared against the user choice</li>
+    <li>Final result will be shown on the screen</li>
+</ul>
+</div>
+
+<div>
 <button type="button" id="rock">Rock</button>
 <button type="button" id="paper">Paper</button>
 <button type="butoon" id="scissors">Scissors</button>
+</div>
+
+<div>
+    <h2>Game Results</h2>
+    <p id="currentRound">Current Round</p>
+    <p id="playerCurrentSelection">Player current selection:</p>
+    <p id="computerCurrentSelection">Computer current selection:</p>
+    <p id="CurrentPlayerScore">Player score:</p>
+    <p id="CurrentComputerScore">Computer Score:</p>
+    <p id="finalResult">Final result:</p>
+    
+
+
+
+</div>
 
 <script src="logic.js"></script>
 
