@@ -4,6 +4,7 @@
 let currentRound=0;
 let playerScore=0;
 let computerScore=0;
+let playerSelection='';
 
 console.log("*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.")
 
@@ -63,30 +64,30 @@ You’re going to use what you return later on, so let’s test this function by
 
 //This function will prompt for user input
 function playerAnswer(){
-    alert("Welcome to Rock Paper Scissors, please make your selection by clicking the buttons")
+    // alert("Welcome to Rock Paper Scissors, please make your selection by clicking the buttons")
 // let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or scissors)"); //This will prmompt for player choice
 // let playerSelection=playerSelectionRaw.toLowerCase() // This will turn anything entered into lower case
-let playerSelection='';
+
 const rock=document.querySelector('#rock');
 rock.addEventListener('click',()=>{
-    console.log("Clicked Rock");
+    playerSelection='rock';
+    // playRound (playerSelection,getComputerChoice()); // Return function out put for player answer computer answer to playRound function
+    game();
 
                                 });
 
 const paper=document.querySelector('#paper');
 paper.addEventListener('click',()=>{
-    console.log('Clicked Paper')
+    playerSelection='paper';
+    game();
                                 });
 
 const scissors=document.querySelector('#scissors');
 scissors.addEventListener('click',()=>{
-    console.log('clicked Scissors')
+    playerSelection='scissors';
+    game();
+
                                 });
-
-
-
-return playerSelection;
-
 
 }
 
@@ -213,9 +214,30 @@ function game()
 {
     currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
     console.log("************Round " + currentRound + "***********");
-    playRound (playerAnswer(),getComputerChoice()); // Return function out put for player answer computer answer to playRound function
+    // playerAnswer();
 
+    if (currentRound<=5){
+        playRound (playerSelection,getComputerChoice()); // Return function out put for player answer computer answer to playRound function
+
+        }
+    else{
+        currentRound=0;
+        if (playerScore < computerScore) 
+        {
+            console.log("Game Over ! Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore);
+            playerScore=0;
+            computerScore=0;
+        }
     
+        else if (playerScore > computerScore) 
+        {
+            console.log("Game Over ! Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore);
+            playerScore=0;
+            computerScore=0;
+        }
+
+    }
+   
     
     console.log("Current round is: " + currentRound)
     
@@ -224,44 +246,44 @@ function game()
 }
 
 
-//Below code will run the game for five times
-function gameRounds(){
-    for (let i = 0; i < 6; i++) 
-{
-    if (i<5)
-    {
-        game();
+// //Below code will run the game for five times
+// function gameRounds(){
+//     for (let i = 0; i < 6; i++) 
+// {
+//     if (i<5)
+//     {
+//         game();
         
         
 
-    }
+//     }
 
-    else
-    {
+//     else
+//     {
         
-        console.log("**********Game Over**********")
+//         console.log("**********Game Over**********")
 
-        if (playerScore < computerScore) 
-        {
-            console.log("Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore);
-        }
+//         if (playerScore < computerScore) 
+//         {
+//             console.log("Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore);
+//         }
 
-        else if (playerScore > computerScore) 
-        {
-            console.log("Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore);
-        }
+//         else if (playerScore > computerScore) 
+//         {
+//             console.log("Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore);
+//         }
 
 
 
-    }
+//     }
     
-}
+// }
 
 
-                    }
+//                     }
 
 // gameRounds();
 
-game();
+// game();
 
-
+playerAnswer();
