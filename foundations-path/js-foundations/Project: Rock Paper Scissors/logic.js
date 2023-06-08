@@ -121,10 +121,6 @@ function playRound(playerSelection, computerSelection) {
 
 console.log("Player selection: " + playerSelection)
 console.log("Computer Selection: "+ computerSelection)
-// if (playerSelection=="rock" && computerSelection=="rock")
-//     {
-//         return console.log("Both computer and user entered rock, hence it is a draw")
-//     }
 
 if (playerSelection=="rock") // Following logic will decide what the outcome is if user select rock
     {
@@ -193,12 +189,6 @@ else (playerSelection=="scissors")
 }
 
 
- 
-
-// console.log(getComputerChoice()); 
-// console.log(playerAnswer()) 
-
-
 /*
 // Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 //     You have not officially learned how to “loop” over code to repeat function calls… 
@@ -214,7 +204,7 @@ function game()
 {
     currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
     console.log("************Round " + currentRound + "***********");
-    // playerAnswer();
+
 
     if (currentRound<=5){
         playRound (playerSelection,getComputerChoice()); // Return function out put for player answer computer answer to playRound function
@@ -245,45 +235,5 @@ function game()
     console.log("Current Computer score is: " + computerScore)
 }
 
-
-// //Below code will run the game for five times
-// function gameRounds(){
-//     for (let i = 0; i < 6; i++) 
-// {
-//     if (i<5)
-//     {
-//         game();
-        
-        
-
-//     }
-
-//     else
-//     {
-        
-//         console.log("**********Game Over**********")
-
-//         if (playerScore < computerScore) 
-//         {
-//             console.log("Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore);
-//         }
-
-//         else if (playerScore > computerScore) 
-//         {
-//             console.log("Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore);
-//         }
-
-
-
-//     }
-    
-// }
-
-
-//                     }
-
-// gameRounds();
-
-// game();
 
 playerAnswer();
