@@ -6,11 +6,6 @@ let playerScore=0;
 let computerScore=0;
 let playerSelection='';
 
-console.log("*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.")
-// const welcome=document.querySelector("#currentRound");
-// welcome.textContent="THis is a test";
-document.getElementById("currentRound").textContent = "*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.";
-
 
 /* Your game is going to play against the computer, so begin with a function called getComputerChoice that will randomly 
 return either 
@@ -68,14 +63,11 @@ You’re going to use what you return later on, so let’s test this function by
 
 //This function will prompt for user input
 function playerAnswer(){
-    // alert("Welcome to Rock Paper Scissors, please make your selection by clicking the buttons")
-// let playerSelectionRaw=prompt("Please Enter your choice (Rock, Paper or scissors)"); //This will prmompt for player choice
-// let playerSelection=playerSelectionRaw.toLowerCase() // This will turn anything entered into lower case
+
 
 const rock=document.querySelector('#rock');
 rock.addEventListener('click',()=>{
     playerSelection='rock';
-    // playRound (playerSelection,getComputerChoice()); // Return function out put for player answer computer answer to playRound function
     game();
 
                                 });
@@ -132,14 +124,12 @@ if (playerSelection=="rock") // Following logic will decide what the outcome is 
     {
         if (computerSelection=="rock")
         {
-            // return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
 
            return (document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
         }
         
         else if (computerSelection=="paper")
         {
-            // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
 
             document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !";
 
@@ -151,7 +141,6 @@ if (playerSelection=="rock") // Following logic will decide what the outcome is 
 
         else (computerSelection=="scissors")
         {
-            // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !");
 
             document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !";
             return playerScore+=1; // This code will add 1 to Player score
@@ -172,7 +161,6 @@ else if (playerSelection=="paper") // Following logic will decide what the outco
 
         else if (computerSelection=="paper")
         {
-            // return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
 
             return (document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
 
@@ -192,7 +180,6 @@ else (playerSelection=="scissors")
 {
     if (computerSelection=="rock")
     {
-        // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !");
 
         document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !";
 
@@ -201,7 +188,7 @@ else (playerSelection=="scissors")
 
     else if (computerSelection=="paper")
     {
-        // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !")
+
 
         document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !";
 
@@ -210,7 +197,7 @@ else (playerSelection=="scissors")
 
     else (computerSelection=="scissors")
     {
-        // return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+
 
         return (document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
 
@@ -234,7 +221,8 @@ If not, don’t worry! Just call your playRound function 5 times in a row. Loops
 function game()
 {
     currentRound+=1;  // This code will add 1 to the round so it can be limited to 5 rounds  
-    console.log("************Round " + currentRound + "***********");
+
+    document.getElementById("currentRound").textContent ="************Round " + currentRound + "***********";
 
 
     if (currentRound<=5){
@@ -245,14 +233,19 @@ function game()
         currentRound=0;
         if (playerScore < computerScore) 
         {
-            console.log("Game Over ! Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore);
+
+            document.getElementById("finalResult").textContent ="Game Over ! Computer wins as Player score is: "+ playerScore + " and Computer score is: " + computerScore;
+
             playerScore=0;
             computerScore=0;
         }
     
         else if (playerScore > computerScore) 
         {
-            console.log("Game Over ! Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore);
+
+
+            document.getElementById("finalResult").textContent ="Game Over ! Player wins as Player score is: "+ playerScore + " and Computer score is " + computerScore;
+
             playerScore=0;
             computerScore=0;
         }
@@ -260,10 +253,13 @@ function game()
     }
    
     
-    console.log("Current round is: " + currentRound)
+    document.getElementById("currentRound").textContent ="Current round is: " + currentRound;
     
-    console.log("Current Player score is: " + playerScore)
-    console.log("Current Computer score is: " + computerScore)
+
+    document.getElementById("CurrentPlayerScore").textContent ="Current Player score is: " + playerScore;
+
+
+    document.getElementById("CurrentComputerScore").textContent ="Current Computer score is: " + computerScore;
 }
 
 
