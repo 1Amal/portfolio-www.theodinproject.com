@@ -7,6 +7,10 @@ let computerScore=0;
 let playerSelection='';
 
 console.log("*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.")
+// const welcome=document.querySelector("#currentRound");
+// welcome.textContent="THis is a test";
+document.getElementById("currentRound").textContent = "*.*.*.*.*.Welcome to Rock Paper scissors Game.*.*.*.*.*.";
+
 
 /* Your game is going to play against the computer, so begin with a function called getComputerChoice that will randomly 
 return either 
@@ -120,26 +124,36 @@ function playRound(playerSelection, computerSelection) {
 
 
 console.log("Player selection: " + playerSelection)
-console.log("Computer Selection: "+ computerSelection)
+document.getElementById("playerCurrentSelection").textContent ="Player current selection: " + playerSelection;
+console.log("Computer Selection: " + computerSelection)
+document.getElementById("computerCurrentSelection").textContent ="Computer current selection: " + computerSelection;
 
 if (playerSelection=="rock") // Following logic will decide what the outcome is if user select rock
     {
         if (computerSelection=="rock")
         {
-            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+            // return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
+
+           return (document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
         }
         
         else if (computerSelection=="paper")
         {
-            console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+            // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+
+            document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !";
+
             return computerScore+=1; // This code will add 1 to Computer score
+            
             
             
         }
 
         else (computerSelection=="scissors")
         {
-            console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
+            // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !");
+
+            document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !";
             return playerScore+=1; // This code will add 1 to Player score
         }
         
@@ -150,17 +164,25 @@ else if (playerSelection=="paper") // Following logic will decide what the outco
         if (computerSelection=="rock")
         {
             console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !")
+
+            document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Player wins !";
+
             return playerScore+=1; // This code will add 1 to Player score
         }
 
         else if (computerSelection=="paper")
         {
-            return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+            // return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+
+            return (document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
+
         }
 
         else (computerSelection=="scissors")
         {
-            console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So computer wins!")
+            console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So computer wins!");
+
+            document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So computer wins!";
             return computerScore+=1; // This code will add 1 to Computer score
         }
 
@@ -170,19 +192,28 @@ else (playerSelection=="scissors")
 {
     if (computerSelection=="rock")
     {
-        console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !")
+        // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !");
+
+        document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So Computer wins !";
+
         return computerScore+=1; // This code will add 1 to Computer score
     }
 
     else if (computerSelection=="paper")
     {
-        console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !")
+        // console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !")
+
+        document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So player wins !";
+
         return playerScore+=1; // This code will add 1 to Player score
     }
 
     else (computerSelection=="scissors")
     {
-        return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+        // return console.log("You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !")
+
+        return (document.getElementById("finalResult").textContent ="You selected: " + playerSelection + " and Computer selected: " + computerSelection + " So it's a draw !");
+
     }
 
 }
