@@ -1,7 +1,7 @@
 //Use this file to do any short JavaScript exercises
 
 // Create an empty object user.
-let user=new Object();
+let user={};
 // Add the property name with the value John.
 user.name="John";
 // Add the property surname with the value Smith.
