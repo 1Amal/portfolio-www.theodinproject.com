@@ -29,11 +29,11 @@ describe('sum', () => {
 		expect(calculator.sum([7])).toBe(7);
 	});
 
-	test.skip('computes the sum of an array of two numbers', () => {
+	test('computes the sum of an array of two numbers', () => {
 		expect(calculator.sum([7,11])).toBe(18);
 	});
 
-	test.skip('computes the sum of an array of many numbers', () => {
+	test('computes the sum of an array of many numbers', () => {
 		expect(calculator.sum([1,3,5,7,9])).toBe(25);
 	});
 });
