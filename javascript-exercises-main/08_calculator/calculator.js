@@ -9,8 +9,8 @@ const subtract = function(num1,num2) {
 const sum = function(arra,arra2) {
 
 let result = arra.reduce((sum, current) => sum + current, 0);
-let result2 = arra2.reduce((sum, current) => sum + current, 0);
-finalResult=
+// let result2 = arra2.reduce((sum, current) => sum + current, 0);
+// finalResult= result+result2;
 return result;
 };
 
