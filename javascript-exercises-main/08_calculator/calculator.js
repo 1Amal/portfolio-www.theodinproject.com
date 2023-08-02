@@ -13,9 +13,18 @@ let result = arra.reduce((sum, current) => sum + current, 0);
 return result;
 };
 
-const multiply = function() {
+const multiply = function(array) {
 
-};
+var total=1;
+
+for (var i=0;i<array.length;++i){
+
+    total*=array[i];
+}
+
+return(total)};
+
+// Power of the number
 
 const power = function() {
 	
