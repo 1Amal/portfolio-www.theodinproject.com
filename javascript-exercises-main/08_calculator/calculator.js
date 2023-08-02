@@ -25,9 +25,20 @@ for (var i=0;i<array.length;++i){
 return(total)};
 
 // Power of the number
+/* 
+4^3
+total=4*4;
+total=total*4
+*/
+const power = function(baseNum,power2) {
+  let fixedBase=baseNum;
+  let finalAns=1;
+for (var j=0; j<power2;j++)
+{
+finalAns=finalAns*fixedBase
+}
+return finalAns;
 
-const power = function() {
-	
 };
 
 const factorial = function() {
