@@ -2,19 +2,45 @@
 with new concepts*/
 
 
-var array=[2,15,10];
-var total=1;
+function factorialize(num) {
+    var result = num;
+    if (num === 0 || num === 1) 
+      return 1; 
+    while (num > 1) { 
+      num--;
+      result *= num;
+    }
+    return result;
+  }
+  factorialize(5);
 
-for (var i=0;i<array.length;++i){
-
-    total*=array[i];
-}
-
-alert(total);
 
 
 //Completed Exercises
 /*
+function factorialize(num) {
+    if (num === 0 || num === 1)
+      return 1;
+    for (var i = num - 1; i >= 1; i--) {
+      num *= i;
+    }
+    return num;
+  }
+  alert(factorialize(5));
+
+
+function factorialize(num) {
+    var result = num;
+    if (num === 0 || num === 1) 
+      return 1; 
+    while (num > 1) { 
+      num--;
+      result *= num;
+    }
+    return result;
+  }
+  console.log(factorialize(5));
+
 // Create an empty object user.
 let user={};
 // Add the property name with the value John.

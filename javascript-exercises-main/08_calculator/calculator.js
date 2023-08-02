@@ -40,9 +40,20 @@ finalAns=finalAns*fixedBase
 return finalAns;
 
 };
+// 
+const factorial = function(num) {
+	var result=num;
+  if (num===0 || num===1)
+  {
+    return 1;
+  }
 
-const factorial = function() {
-	
+  while (num>1)
+  {
+    num--;
+    result=result*num;
+  }
+  return (result);
 };
 
 // Do not edit below this line
