@@ -2,6 +2,19 @@
 with new concepts*/
 
 
+
+
+//Completed Exercises
+/*
+function palindrome(str) {
+  var re = /[\W_]/g;
+  var lowRegStr = str.toLowerCase().replace(re, '');
+  var reverseStr = lowRegStr.split('').reverse().join(''); 
+  return reverseStr === lowRegStr;
+}
+console.log(palindrome("A man, a plan, a canal. Panama"));
+
+
 function factorialize(num) {
     var result = num;
     if (num === 0 || num === 1) 
@@ -16,8 +29,6 @@ function factorialize(num) {
 
 
 
-//Completed Exercises
-/*
 function factorialize(num) {
     if (num === 0 || num === 1)
       return 1;
