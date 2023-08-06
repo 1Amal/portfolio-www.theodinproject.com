@@ -1,6 +1,26 @@
 /*Use this file to do any short JavaScript exercises and to experiment
 with new concepts*/
 
+let sequenceNumber=4;
+let previousNum1=0;
+let previousNum2=1;
+let sequenceArray=[];
+
+while (sequenceNumber>0)
+{
+sequenceNumber=sequenceNumber-1; // Following code will run the counter
+
+sequenceArray.push(previousNum1+previousNum2); // This code will add numbers to an array
+
+//Look into adding all the numbers to an array the addressing the array index by the formula
+//Fn= (fn-1) + (fn-2)
+//Then add those two numbers together and show the output
+
+// sequenceArray.push(sequenceNumber);
+
+}
+console.log(sequenceArray);
+
 
 
 
