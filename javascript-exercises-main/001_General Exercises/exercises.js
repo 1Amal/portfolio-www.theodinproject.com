@@ -1,16 +1,62 @@
 /*Use this file to do any short JavaScript exercises and to experiment
 with new concepts*/
 
-let sequenceNumber=4;
-let previousNum1=0;
-let previousNum2=1;
-let sequenceArray=[];
+function fib(n){
+  let arr = [0, 1];
+  for (let i = 2; i < n + 1; i++){
+    arr.push(arr[i - 2] + arr[i -1])
+  }
+//  return arr[n]
+console.log(arr[n]);  
+}
 
-while (sequenceNumber>0)
-{
-sequenceNumber=sequenceNumber-1; // Following code will run the counter
+fib("8");
 
-sequenceArray.push(previousNum1+previousNum2); // This code will add numbers to an array
+
+
+
+
+//Completed Exercises
+/*
+
+function fib(n) {
+  if (n < 2){
+    return n
+  }
+  return fib(n - 1) + fib (n - 2)
+}
+
+console.log(fib(8));
+
+const fibonacci = function(sequenceNumber) {
+  // let toNumber=Number(sequence);
+  
+  // Fn = Fn-1 + Fn-2 (applies to all other integers)
+  
+  // let sequenceNumber=input;
+  let previousNum1;
+  let previousNum2=1;
+  let fibonacciNum;
+  let fib;
+  let sequenceArray=[];
+  let whileCounter=sequenceNumber;
+
+  while (whileCounter>0)
+  {
+  whileCounter=whileCounter -1; // Following code will run the counter
+  // previousNum2=previousNum1+previousNum2;
+  // fibonacciNum=(sequenceNumber-1)+(sequenceNumber-2);
+  //0,1,1,2,3,5,8,13,21,34,55,89,144
+  //
+//Xn=[(1.618^n)-(1-1.618)^n]/sqrt(5) Golden rule to solve this
+  // sequenceArray.push(fibonacciNum); // This code will add numbers to an array
+  fib=(((1.618)^(sequenceNumber))-(1-1.618)^(sequenceNumber))/(Math.sqrt(5));
+
+  };
+
+  console.log(fib);
+  console.log(sequenceNumber);
+  console.log(Math.sqrt(5));
 
 //Look into adding all the numbers to an array the addressing the array index by the formula
 //Fn= (fn-1) + (fn-2)
@@ -19,13 +65,11 @@ sequenceArray.push(previousNum1+previousNum2); // This code will add numbers to 
 // sequenceArray.push(sequenceNumber);
 
 }
-console.log(sequenceArray);
+
+fibonacci(4);
 
 
 
-
-//Completed Exercises
-/*
 function palindrome(str) {
   var re = /[\W_]/g;
   var lowRegStr = str.toLowerCase().replace(re, '');
