@@ -1,6 +1,42 @@
 /*Use this file to do any short JavaScript exercises and to experiment
 with new concepts*/
 
+
+const books = [
+  {
+    title: 'Book',
+    author: 'Name'
+  },
+  {
+    title: 'Book2',
+    author: 'Name2'
+  }
+]
+let i=0;
+do {
+  console.log(books.length);
+  console.log('This Works');
+  i++;
+
+}
+
+while (i<books.length);
+
+
+
+for (let bookTitles in books[1])
+{
+let getTheTitles=bookTitles;   //books[1].title;
+console.log(getTheTitles);
+
+}
+
+
+
+
+//Completed Exercises
+/*
+
 function fib(n){
   let arr = [0, 1];
   for (let i = 2; i < n + 1; i++){
@@ -11,13 +47,6 @@ console.log(arr[n]);
 }
 
 fib("8");
-
-
-
-
-
-//Completed Exercises
-/*
 
 function fib(n) {
   if (n < 2){
