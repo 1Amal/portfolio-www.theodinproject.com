@@ -2,6 +2,12 @@
 with new concepts*/
 
 
+
+
+//Completed Exercises
+/*
+
+
 const books = [
   {
     title: 'Book',
@@ -22,12 +28,6 @@ for (let bookTitles in books)
 }
 console.log(getTheTitles);
 return(getTheTitles);
-
-
-
-
-//Completed Exercises
-/*
 
 function fib(n){
   let arr = [0, 1];
