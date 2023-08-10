@@ -5,31 +5,23 @@ with new concepts*/
 const books = [
   {
     title: 'Book',
-    author: 'Name'
+    author: 'Name',
   },
   {
     title: 'Book2',
-    author: 'Name2'
+    author: 'Name2',
   }
 ]
-let i=0;
-do {
-  console.log(books.length);
-  console.log('This Works');
-  i++;
 
-}
+let getTheTitles=[];
 
-while (i<books.length);
-
-
-
-for (let bookTitles in books[1])
+for (let bookTitles in books)
 {
-let getTheTitles=bookTitles;   //books[1].title;
-console.log(getTheTitles);
+  getTheTitles.push(books[bookTitles].title); 
 
 }
+console.log(getTheTitles);
+return(getTheTitles);
 
 
 
