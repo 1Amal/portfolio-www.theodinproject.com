@@ -17,11 +17,48 @@ const people = [
     yearOfBirth: 1912,
     yearOfDeath: 1941,
   },
+
 ]
 
+let birthYears=[];
+let ages=[];
 
 
-console.log(people[0].name);
+for (let key in people){
+  // console.log(key);
+
+  // birthYears.push('test1','test2');
+  if (people[key].yearOfDeath===undefined)
+  {
+    console.log("No Year of Death")
+    // console.log(new Date.getFullYear());
+    const d = new Date();
+    let year = d.getFullYear();
+    console.log(year);
+    let currentlyLiving=year-people[key].yearOfBirth;
+    console.log(currentlyLiving);
+  }
+
+  else{
+  ages.push((people[key].yearOfDeath)-(people[key].yearOfBirth));
+
+  console.log(people[key].name);
+  }
+
+}
+// return ages;
+
+console.log(ages);
+
+
+
+// console.log(birthYears);  
+// console.log(people);
+
+
+// console.log(people[1].yearOfBirth);
+// console.log(people[1].yearOfDeath);
+
 
 
 
