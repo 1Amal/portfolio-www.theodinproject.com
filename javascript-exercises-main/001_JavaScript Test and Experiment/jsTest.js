@@ -20,46 +20,131 @@ const people = [
 
 ]
 
-let birthYears=[];
-let ages=[];
+const findTheOldest = function(people) {
+   
+  let birthYears=[];
+  let ages=[];
+      
+  for (let key in people){
+  
+        if (people[key].yearOfDeath===undefined)
+          {
+            const d = new Date();
+            let year = d.getFullYear();
+            let currentlyLiving=year-people[key].yearOfBirth;
+            people[key].age=currentlyLiving;
+            ages.push(currentlyLiving);
+      
+          }
+      
+        else{
+          let currentlyLiving2=((people[key].yearOfDeath)-(people[key].yearOfBirth));
 
+          people[key].age=currentlyLiving2;
+          ages.push(currentlyLiving2);
 
-for (let key in people){
-  // console.log(key);
-
-  // birthYears.push('test1','test2');
-  if (people[key].yearOfDeath===undefined)
-  {
-    console.log("No Year of Death")
-    // console.log(new Date.getFullYear());
-    const d = new Date();
-    let year = d.getFullYear();
-    console.log(year);
-    let currentlyLiving=year-people[key].yearOfBirth;
-    console.log(currentlyLiving);
+  
+        }
+      
   }
 
-  else{
-  ages.push((people[key].yearOfDeath)-(people[key].yearOfBirth));
+  
+  // console.log(ages);
+  return ages;
 
-  console.log(people[key].name);
-  }
+    };
 
+// console.log(findTheOldest(people));
+
+findTheOldest(people);
+
+
+function largestOfFour(mainArray) {
+  return mainArray.map(function (subArray){
+    return subArray.reduce(function (previousLargestNumber, currentLargestNumber) {
+      return (currentLargestNumber > previousLargestNumber) ? currentLargestNumber : previousLargestNumber;
+    }, 0);
+  });
 }
-// return ages;
 
-console.log(ages);
+// console.log(largestOfFour(findTheOldest(people)));
+
+// console.log(largestOfFour([[1,51,4,5]]));
+
+console.log(largestOfFour([findTheOldest(people)]));
 
 
 
-// console.log(birthYears);  
+// const findTheOldest = function (array) {
+//   return array.reduce((oldest, currentPerson) => {
+//     const oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath);
+
+//     console.log(oldest.yearOfBirth, oldest.yearOfDeath);
+//     const currentAge = getAge(
+//       currentPerson.yearOfBirth,
+//       currentPerson.yearOfDeath
+//     );
+//     console.log(currentPerson.yearOfBirth,
+//       currentPerson.yearOfDeath)
+//     return oldestAge < currentAge ? currentPerson : oldest;
+//   });
+// };
+
+// const getAge = function (birth, death) {
+//   if (!death) {
+//     death = new Date().getFullYear();
+//   }
+//   return death - birth;
+// };
+
+// findTheOldest(people);
+
+
+
+// function largestOfFour(mainArray) {
+//   return mainArray.map(function (subArray){
+//     return subArray.reduce(function (previousLargestNumber, currentLargestNumber) {
+//       return (currentLargestNumber > previousLargestNumber) ? currentLargestNumber : previousLargestNumber;
+//     }, 0);
+//   });
+// }
+// console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+
+
+// let birthYears=[];
+// let ages=[];
+
+
+// for (let key in people){
+// ages.push(people[key].name);
+//   if (people[key].yearOfDeath===undefined)
+//   {
+//     const d = new Date();
+//     let year = d.getFullYear();
+//     // console.log(year);
+//     let currentlyLiving=year-people[key].yearOfBirth;
+
+//     ages.push(currentlyLiving);
+
+//     // console.log(currentlyLiving);
+  
+//   }
+
+//   else{
+//   // ages.push((people[key].yearOfDeath)-(people[key].yearOfBirth));
+
+//   people[key].age=((people[key].yearOfDeath)-(people[key].yearOfBirth));
+
+//   console.log(people[key].age);
+
+//   // console.log(people[key].name);
+//   }
+
+// }
+// // let testArray=ages.push("Hello");
+// // console.log(testArray);
+// // console.log(typeof(ages));
 // console.log(people);
-
-
-// console.log(people[1].yearOfBirth);
-// console.log(people[1].yearOfDeath);
-
-
 
 
 

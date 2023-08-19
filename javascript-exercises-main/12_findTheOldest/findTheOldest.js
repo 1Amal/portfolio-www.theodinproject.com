@@ -16,21 +16,34 @@ const people = [
     },
   ]
 
-const findTheOldest = function(people) {
-    // let birthYears=[];
+  const findTheOldest = function(people) {
+   
+    let birthYears=[];
     let ages=[];
-    
-    
+        
     for (let key in people){
-      console.log(key);
     
-    //   birthYears.push('test1','test2');
-      ages.push((people[key].yearOfDeath)-(people[key].yearOfBirth));
-      
+          if (people[key].yearOfDeath===undefined)
+            {
+              const d = new Date();
+              let year = d.getFullYear();
+              let currentlyLiving=year-people[key].yearOfBirth;
+              people[key].age=currentlyLiving;
+        
+            }
+        
+          else{
+            people[key].age=((people[key].yearOfDeath)-(people[key].yearOfBirth));
+  
     
+          }
+        
     }
-    return people[0];
-};
+    // console.log(people);
+    return people;
+  
+      };
+
 
 // Do not edit below this line
 module.exports = findTheOldest;
