@@ -24,9 +24,10 @@ const findTheOldest = function(people) {
    
   let birthYears=[];
   let ages=[];
+  let key;
       
-  for (let key in people){
-  
+  for (key in people){
+
         if (people[key].yearOfDeath===undefined)
           {
             const d = new Date();
@@ -43,35 +44,45 @@ const findTheOldest = function(people) {
           people[key].age=currentlyLiving2;
           ages.push(currentlyLiving2);
 
-  
         }
-      
+        // console.log(people[key].age);
+                
   }
 
+  function largestOfFour(mainArray) {
+    return mainArray.map(function (subArray){
+      return subArray.reduce(function (previousLargestNumber, currentLargestNumber) {
+        return (currentLargestNumber > previousLargestNumber) ? currentLargestNumber : previousLargestNumber;
+      }, 0);
+    });
+  }
+
+
+let largestAge=largestOfFour([ages]);
+let indexNo=ages.indexOf(largestAge[0]);
+
+// console.log(largestAge[0])
+// console.log(people);
+
+// console.log(indexNo);
+// console.log(people[indexNo]);
+
   
-  // console.log(ages);
-  return ages;
+return people[indexNo];
+
 
     };
 
-// console.log(findTheOldest(people));
-
-findTheOldest(people);
 
 
-function largestOfFour(mainArray) {
-  return mainArray.map(function (subArray){
-    return subArray.reduce(function (previousLargestNumber, currentLargestNumber) {
-      return (currentLargestNumber > previousLargestNumber) ? currentLargestNumber : previousLargestNumber;
-    }, 0);
-  });
-}
 
-// console.log(largestOfFour(findTheOldest(people)));
 
-// console.log(largestOfFour([[1,51,4,5]]));
 
-console.log(largestOfFour([findTheOldest(people)]));
+// console.log(largestOfFour([findTheOldest(people)]));
+
+console.log(findTheOldest(people))
+// findTheOldest(people);
+
 
 
 

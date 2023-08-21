@@ -20,27 +20,52 @@ const people = [
    
     let birthYears=[];
     let ages=[];
+    let key;
         
-    for (let key in people){
-    
+    for (key in people){
+  
           if (people[key].yearOfDeath===undefined)
             {
               const d = new Date();
               let year = d.getFullYear();
               let currentlyLiving=year-people[key].yearOfBirth;
               people[key].age=currentlyLiving;
+              ages.push(currentlyLiving);
         
             }
         
           else{
-            people[key].age=((people[key].yearOfDeath)-(people[key].yearOfBirth));
+            let currentlyLiving2=((people[key].yearOfDeath)-(people[key].yearOfBirth));
+  
+            people[key].age=currentlyLiving2;
+            ages.push(currentlyLiving2);
+  
+          }
+          // console.log(people[key].age);
+                  
+    }
+  
+    function largestOfFour(mainArray) {
+      return mainArray.map(function (subArray){
+        return subArray.reduce(function (previousLargestNumber, currentLargestNumber) {
+          return (currentLargestNumber > previousLargestNumber) ? currentLargestNumber : previousLargestNumber;
+        }, 0);
+      });
+    }
+  
+  
+  let largestAge=largestOfFour([ages]);
+  let indexNo=ages.indexOf(largestAge[0]);
+  
+  // console.log(largestAge[0])
+  // console.log(people);
+  
+  // console.log(indexNo);
+  // console.log(people[indexNo]);
   
     
-          }
-        
-    }
-    // console.log(people);
-    return people;
+  return people[indexNo];
+  
   
       };
 
