@@ -1,6 +1,6 @@
 *
 {
-
+ background-color: #f8f8f8;
 }
 
 @font-face
@@ -23,8 +23,52 @@ h1
 
 }
 
-.mainImage
+p
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.container
+{
+    display: flex;
+}
+
+.leftPane
+{
+    /* position:relative; */
+    background: url(./images/halie-west-25xggax4bSA-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: 768px 1024px;
+
+}
+
+.signUpForm
+{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* .mainImage
 {
     width:420px;
     height:640px;
+} */
+
+.logoImage
+{
+    width:200px;
+    height:300px;
+}
+
+.formRow
+{
+    /* background-color: red; */
+}
+
+.formOutside
+{
+    background-color: green;
 }
