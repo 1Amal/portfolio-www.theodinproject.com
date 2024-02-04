@@ -7,15 +7,66 @@
     <link rel="stylesheet" href="./signup.css">
 </head>
 <body>
-    <div>
-        <h1>Code Challenge : Signup Form </h1>
-        <p>Welcome to coding challenge to create a professional looking signup page as per the  <a href="./images/sign-up-form.png">design file</a></p>
-        <p>Coding challenge specifications are <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form">here</a></p>
-
-    </div>
-
-
+    
+<div class="leftPane">
+    
+    <img class="mainImage" src="./images/halie-west-25xggax4bSA-unsplash.jpg" alt="Forest image" >
     Photo by <a href="https://unsplash.com/@haliewestphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Halie West</a> on <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+</div>
+
+<div class="rightPane">
+    <h1>Code Challenge : Signup Form </h1>
+    <p>Welcome to coding challenge to create a professional looking signup page as per the  <a href="./images/sign-up-form.png">design file</a></p>
+    <p>Coding challenge specifications are <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form">here</a></p>
+
+    <form action="" method="get" class="signUpForm">
+        <div class="formRow">
+            <label for="firstName">First Name</label>
+            <input id="firstName" 
+                   name="firstName" 
+                   type="text"
+                />
+
+            <label for="lastName">Last Name</label>
+            <input id="lastName" 
+                   name="lastName" 
+                   type="text"
+                />
+        </div>
+
+        <div class="formRow">
+            <label for="eMail">E-Mail</label>
+            <input id="eMail" 
+                   name="eMail"
+                   type="email"
+                   placeholder="amal@amal.com"
+                />
+            <label for="phoneNumber">Phone Number</label>    
+            <input id="phoneNumber" 
+                   name="phoneNumber"
+                   type="tel"
+                   placeholder="+610000000000"
+                />
+        </div>
+
+        <div class="formRow">
+            <label for="password">Password</label>
+            <input id="password"
+                   name="password"
+                   type="password"
+                />  
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword"
+                   name="confirmPassword"
+                   type="password"
+                /> 
+        </div>
+
+    </form>
+</div>
+  
   
 </body>
 </html>

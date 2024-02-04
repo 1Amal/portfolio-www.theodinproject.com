@@ -22,3 +22,9 @@ h1
     align-self:end;
 
 }
+
+.mainImage
+{
+    width:420px;
+    height:640px;
+}
