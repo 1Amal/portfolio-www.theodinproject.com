@@ -34,6 +34,8 @@ p
 .container
 {
     display: flex;
+    /* justify-content: space-between; */
+    column-gap:30px;
     
 
 }
@@ -116,3 +118,12 @@ p
     /* flex:1; */
 }
 
+#createButton
+{
+    color:#f8f8f8;
+    background-color:#596D48;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    padding:5px 20px 5px 20px;
+    border-radius: 5px;
+}
