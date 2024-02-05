@@ -33,15 +33,63 @@ p
 .container
 {
     display: flex;
+    flex:1;
+    justify-content:flex-start ;
+    /* align-items: flex-start; */
 }
 
 .leftPane
 {
-    /* position:relative; */
+    display:flex;
+    flex-direction: column;
     background: url(./images/halie-west-25xggax4bSA-unsplash.jpg);
+    width:640px;
+    height:1024px;
     background-repeat: no-repeat;
-    background-size: 768px 1024px;
+    background-size: contain;
 
+}
+
+.logoDiv
+{
+    background-color: #0d0d0d;
+    opacity: 0.6;
+}
+
+.logoImage
+{
+    width:150px;
+    height:150px;
+
+}
+
+#logoText
+{
+    color: green;
+    font:
+    4rem "norse",
+    monospace;
+    align-self:end;
+}
+
+#photoCredit
+{
+    background-color: #0d0d0d;
+    opacity: 0.6;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1rem;
+    color: #f8f8f8;
+}
+
+
+.rightPane
+{
+    display: flex;
+    flex-direction: column;
+ 
+   
 }
 
 .signUpForm
@@ -49,6 +97,7 @@ p
     font-family: "Protest Riot", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
 }
 
 /* .mainImage
@@ -57,18 +106,4 @@ p
     height:640px;
 } */
 
-.logoImage
-{
-    width:200px;
-    height:300px;
-}
 
-.formRow
-{
-    /* background-color: red; */
-}
-
-.formOutside
-{
-    background-color: green;
-}
