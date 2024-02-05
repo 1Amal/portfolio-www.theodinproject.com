@@ -37,34 +37,40 @@
 
     <form action="" method="get" class="signUpForm">
         <div class="formRow">
-            <label for="firstName">First Name
+            <label for="firstName">First Name</label>
             <input id="firstName" 
                    name="firstName" 
                    type="text"
+                   required
                 />
-            </label>
+            
 
-            <label for="lastName">Last Name
+            <label for="lastName">Last Name</label>
             <input id="lastName" 
                    name="lastName" 
                    type="text"
+                   required
                 />
-            </label>
+            
         </div>
 
         <div class="formRow">
-            <label for="eMail">E-Mail
+            <label for="eMail">E-Mail</label>
             <input id="eMail" 
                    name="eMail"
                    type="email"
                    placeholder="amal@amal.com"
+                   required
                 />
-            </label>
+            
             <label for="phoneNumber">Phone Number</label>    
             <input id="phoneNumber" 
                    name="phoneNumber"
                    type="tel"
                    placeholder="+610000000000"
+                   maxlength="13"
+                   minlength="10"
+                   required
                 />
         </div>
 
@@ -73,12 +79,14 @@
             <input id="password"
                    name="password"
                    type="password"
+                   required
                 />  
 
             <label for="confirmPassword">Confirm Password</label>
             <input id="confirmPassword"
                    name="confirmPassword"
                    type="password"
+                   required
                 /> 
         </div>
         <div class="formOutside">

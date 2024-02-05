@@ -56,7 +56,7 @@ p
 .logoDiv
 {
     background-color: #0d0d0d;
-    opacity: 0.6;
+    
     width:300px;
     height:50px;
 }
@@ -65,12 +65,13 @@ p
 {
     width:150px;
     height:150px;
+   
 
 }
 
 #logoText
 {
-    color: green;
+    color: #da3b3b;
     font:
     4rem "norse",
     monospace;
@@ -94,7 +95,8 @@ p
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
-    
+
+
 }
 
 .signUpForm
@@ -104,18 +106,22 @@ p
     /* justify-content: space-between 10px; */
     /* align-items:stretch; */
     align-content:center;
-    row-gap: 20px;
-    column-gap: 20px;
+    row-gap: 30px;
+    column-gap: 30px;
 
     font-family: "Protest Riot", sans-serif;
     font-weight: 100;
     font-style: normal;
 
+    
+
 }
 
-#formRow
+.formRow label
 {
     /* flex:1; */
+    display:block;
+
 }
 
 #createButton
