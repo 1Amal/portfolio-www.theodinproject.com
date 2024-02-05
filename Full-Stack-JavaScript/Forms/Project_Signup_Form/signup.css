@@ -1,6 +1,7 @@
 *
 {
  background-color: #f8f8f8;
+ margin:0px;
 }
 
 @font-face
@@ -33,27 +34,29 @@ p
 .container
 {
     display: flex;
-    flex:1;
-    justify-content:flex-start ;
-    /* align-items: flex-start; */
+    
+
 }
 
 .leftPane
 {
+    width:300px;
+    height:500px;
     display:flex;
     flex-direction: column;
-    background: url(./images/halie-west-25xggax4bSA-unsplash.jpg);
-    width:640px;
-    height:1024px;
+    justify-content: space-around;
+    background: url(./images/halie-west-25xggax4bSA-unsplash.jpg) ;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: contain;
-
+    
 }
 
 .logoDiv
 {
     background-color: #0d0d0d;
     opacity: 0.6;
+    width:300px;
+    height:50px;
 }
 
 .logoImage
@@ -69,7 +72,7 @@ p
     font:
     4rem "norse",
     monospace;
-    align-self:end;
+    /* align-self:end; */
 }
 
 #photoCredit
@@ -88,22 +91,28 @@ p
 {
     display: flex;
     flex-direction: column;
- 
-   
+    justify-content:space-evenly;
+    
 }
 
 .signUpForm
 {
+    display:flex;
+    flex-direction: column;
+    /* justify-content: space-between 10px; */
+    /* align-items:stretch; */
+    align-content:center;
+    row-gap: 20px;
+    column-gap: 20px;
+
     font-family: "Protest Riot", sans-serif;
-    font-weight: 400;
+    font-weight: 100;
     font-style: normal;
-    
+
 }
 
-/* .mainImage
+#formRow
 {
-    width:420px;
-    height:640px;
-} */
-
+    /* flex:1; */
+}
 
