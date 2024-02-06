@@ -87,24 +87,25 @@ p
 {
 
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
     font-size: 1rem;
-    color: #f8f8f8;
     
 }
 
 #photoCredit p
 {
     margin-right: 60px;
-    background-color: #0d0d0d;
     opacity: 0.4;
+    color: #160202;
+    opacity: 0.9;
 }
 
 
 .rightPane
 {
     display: flex;
+    flex-wrap:wrap;
     flex-direction: column;
     justify-content:space-evenly;
 
