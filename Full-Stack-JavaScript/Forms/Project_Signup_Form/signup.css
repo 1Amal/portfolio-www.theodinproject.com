@@ -90,10 +90,10 @@ p
 
 #photoCredit
 {
-    background-color: #0d0d0d;
-    opacity: 0.6;
+    /* background-color: #0d0d0d;
+    opacity: 0.4; */
     font-family: "Roboto", sans-serif;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     font-size: 1rem;
     color: #f8f8f8;
@@ -102,9 +102,9 @@ p
 
 #photoCredit p
 {
-    margin-right: 50px;
+    margin-right: 60px;
     background-color: #0d0d0d;
-    /* /* opacity: 0.4;
+    opacity: 0.4;
 }
 
 
@@ -121,9 +121,9 @@ p
 {
     display:flex;
     flex-direction: column;
-    /* justify-content: space-between 10px; */
+    justify-content: space-between 10px;
     /* align-items:stretch; */
-    align-content:flex-start;
+
     row-gap: 30px;
     column-gap: 30px;
 
@@ -133,6 +133,12 @@ p
 
     
 
+}
+
+.formRow
+{
+    display:flex;
+    column-gap: 30px;
 }
 
 .formRow label
