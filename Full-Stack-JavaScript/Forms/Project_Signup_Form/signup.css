@@ -1,3 +1,12 @@
+:root
+{
+    --heading:#019824;
+    --correct:#07db38;
+    --error:#c50505;
+    --default-font-color:#000000;
+    --background-color:#0d0d0d;
+}
+
 *
 {
  background-color: #f8f8f8;
@@ -16,7 +25,7 @@
 
 h1
 {
-    color: green;
+    color: var(--heading);
     font:
     2rem "norse",
     monospace;
@@ -53,24 +62,25 @@ p
 
 }
 
-.logoDiv p
-{
-    background-color: #0d0d0d;
-    width:300px;
-}
 
 .logoDiv
 {
-    background-color: #0d0d0d;
-    opacity: 0.6;
+    background-color: var(--background-color);
+    opacity: 0.7;
 
+}
+
+.logoDiv p
+{
+    background-color: var(--background-color);
+    width:300px;
 }
 
 .logoImage
 {
     width:100px;
     height:100px;
-    background-color: #0d0d0d;
+    background-color: var(--background-color);
     margin:10px;
 
 }
@@ -97,7 +107,7 @@ p
 {
     margin-right: 60px;
     opacity: 0.4;
-    color: #160202;
+    color: var(--background-color);
     opacity: 0.9;
 }
 
@@ -138,7 +148,7 @@ p
 
 .formRow label
 {
-    /* flex:1; */
+
     display:block;
 
 }
@@ -146,7 +156,7 @@ p
 #createButton
 {
     color:#f8f8f8;
-    background-color:#596D48;
+    background-color:var(--heading);
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     padding:5px 20px 5px 20px;
@@ -161,12 +171,12 @@ input:focus
 
 input:valid
 {
-    border-color:#89c851;
+    border-color:var(--heading);
 
 }
 
 input:invalid
 {
-    border-color:#ef1616;
+    border-color:var(--error);
 }
 
