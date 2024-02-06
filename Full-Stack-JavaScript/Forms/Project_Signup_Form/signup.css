@@ -157,3 +157,19 @@ p
     padding:5px 20px 5px 20px;
     border-radius: 5px;
 }
+
+input:focus
+{
+    background-color: #ecf240;
+}
+
+
+input:valid
+{
+    border-color:#89c851;
+}
+
+input:invalid
+{
+    border-color:#ef1616;
+}
