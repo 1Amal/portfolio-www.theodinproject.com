@@ -115,6 +115,7 @@ p
 .signUpForm
 {
     display:flex;
+    flex-wrap:wrap;
     flex-direction: column;
     justify-content: space-between 10px;
     row-gap: 30px;
@@ -131,6 +132,7 @@ p
 .formRow
 {
     display:flex;
+    flex-wrap:wrap;
     column-gap: 30px;
 }
 
