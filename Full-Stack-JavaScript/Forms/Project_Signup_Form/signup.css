@@ -167,9 +167,11 @@ input:focus
 input:valid
 {
     border-color:#89c851;
+
 }
 
 input:invalid
 {
     border-color:#ef1616;
 }
+
