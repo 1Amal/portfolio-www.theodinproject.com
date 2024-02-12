@@ -1,5 +1,49 @@
 
+*
+{
+    margin-top:0;
+    margin-left: 0;
+    
+}
 h1
 {
-    color: red;
+    color: rgb(16, 0, 0);
+}
+
+ul
+{
+    list-style: none;
+}
+
+
+.container
+{
+    display:grid;
+    grid-template-rows: repeat(1,1fr) repeat(1,3fr);
+    grid-template-columns:repeat(1,1fr) repeat(1,3fr);
+
+}
+
+.column1
+{
+    display:grid;
+    grid-template-rows:repeat(1, 1fr);
+    grid-template-columns:repeat(1,1fr);
+    background-color:#0284c7;
+    
+        /* margin-top:0; */
+}
+
+.column1 li, h1
+{
+    display:grid;
+    color:#f1f5f9;
+    font-weight: 600;
+    font-size: 2rem;
+  
+}
+
+.column2
+{
+    background-color: aliceblue;
 }
