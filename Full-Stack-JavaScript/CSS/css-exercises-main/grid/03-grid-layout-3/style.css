@@ -9,12 +9,11 @@
   resize:both;
   row-gap: 4px;
   column-gap: 4px;
-  /* grid-template-rows:repeat(1,1fr) repeat(1,1fr) repeat(1,1fr) repeat(1,1fr);
-  grid-template-columns:repeat(1,1fr) repeat(1,1fr); */
+  grid-template-rows:repeat(4, clamp(150px));
+  grid-template-columns:repeat(1,1fr) repeat(1,4fr);
 }
 
 .container div {
-
 
   padding: 15px;
   font-size: 32px;
@@ -24,13 +23,18 @@
 }
 
 .header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   background-color: #393f4d;
   grid-area:1/1/2/3;
 }
 
+
 .menu ul,
 .menu li {
   font-size: 16px;
+  list-style-type:none;
+  /* display:inline-block; */
 }
 
 .sidebar {
