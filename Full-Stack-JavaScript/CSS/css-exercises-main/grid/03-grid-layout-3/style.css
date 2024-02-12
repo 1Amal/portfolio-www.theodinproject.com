@@ -24,7 +24,7 @@
 
 .header {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(1, 1fr) repeat(1,5fr);
   background-color: #393f4d;
   grid-area:1/1/2/3;
 }
@@ -35,6 +35,14 @@
   font-size: 16px;
   list-style-type:none;
   /* display:inline-block; */
+  /* margin-right: 100px ; */
+}
+
+.menu ul
+{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
 }
 
 .sidebar {
@@ -59,6 +67,7 @@
 }
 
 .nav {
+
   background-color: #C50208;
   grid-area:2/2/3/3;
 }
@@ -66,6 +75,13 @@
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  list-style-type:none;
+}
+
+.nav ul
+{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
 }
 
 .article {
