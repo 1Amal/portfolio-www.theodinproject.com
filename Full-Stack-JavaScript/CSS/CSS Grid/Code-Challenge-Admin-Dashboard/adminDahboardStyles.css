@@ -17,9 +17,10 @@
 h1
 {
     color: rgb(16, 0, 0);
-
+    /* font-size: 1rem; */
 
 }
+
 
 ul
 {
@@ -52,7 +53,13 @@ ul
     color:#f1f5f9;
     font-weight: 600;
     font-size: 2rem;
-  
+      
+}
+
+.column1 img
+{
+    height: 1rem;
+    width:1rem;
 }
 
 
@@ -81,7 +88,7 @@ ul
 .topBar ul
 {
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    grid-template-columns:repeat(3,1fr);
 
 }
 
@@ -99,5 +106,57 @@ ul
 display:grid;
 grid-template-rows:repeat(1,1fr);
 grid-template-columns:repeat(1,2fr) repeat(1,1fr);
+gap:5px;
+
+}
+
+.projects
+{
+    display:grid;
+    grid-template-rows:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
+    grid-area:1/1/2/2;
+    gap:10px;
+
+}
+
+.projectItems
+{
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    grid-template-columns:repeat(1,1fr);
+    background-color: #fafafa;
+    border-radius: 5%;
+    border-left: 5px solid #fb923c;
+    
+}
+
+.projectItems ul
+{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.announcementContainer
+{
+    display:grid;
+    grid-template-rows:repeat(3,1fr);
+    grid-template-columns:repeat(1,1fr);
+}
+
+.trendingContainer
+{
+    display:grid;
+    grid-template-rows:repeat(4,1fr);
+    grid-template-columns:repeat(1,1fr);
+    gap:5px;
+}
+
+.trendingContainer
+{
+    display: grid;
+    grid-template-rows:repeat(4,1fr);
+    grid-template-columns:repeat(1,1fr);
+    gap:5px;
 
 }
