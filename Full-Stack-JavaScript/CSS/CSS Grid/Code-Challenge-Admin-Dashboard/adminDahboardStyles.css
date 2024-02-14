@@ -102,6 +102,13 @@ ul
     background-color:#f8fafc ;
 }
 
+.topBar img
+{
+    height:20px;
+    width:20px;
+}
+
+
 .topBar ul
 {
     display:grid;
@@ -109,11 +116,43 @@ ul
 
 }
 
-.topBar1
+.topBarRow1
 {
     display:grid;
     /* grid-template-rows:repeat(1, 2fr) repeat(1,1fr) */
     grid-template-columns:repeat(2,1fr);
+}
+
+.topBarRow2
+{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+.topBarRow2 ul
+{
+    grid-area: 1/4/2/5;
+    display:grid;
+    gap:40px;
+    
+}
+
+.topBarRow2 button
+{
+    /* display:grid; */
+    background-color: #0284c7;
+    border-radius: 15%;
+    color: #e2e8f0;
+    font-weight: 500;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width:100px;
+    height:50px;
+}
+
+input[type="search"]
+{
+    width:20vw;
 }
 
 /* CSS Code to style the content box  */
