@@ -14,6 +14,12 @@
     font-size: 1rem;
   }
 
+a
+{
+    color:#f1f5f9;
+    text-decoration: none;
+}
+
 h1
 {
     color: rgb(16, 0, 0);
@@ -66,8 +72,12 @@ ul
 {
     height: 50px;
     width:50px;
+    background-color: #f1f5f9;
+    
     /* float:inline-start; */
 }
+
+
 
 
 /* CSS Code for Column2 Goes here */
