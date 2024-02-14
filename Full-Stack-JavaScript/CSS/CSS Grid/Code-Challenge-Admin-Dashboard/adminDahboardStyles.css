@@ -59,14 +59,14 @@ ul
         /* margin-top:0; */
 }
 
-.column1 li, h1
+/* .column1 li, h1
 {
     display:grid;
     color:#f1f5f9;
     font-weight: 600;
     font-size: 2rem;
       
-}
+} */
 
 .column1 img
 {
@@ -75,6 +75,18 @@ ul
     background-color: #f1f5f9;
     
     /* float:inline-start; */
+}
+
+.dashboard li, h1
+{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex:1;
+    font-weight: 600;
+    font-size: 2rem;
+    /* justify-content:space-between; */
+    align-items: center;
 }
 
 
@@ -86,6 +98,7 @@ ul
     display:grid;
     grid-template-rows:repeat(1,1fr) repeat(1,5fr);
     background-color: #e2e8f0;
+    gap:30px;
 }
 
 .column2 li,h1
@@ -114,13 +127,15 @@ ul
     display:grid;
     grid-template-columns:repeat(3,1fr);
 
+
 }
 
 .topBarRow1
 {
-    display:grid;
-    /* grid-template-rows:repeat(1, 2fr) repeat(1,1fr) */
-    grid-template-columns:repeat(2,1fr);
+    /* display:grid; */
+    /* grid-template-columns:repeat(2,1fr); */
+    display: flex;
+    justify-content: space-between;
 }
 
 .topBarRow2
@@ -152,7 +167,8 @@ ul
 
 input[type="search"]
 {
-    width:20vw;
+    width:30vw;
+    border-radius: 10px;
 }
 
 /* CSS Code to style the content box  */
