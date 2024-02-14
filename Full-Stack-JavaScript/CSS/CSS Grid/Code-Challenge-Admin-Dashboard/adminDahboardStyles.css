@@ -17,6 +17,9 @@
 h1
 {
     color: rgb(16, 0, 0);
+    display:flex;
+    align-items:start;
+
     /* font-size: 1rem; */
 
 }
@@ -25,7 +28,9 @@ h1
 ul
 {
     list-style: none;
+
 }
+
 
 
 .container
@@ -58,8 +63,9 @@ ul
 
 .column1 img
 {
-    height: 1rem;
-    width:1rem;
+    height: 50px;
+    width:50px;
+    /* float:inline-start; */
 }
 
 
@@ -135,6 +141,21 @@ gap:5px;
 {
     display:grid;
     grid-template-columns: repeat(3,1fr);
+}
+
+.projectItemsrow2 li
+{
+    display:flex;
+    flex-direction: column;
+    align-items:flex-end;
+    align-content:space-evenly;
+}
+
+.projectItemsrow2 img
+{
+height:20px;
+width:20px;
+
 }
 
 .announcementContainer
