@@ -1,3 +1,98 @@
+function Person(name) {
+    this.name = name;
+  }
+  
+  Person.prototype.sayName = function() {
+    console.log(`Hello, I'm ${this.name}!`);
+  };
+  
+  function Player(name, marker) {
+    this.name = name;
+    this.marker = marker;
+  }
+  
+  // Don't do this!
+  // Use Object.setPrototypeOf(Player.prototype, Person.prototype)
+  Player.prototype = Person.prototype;
+  
+  function Enemy(name) {
+    this.name = name;
+    this.marker = '^';
+  }
+  
+  // Not again!
+  // Use Object.setPrototypeOf(Enemy.prototype, Person.prototype)
+  Enemy.prototype = Person.prototype;
+  
+  Enemy.prototype.sayName = function() {
+    console.log('HAHAHAHAHAHA');
+  };
+  
+  const carl = new Player('carl', 'X');
+  carl.sayName(); // Uh oh! this logs "HAHAHAHAHAHA" because we edited the sayName function!
+
+
+// function Person(name) {
+//     this.name = name;
+//   }
+  
+//   Person.prototype.sayName = function() {
+//     console.log(`Hello, I'm ${this.name}!`);
+//   };
+  
+//   function Player(name, marker) {
+//     this.name = name;
+//     this.marker = marker;
+//   }
+  
+//   Player.prototype.getMarker = function() {
+//     console.log(`My marker is '${this.marker}'`);
+//   };
+  
+//   // Object.getPrototypeOf(Player.prototype) should
+//   // return the value of "Person.prototype" instead
+//   // of "Object.prototype"
+//   Object.getPrototypeOf(Player.prototype); // returns Object.prototype
+  
+//   // Now make `Player` objects inherit from `Person`
+//   Object.setPrototypeOf(Player.prototype, Person.prototype);
+//   Object.getPrototypeOf(Player.prototype); // returns Person.prototype
+  
+//   const player1 = new Player('steve', 'X');
+//   const player2 = new Player('also steve', 'O');
+  
+//   player1.sayName(); // Hello, I'm steve!
+//   player2.sayName(); // Hello, I'm also steve!
+  
+//   player1.getMarker(); // My marker is 'X'
+//   player2.getMarker(); // My marker is 'O'
+
+
+
+// function Player(name, marker) {
+//     this.name = name;
+//     this.marker = marker;
+//     this.sayName = function() {
+//       console.log(this.name)
+//     };
+//   }
+  
+//   const player1 = new Player('steve', 'X');
+//   const player2 = new Player('also steve', 'O');
+//   player1.sayName(); // logs 'steve'
+//   player2.sayName(); // logs 'also steve'
+
+// Object.getPrototypeOf(player1) === Player.prototype; // returns true
+// Object.getPrototypeOf(player2) === Player.prototype; // returns true
+
+// Player.prototype.sayHello = function() {
+//     console.log("Hello, I'm a player!");
+//  };
+ 
+//  player1.sayHello(); // logs "Hello, I'm a player!"
+//  player2.sayHello(); // logs "Hello, I'm a player!"
+
+
 // Write a constructor for making “Book” objects. We will revisit this in the project at the end of this lesson. Your book objects should have the book’s title, author, the number of pages, and whether or not you have read the book.
 
 // Put a function into the constructor that can report the book info like so:
@@ -7,21 +102,21 @@
 
 // console.log(theHobbit.info());
 
-function Book(title, author,pages,read)
+// function Book(title, author,pages,read)
 
-{
-this.title=title,
-this.author=author,
-this.pages=pages,
-this.read=read;
-this.info=function(){
-    return (this.title+" by "+this.author+" "+this.pages+" Pages"+ " "+this.read);
-}
-}
+// {
+// this.title=title,
+// this.author=author,
+// this.pages=pages,
+// this.read=read;
+// this.info=function(){
+//     return (this.title+" by "+this.author+" "+this.pages+" Pages"+ " "+this.read);
+// }
+// }
 
-const Book1=new Book("Linux Cookbook","Schroder",654,"Not Yet read");
+// const Book1=new Book("Linux Cookbook","Schroder",654,"Not Yet read");
 
-console.log(Book1.info());
+// console.log(Book1.info());
 
 
 
