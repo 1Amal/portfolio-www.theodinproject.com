@@ -1,35 +1,123 @@
-function Person(name) {
-    this.name = name;
-  }
-  
-  Person.prototype.sayName = function() {
-    console.log(`Hello, I'm ${this.name}!`);
+// Code snippet evaluation space made by Amal 2024
+// You can out put to the HTML page By;
+// codeOut.innerHTML=[Code to be output];
+// or
+// console.log();
+
+
+
+let heads = {
+    glasses: 1
   };
   
-  function Player(name, marker) {
-    this.name = name;
-    this.marker = marker;
-  }
-  
-  // Don't do this!
-  // Use Object.setPrototypeOf(Player.prototype, Person.prototype)
-  Player.prototype = Person.prototype;
-  
-  function Enemy(name) {
-    this.name = name;
-    this.marker = '^';
-  }
-  
-  // Not again!
-  // Use Object.setPrototypeOf(Enemy.prototype, Person.prototype)
-  Enemy.prototype = Person.prototype;
-  
-  Enemy.prototype.sayName = function() {
-    console.log('HAHAHAHAHAHA');
+  let table = {
+    pen: 3,
+    // Object.setPrototypeOf(table.prototype,heads,prototype);
+    __proto__: heads
   };
   
-  const carl = new Player('carl', 'X');
-  carl.sayName(); // Uh oh! this logs "HAHAHAHAHAHA" because we edited the sayName function!
+  let bed = {
+    sheet: 1,
+    pillow: 2,
+    __proto__:table
+
+  };
+  
+  let pockets = {
+    money: 2000,
+    __proto__:bed
+  };
+
+  console.log(Object.getPrototypeOf(pockets.sheet));
+  const codeOut=document.querySelector('.codeOutput')
+
+
+  codeOut.innerHTML= pockets.glasses +" " + heads.glasses;
+
+
+//   Use __proto__ to assign prototypes in a way that any property lookup will follow the path: pockets → bed → table → head. For instance, pockets.pen should be 3 (found in table), and bed.glasses should be 1 (found in head).
+// Answer the question: is it faster to get glasses as pockets.glasses or head.glasses? Benchmark if needed.
+
+
+// // Initialize a constructor function for a new Hero
+// function Hero(name, level) {
+//     this.name = name;
+//     this.level = level;
+//   }
+
+// //   const hero1=new Hero("Amal",12);
+
+//   Hero.prototype.greet=function()
+//   {
+//     return `${this.name} says hello`;
+//   }
+
+
+// // Initialize Warrior constructor
+// function Warrior(name, level, weapon) {
+//   // Chain constructor with call
+//   Hero.call(this, name, level);
+
+//   // Add a new property
+//   this.weapon = weapon;
+// }
+
+// // Initialize Healer constructor
+// function Healer(name, level, spell) {
+//   Hero.call(this, name, level);
+
+//   this.spell = spell;
+// }
+
+
+// Warrior.prototype.attack = function () {
+//   return `${this.name} attacks with the ${this.weapon}.`;
+// }
+
+// Healer.prototype.heal = function () {
+//   return `${this.name} casts ${this.spell}.`;
+// }
+
+
+// Object.setPrototypeOf(Warrior.prototype, Hero.prototype);
+// Object.setPrototypeOf(Healer.prototype, Hero.prototype);
+
+// All other prototype methods added below
+
+
+
+// function Person(name) {
+//     this.name = name;
+//   }
+  
+//   Person.prototype.sayName = function() {
+//     console.log(`Hello, I'm ${this.name}!`);
+//   };
+  
+//   function Player(name, marker) {
+//     this.name = name;
+//     this.marker = marker;
+//   }
+  
+//   // Don't do this!
+//   // Use Object.setPrototypeOf(Player.prototype, Person.prototype)
+//   Player.prototype = Person.prototype;
+  
+//   function Enemy(name) {
+//     this.name = name;
+//     this.marker = '^';
+//   }
+  
+//   // Not again!
+//   // Use Object.setPrototypeOf(Enemy.prototype, Person.prototype)
+//   Enemy.prototype = Person.prototype;
+  
+//   Enemy.prototype.sayName = function() {
+//     console.log('HAHAHAHAHAHA');
+//   };
+  
+//   const carl = new Player('carl', 'X');
+//   carl.sayName(); // Uh oh! this logs "HAHAHAHAHAHA" because we edited the sayName function!
 
 
 // function Person(name) {
