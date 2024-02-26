@@ -1,38 +1,119 @@
 // Code snippet evaluation space made by Amal 2024
 // You can out put to the HTML page By;
+//   const codeOut=document.querySelector('.codeOutput')
 // codeOut.innerHTML=[Code to be output];
 // or
 // console.log();
 
-
-
-let heads = {
-    glasses: 1
-  };
+function nonStrictSum(a, b) {
+    // non-strict mode
+    console.log(this === window); // => true
+    return a + b;
+  }
   
-  let table = {
-    pen: 3,
-    // Object.setPrototypeOf(table.prototype,heads,prototype);
-    __proto__: heads
-  };
+  function strictSum(a, b) {
+    'use strict';
+    // strict mode is enabled
+    console.log(this === undefined); // => true
+    return a + b;
+  }
   
-  let bed = {
-    sheet: 1,
-    pillow: 2,
-    __proto__:table
-
-  };
+  // nonStrictSum() is invoked as a function in non-strict mode
+  // this in nonStrictSum() is the window object
+  nonStrictSum(5, 6); // => 11
   
-  let pockets = {
-    money: 2000,
-    __proto__:bed
-  };
-
-  console.log(Object.getPrototypeOf(pockets.sheet));
-  const codeOut=document.querySelector('.codeOutput')
+  // strictSum() is invoked as a function in strict mode
+  // this in strictSum() is undefined
+  strictSum(8, 12); // => 20
 
 
-  codeOut.innerHTML= pockets.glasses +" " + heads.glasses;
+
+// function multiply(a, b) {
+//     'use strict'; // enable the strict mode
+//     console.log(this === undefined); // => true
+//     return a * b;
+//   }
+//   // multiply() function invocation with strict mode enabled
+//   // this in multiply() is undefined
+//   multiply(2, 5); // => 10
+
+
+// function sum(a, b) {
+//     // 'use strict'
+//     console.log(this === window); // => true
+//     this.myNumber = 20; // add 'myNumber' property to global object
+//     return a + b;
+//   }
+//   // sum() is invoked as a function
+//   // this in sum() is a global object (window)
+//   sum(15, 16);     // => 31
+//   console.log(window.myNumber); // => 20
+
+//   console.log(this === window); // => true
+
+// this.myString = 'Hello World!';
+// console.log(window.myString); // => 'Hello World!'
+
+// console.log(this === window); // => true
+
+
+
+// let hamster = {
+//     stomach: [],
+  
+//     eat(food) {
+//       this.stomach=[food];
+//     }
+//   };
+  
+//   let speedy = {
+//     __proto__: hamster
+//   };
+  
+//   let lazy = {
+//     __proto__: hamster
+//   };
+  
+//   // This one found the food
+//   speedy.eat("apple");
+//   alert( speedy.stomach ); // apple
+  
+//   // This one also has it, why? fix please.
+//   alert( lazy.stomach ); // apple
+
+//   const codeOut=document.querySelector('.codeOutput')
+//   codeOut.innerHTML= hamster.stomach[0];
+  
+
+
+
+// let heads = {
+//     glasses: 1
+//   };
+  
+//   let table = {
+//     pen: 3,
+//     // Object.setPrototypeOf(table.prototype,heads,prototype);
+//     __proto__: heads
+//   };
+  
+//   let bed = {
+//     sheet: 1,
+//     pillow: 2,
+//     __proto__:table
+
+//   };
+  
+//   let pockets = {
+//     money: 2000,
+//     __proto__:bed
+//   };
+
+//   console.log(Object.getPrototypeOf(pockets.sheet));
+//   const codeOut=document.querySelector('.codeOutput')
+
+
+//   codeOut.innerHTML= pockets.glasses +" " + heads.glasses;
 
 
 //   Use __proto__ to assign prototypes in a way that any property lookup will follow the path: pockets → bed → table → head. For instance, pockets.pen should be 3 (found in table), and bed.glasses should be 1 (found in head).
