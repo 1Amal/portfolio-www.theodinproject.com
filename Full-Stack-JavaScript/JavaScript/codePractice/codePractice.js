@@ -1,30 +1,53 @@
-// Code snippet evaluation space made by Amal 2024
-// You can out put to the HTML page By;
-//   const codeOut=document.querySelector('.codeOutput')
-// codeOut.innerHTML=[Code to be output];
-// or
-// console.log();
+/*
 
-function nonStrictSum(a, b) {
-    // non-strict mode
-    console.log(this === window); // => true
-    return a + b;
-  }
+Code snippet evaluation space made by Amal 2024
+You can out put to the HTML page By;
+
+const codeOut=document.querySelector('.codeOutput')
+codeOut.innerHTML=[Code to be output];
+
+or
+console.log();
+                           _ _        _____          _              _                                             _   _ 
+     /\                   | ( )      / ____|        | |            | |                                           | | | |
+    /  \   _ __ ___   __ _| |/ ___  | |     ___   __| | ___   _ __ | | __ _ _   _  __ _ _ __ ___  _   _ _ __   __| | | |
+   / /\ \ | '_ ` _ \ / _` | | / __| | |    / _ \ / _` |/ _ \ | '_ \| |/ _` | | | |/ _` | '__/ _ \| | | | '_ \ / _` | | |
+  / ____ \| | | | | | (_| | | \__ \ | |___| (_) | (_| |  __/ | |_) | | (_| | |_| | (_| | | | (_) | |_| | | | | (_| | |_|
+ /_/    \_\_| |_| |_|\__,_|_| |___/  \_____\___/ \__,_|\___| | .__/|_|\__,_|\__, |\__, |_|  \___/ \__,_|_| |_|\__,_| (_)
+                                                             | |             __/ | __/ |                                
+                                                             |_|            |___/ |___/                                 
+*/
+
+//*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.
+
+
+
+
+
+
+
+// ('World');
+
+// function nonStrictSum(a, b) {
+//     // non-strict mode
+//     console.log(this === window); // => true
+//     return a + b;
+//   }
   
-  function strictSum(a, b) {
-    'use strict';
-    // strict mode is enabled
-    console.log(this === undefined); // => true
-    return a + b;
-  }
+//   function strictSum(a, b) {
+//     'use strict';
+//     // strict mode is enabled
+//     console.log(this === undefined); // => true
+//     return a + b;
+//   }
   
   // nonStrictSum() is invoked as a function in non-strict mode
   // this in nonStrictSum() is the window object
-  nonStrictSum(5, 6); // => 11
+  // nonStrictSum(5, 6); // => 11
   
-  // strictSum() is invoked as a function in strict mode
-  // this in strictSum() is undefined
-  strictSum(8, 12); // => 20
+  // // strictSum() is invoked as a function in strict mode
+  // // this in strictSum() is undefined
+  // strictSum(8, 12); // => 20
 
 
 
