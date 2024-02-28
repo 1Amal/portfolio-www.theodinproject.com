@@ -10,6 +10,12 @@
 
 const myLibrary=[];
 
+const bookInfoAuthor=document.querySelector(".bookInfoAuthor");
+const bookInfoTitle=document.querySelector(".bookInfoTitle");
+const bookInfoNumberOfPages=document.querySelector(".bookInfoNumberOfPages");
+const bookInfoRead=document.querySelector(".bookInfoRead");
+
+
 
 function addBookToLibrary(newBook) 
     {
@@ -39,19 +45,23 @@ function bookInfoDisplay(displayOut)
 
     for (let i=0;i<myLibrary.length;i++)
     {
-        // bookInfoDisplay(myLibrary[0]["author"]);
+        const card=document.querySelector(".card");
+        
+        const newDiv=document.createElement('div');
 
-        const bookInfoAuthor=document.querySelector(".bookInfoAuthor");
-        bookInfoAuthor.textContent="Author Name: " + myLibrary[i]["author"];
+        // bookInfoAuthor.textContent="Author Name: " + myLibrary[i]["author"];
 
-        const bookInfoTitle=document.querySelector(".bookInfoTitle");
-        bookInfoTitle.textContent="Title Name: " + myLibrary[i]["title"];
+        newDiv.textContent="Author Name: " + myLibrary[i]["author"] + " " +
+                            "Title Name: " + myLibrary[i]["title"] + " "  +
+                            "Number of Pages: " + myLibrary[i]["numberOfPages"] + " " +
+                            "Book Read: " + myLibrary[i]["read"];
+        card.appendChild(newDiv);
+
+        // bookInfoTitle.textContent="Title Name: " + myLibrary[i]["title"];
     
-        const bookInfoNumberOfPages=document.querySelector(".bookInfoNumberOfPages");
-        bookInfoNumberOfPages.textContent="Number of Pages: " + myLibrary[i]["numberOfPages"];
+        // bookInfoNumberOfPages.textContent="Number of Pages: " + myLibrary[i]["numberOfPages"];
     
-        const bookInfoRead=document.querySelector(".bookInfoRead");
-        bookInfoRead.textContent="Book Read: " + myLibrary[i]["read"];
+        // bookInfoRead.textContent="Book Read: " + myLibrary[i]["read"];
 
         console.log(myLibrary[i]);
 
