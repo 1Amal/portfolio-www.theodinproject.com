@@ -3,18 +3,40 @@ h1
 color: #13af23;
 }
 
+.fredericka-the great-regular {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+
 .LibraryStatusDiv
 {
-    background-color: #b3c2b5;
+    font-family:'Fredericka the Great',serif;
+    background-color: #74bb7d;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    
+    
 }
 
 .addNewBookDiv
 {
-    background-color: #6a30df;
+    background-color: #9770e5;
 }
 
 .bookDetails
 {
-    background-color: #5586da;
-    border: solid #eb1515 2px;
+
+    background-color: #aebbd2;
+    border: solid #fece0e 2px;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    
 }
