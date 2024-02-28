@@ -18,7 +18,17 @@ function bookInfoDisplay(displayOut)
     // const content=document.createElement("p");
     // content.classList.add("content");
     const bookInfoAuthor=document.querySelector(".bookInfoAuthor");
-    bookInfoAuthor.textContent=displayOut;
+    bookInfoAuthor.textContent="Author Name: " + displayOut;
+
+    const bookInfoTitle=document.querySelector(".bookInfoTitle");
+    bookInfoTitle.textContent="Title Name: " +myLibrary[0]["title"];
+
+    const bookInfoNumberOfPages=document.querySelector(".bookInfoNumberOfPages");
+    bookInfoNumberOfPages.textContent="Number of Pages: " + myLibrary[0]["numberOfPages"];
+
+    const bookInfoRead=document.querySelector(".bookInfoRead");
+    bookInfoRead.textContent="Book Read: " + myLibrary[0]["read"];
+
 }
 
 
