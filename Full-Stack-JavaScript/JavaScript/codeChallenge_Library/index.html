@@ -22,6 +22,43 @@
 
     <div class="addNewBookDiv">
         <h2>Please use this form to add a new book to the library</h2>
+        <div class="inputForm">
+        <form action="" method="get" class="bookSubmitForm">
+            <div>
+                <label for="author">Author Name:</label>
+                <input id="author" type="text" name="author" >
+            </div>
+
+            <div>
+                <label for="title">Book Title:</label>
+                <input id="title" type="text" name="title" >
+            </div>
+
+            <div>
+                <label for="numberOfPages">Number of Pages:</label>
+                <input type="number" id="numberOfPages" name="numberOfPages">
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Have you read this book ?</legend>
+                <label for="read">Yes</label>
+                <input type="radio" id="read" name="read" value="yes">
+
+                <label for="read">No</label>
+                <input type="radio" id="no" name="read" value="no" checked>
+
+            </fieldset>
+            </div>
+
+            <div>
+                <button id="submitButton" type="submit">Submit Book info</button>
+            </div>
+
+            </form>
+
+
+        </div>
 
     </div>
     

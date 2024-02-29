@@ -8,9 +8,9 @@
 */
 
 /* Pending Tasks
-1) For "addBookToLibrary" enable code to receive four variables that will be converted to a object using "bookData" object constructor.
+1) For "addBookToLibrary" enable code to receive four variables that will be converted to a object using "bookData" object constructor: Completed
 2) Add HTML input form with buttons
-3) Enable "addBookToLibrary" to recived four variables from the HTML code
+3) Enable "addBookToLibrary" to received four variables from the HTML code
 4) Add a "Delete" button and "Read" button
 5) Write code so "Delete" button deletes book from the array
 6) Write code so "Read" button change the status i.e. if current read=yes then change to read=no, vice versa
@@ -34,12 +34,22 @@ this.read=read;
 }
 
 //Code to add the new book details object into the myLibrary array
-function addBookToLibrary(newBook) 
+function addBookToLibrary(author,title,pages,read) 
     {
-        myLibrary.push(new bookData("Amal","The Great",4939,"No"));
-        myLibrary.push(new bookData("Wimal","Not So Great",423,"No"));
-        myLibrary.push(new bookData("Monica","Not tooo bad",223,"Yes"));
-        myLibrary.push(new bookData("Siripala","Gamaya",2232,"No"));
+        // myLibrary.push(new bookData("Amal","The Great",4939,"No"));
+        // myLibrary.push(new bookData("Wimal","Not So Great",423,"No"));
+        // myLibrary.push(new bookData("Monica","Not tooo bad",223,"Yes"));
+        // myLibrary.push(new bookData("Siripala","Gamaya",2232,"No"));
+
+        const submitButton=document.querySelector("#submitButton");
+        console.dir("Submit button "+submitButton);
+        // submitButton.addEventListener('click',function(){
+
+
+        // });
+
+
+        myLibrary.push(new bookData(author,title,pages,read));
 
         bookInfoDisplay(myLibrary);
         console.log(myLibrary);
@@ -75,4 +85,10 @@ function bookInfoDisplay(myLibrary)
     }
 
 
-  addBookToLibrary();
+//   addBookToLibrary("amal3","Greatest Hits Volume 3",3543,"Yes");
+
+//   addBookToLibrary("amal1","Greatest Hits Volume 1",1543,"Yes");
+
+  addBookToLibrary("amal3","Greatest Hits Volume 3",343,"Yes");
+
+

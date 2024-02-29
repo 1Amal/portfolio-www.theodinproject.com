@@ -40,3 +40,9 @@ color: #13af23;
     margin: 10px;
     
 }
+
+.inputForm
+{
+    display: flex;
+    padding: 10px;
+}
