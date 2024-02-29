@@ -20,7 +20,7 @@
 const myLibrary=[];
 
 const LibraryStatusDiv=document.querySelector(".LibraryStatusDiv");
-
+const submitButton=document.querySelector("#submitButton");
 const bookInfoAuthor=document.querySelector(".bookInfoAuthor");
 const bookInfoTitle=document.querySelector(".bookInfoTitle");
 const bookInfoNumberOfPages=document.querySelector(".bookInfoNumberOfPages");
@@ -36,26 +36,26 @@ this.read=read;
 }
 
 //Code to add the new book details object into the myLibrary array
-function addBookToLibrary(author,title,pages,read) 
+function addBookToLibrary() 
     {
 
-        const submitButton=document.querySelector("#submitButton");
+    // console.log("Button clicked");
 
-        // submitButton.addEventListener('click',function(){
+    var bookSubmitForm = new FormData(document.getElementById("bookSubmitForm"));
+    var authorValue = bookSubmitForm.getAll("author");
+    var titleValue=bookSubmitForm.getAll("title");
+    var numberOfPagesValue=bookSubmitForm.getAll("numberOfPages");
+    var readValue=bookSubmitForm.getAll("read");
+    console.log(typeof(authorValue[0]));
+    console.log(titleValue[0]);
+    console.log(numberOfPagesValue[0]);
+    console.log(readValue[0]);
 
-
-        // });
-
-        // var bookSubmitForm = new FormData(document.getElementById("bookSubmitForm"));
-        // var inputValue = bookSubmitForm.getAll("author");
-        // console.log(inputValue);
-
-
-
-        myLibrary.push(new bookData(author,title,pages,read));
+    myLibrary.push(new bookData(authorValue[0],titleValue[0],numberOfPagesValue[0],readValue[0]));
 
         // bookInfoDisplay(myLibrary);
-        // console.log(myLibrary);
+        // console.dir(myLibrary);
+        bookInfoDisplay();
         
     }
 
@@ -93,12 +93,21 @@ function bookInfoDisplay()
     }
 
 
-  addBookToLibrary("amal3","Greatest Hits Volume 3",3543,"Yes");
+//   addBookToLibrary("Amal K.","Greatest Hits Volume 1",543,"Yes");
 
-  addBookToLibrary("amal1","Greatest Hits Volume 1",1543,"Yes");
+//   addBookToLibrary("Amal K.","Greatest Hits Volume 2",143,"No");
 
-  addBookToLibrary("amal3","Greatest Hits Volume 3",343,"Yes");
+//   addBookToLibrary("Amal K.","Greatest Hits Volume 3",342,"Yes");
 
 
 bookInfoDisplay();
-// console.log(myLibrary.length);
+
+
+
+
+submitButton.addEventListener('click',function(){
+    // event.preventDefault();
+    addBookToLibrary();
+
+});
+
