@@ -39,24 +39,17 @@ this.read=read;
 function addBookToLibrary() 
     {
 
-    // console.log("Button clicked");
-
     var bookSubmitForm = new FormData(document.getElementById("bookSubmitForm"));
     var authorValue = bookSubmitForm.getAll("author");
     var titleValue=bookSubmitForm.getAll("title");
     var numberOfPagesValue=bookSubmitForm.getAll("numberOfPages");
     var readValue=bookSubmitForm.getAll("read");
-    console.log(typeof(authorValue[0]));
-    console.log(titleValue[0]);
-    console.log(numberOfPagesValue[0]);
-    console.log(readValue[0]);
+
 
     myLibrary.push(new bookData(authorValue[0],titleValue[0],numberOfPagesValue[0],readValue[0]));
 
-        // bookInfoDisplay(myLibrary);
-        // console.dir(myLibrary);
-        LibraryStatusDiv.textContent="Current list of available books in the Library database";
-        bookInfoDisplay();
+    LibraryStatusDiv.textContent="Current list of available books in the Library database";
+    bookInfoDisplay();
         
     }
 
@@ -75,18 +68,41 @@ function bookInfoDisplay()
 
                 for (let i=0;i<myLibrary.length;i++)
                 {
-
+//Following code block will create a Book info card in the HTML Dom
                     const newDiv=document.createElement('div');
-
                     newDiv.textContent="Author Name: " + myLibrary[i]["author"] + " | " +
                                         "Title Name: " + myLibrary[i]["title"] + " | "  +
                                         "Number of Pages: " + myLibrary[i]["numberOfPages"] + " | " +
                                         "Book Read: " + myLibrary[i]["read"];
                     
-                    newDiv.classList.add("bookDetails");
+                    newDiv.classList.add("bookDetails",i);
+                    
                     LibraryStatusDiv.appendChild(newDiv);
+//Following code block will create a Delete Button and attach an event listener 
+                    const deleteButton=document.createElement("button");
+                    deleteButton.innerHTML="Delete Book";
+                    deleteButton.classList.add("deleteButton");
+                    
+                    deleteButton.addEventListener('click',function(){
+                    console.log("Delete Button clicked");
 
-                    console.log(myLibrary.length);
+                    // const myLibraryindex = myLibrary.indexOf(0);
+                    //     if (myLibraryindex > -1) { // only splice array when item is found
+                    //         myLibrary.splice(myLibrary, 1); // 2nd parameter means remove one item only
+                    //     }
+
+                    myLibrary.splice(2,1);
+                    console.log(myLibrary);
+
+
+                                                                        })
+                    newDiv.appendChild(deleteButton);
+
+                    const readButton=document.createElement("button");
+                    readButton.innerHTML="Book read";
+                    readButton.classList.add("readButton");
+                    newDiv.appendChild(readButton);
+
 
                 }
             }
@@ -109,6 +125,5 @@ bookInfoDisplay();
 submitButton.addEventListener('click',function(){
     // event.preventDefault();
     addBookToLibrary();
-
 });
 
