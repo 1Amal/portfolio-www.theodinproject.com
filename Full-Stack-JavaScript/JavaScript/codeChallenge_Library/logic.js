@@ -17,10 +17,11 @@
 */
 
 
-const myLibrary=[];
+const myLibrary=[]; // Array where all the newly created book will be stored
 
 const LibraryStatusDiv=document.querySelector(".LibraryStatusDiv");
 const submitButton=document.querySelector("#submitButton");
+
 const bookInfoAuthor=document.querySelector(".bookInfoAuthor");
 const bookInfoTitle=document.querySelector(".bookInfoTitle");
 const bookInfoNumberOfPages=document.querySelector(".bookInfoNumberOfPages");
@@ -38,14 +39,14 @@ this.read=read;
 //Code to add the new book details object into the myLibrary array
 function addBookToLibrary() 
     {
-
+//Following code will get the Form Data from HTML document as an object and store the value in four variables
     var bookSubmitForm = new FormData(document.getElementById("bookSubmitForm"));
     var authorValue = bookSubmitForm.getAll("author");
     var titleValue=bookSubmitForm.getAll("title");
     var numberOfPagesValue=bookSubmitForm.getAll("numberOfPages");
     var readValue=bookSubmitForm.getAll("read");
 
-
+//Following code will store the data captured from above code in the myLibrary array
     myLibrary.push(new bookData(authorValue[0],titleValue[0],numberOfPagesValue[0],readValue[0]));
 
     LibraryStatusDiv.textContent="Current list of available books in the Library database";
@@ -53,7 +54,7 @@ function addBookToLibrary()
         
     }
 
-
+//Following function will update the Webpage dynamically with the data in the myLibrary array
 function bookInfoDisplay()
     {
 
@@ -81,13 +82,7 @@ function bookInfoDisplay()
                     const deleteButton=document.createElement("button");
                     deleteButton.innerHTML="Delete Book";
                     deleteButton.classList.add(i);
-                   
                     newDiv.appendChild(deleteButton);
-
-                    const readButton=document.createElement("button");
-                    readButton.innerHTML="Book read";
-                    readButton.classList.add("readButton");
-                    newDiv.appendChild(readButton);
 
                     deleteButton.addEventListener('click',(a) =>
                     
@@ -111,6 +106,12 @@ function bookInfoDisplay()
                     }
                     );
 
+//Following code block will create a Read Button and attach an event listener 
+
+                    const readButton=document.createElement("button");
+                    readButton.innerHTML="Book read";
+                    readButton.classList.add("readButton");
+                    newDiv.appendChild(readButton);
 
                 }
             }
@@ -120,7 +121,7 @@ function bookInfoDisplay()
 
 bookInfoDisplay();
 
-
+//Following code will add an Event Listener to the Form Submit button
 submitButton.addEventListener('click',function(){
     // event.preventDefault();
     addBookToLibrary();
