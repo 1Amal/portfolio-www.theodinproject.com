@@ -9,10 +9,10 @@
 
 /* Pending Tasks
 1) For "addBookToLibrary" enable code to receive four variables that will be converted to a object using "bookData" object constructor: Completed
-2) Add HTML input form with buttons
-3) Enable "addBookToLibrary" to received four variables from the HTML code
-4) Add a "Delete" button and "Read" button
-5) Write code so "Delete" button deletes book from the array
+2) Add HTML input form with buttons : Completed
+3) Enable "addBookToLibrary" to received four variables from the HTML code : Completed
+4) Add a "Delete" button and "Read" button: Completed
+5) Write code so "Delete" button deletes book from the array: Completed
 6) Write code so "Read" button change the status i.e. if current read=yes then change to read=no, vice versa
 */
 
@@ -54,7 +54,6 @@ function addBookToLibrary()
     }
 
 
-
 function bookInfoDisplay()
     {
 
@@ -81,18 +80,8 @@ function bookInfoDisplay()
 //Following code block will create a Delete Button and attach an event listener 
                     const deleteButton=document.createElement("button");
                     deleteButton.innerHTML="Delete Book";
-                    // deleteButton.classList.add("deleteButton");
                     deleteButton.classList.add(i);
-                    
-                    // deleteButton.addEventListener('click',function(){
-                    // console.log("Delete Button clicked");
-
-                    // myLibrary.splice(2,1);
-                    // console.log(myLibrary);
-                    //                                                     })
-                    
-                    
-                    
+                   
                     newDiv.appendChild(deleteButton);
 
                     const readButton=document.createElement("button");
@@ -113,7 +102,6 @@ function bookInfoDisplay()
                         LibraryStatusDiv.textContent="Current list of available books in the Library database";
                         bookInfoDisplay();
 
-
                         
                         }
                         // If element has no classes
@@ -130,16 +118,7 @@ function bookInfoDisplay()
     }
 
 
-//   addBookToLibrary("Amal K.","Greatest Hits Volume 1",543,"Yes");
-
-//   addBookToLibrary("Amal K.","Greatest Hits Volume 2",143,"No");
-
-//   addBookToLibrary("Amal K.","Greatest Hits Volume 3",342,"Yes");
-
-
 bookInfoDisplay();
-
-
 
 
 submitButton.addEventListener('click',function(){
