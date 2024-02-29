@@ -19,6 +19,8 @@
 
 const myLibrary=[];
 
+const LibraryStatusDiv=document.querySelector(".LibraryStatusDiv");
+
 const bookInfoAuthor=document.querySelector(".bookInfoAuthor");
 const bookInfoTitle=document.querySelector(".bookInfoTitle");
 const bookInfoNumberOfPages=document.querySelector(".bookInfoNumberOfPages");
@@ -36,59 +38,67 @@ this.read=read;
 //Code to add the new book details object into the myLibrary array
 function addBookToLibrary(author,title,pages,read) 
     {
-        // myLibrary.push(new bookData("Amal","The Great",4939,"No"));
-        // myLibrary.push(new bookData("Wimal","Not So Great",423,"No"));
-        // myLibrary.push(new bookData("Monica","Not tooo bad",223,"Yes"));
-        // myLibrary.push(new bookData("Siripala","Gamaya",2232,"No"));
 
         const submitButton=document.querySelector("#submitButton");
-        console.dir("Submit button "+submitButton);
+
         // submitButton.addEventListener('click',function(){
 
 
         // });
 
+        // var bookSubmitForm = new FormData(document.getElementById("bookSubmitForm"));
+        // var inputValue = bookSubmitForm.getAll("author");
+        // console.log(inputValue);
+
+
 
         myLibrary.push(new bookData(author,title,pages,read));
 
-        bookInfoDisplay(myLibrary);
-        console.log(myLibrary);
+        // bookInfoDisplay(myLibrary);
+        // console.log(myLibrary);
         
     }
 
 
 
-function bookInfoDisplay(myLibrary)
+function bookInfoDisplay()
     {
 
+        if (myLibrary.length==0){
+            console.log("Library is empty");
+            LibraryStatusDiv.textContent="I am sorry, Library does not have any books, Use the form below to add some books ";
 
-    for (let i=0;i<myLibrary.length;i++)
-    {
-        const LibraryStatusDiv=document.querySelector(".LibraryStatusDiv");
-        
-        const newDiv=document.createElement('div');
+        }
 
-        newDiv.textContent="Author Name: " + myLibrary[i]["author"] + " | " +
-                            "Title Name: " + myLibrary[i]["title"] + " | "  +
-                            "Number of Pages: " + myLibrary[i]["numberOfPages"] + " | " +
-                            "Book Read: " + myLibrary[i]["read"];
-        
-        newDiv.classList.add("bookDetails");
-        LibraryStatusDiv.appendChild(newDiv);
+        else{
 
-        console.log(myLibrary[i]);
+                for (let i=0;i<myLibrary.length;i++)
+                {
+
+                    const newDiv=document.createElement('div');
+
+                    newDiv.textContent="Author Name: " + myLibrary[i]["author"] + " | " +
+                                        "Title Name: " + myLibrary[i]["title"] + " | "  +
+                                        "Number of Pages: " + myLibrary[i]["numberOfPages"] + " | " +
+                                        "Book Read: " + myLibrary[i]["read"];
+                    
+                    newDiv.classList.add("bookDetails");
+                    LibraryStatusDiv.appendChild(newDiv);
+
+                    console.log(myLibrary.length);
+
+                }
+            }
 
     }
 
 
+  addBookToLibrary("amal3","Greatest Hits Volume 3",3543,"Yes");
 
-    }
-
-
-//   addBookToLibrary("amal3","Greatest Hits Volume 3",3543,"Yes");
-
-//   addBookToLibrary("amal1","Greatest Hits Volume 1",1543,"Yes");
+  addBookToLibrary("amal1","Greatest Hits Volume 1",1543,"Yes");
 
   addBookToLibrary("amal3","Greatest Hits Volume 3",343,"Yes");
 
 
+bookInfoDisplay();
+// console.log(myLibrary.length);
