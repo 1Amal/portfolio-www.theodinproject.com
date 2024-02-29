@@ -81,27 +81,47 @@ function bookInfoDisplay()
 //Following code block will create a Delete Button and attach an event listener 
                     const deleteButton=document.createElement("button");
                     deleteButton.innerHTML="Delete Book";
-                    deleteButton.classList.add("deleteButton");
+                    // deleteButton.classList.add("deleteButton");
+                    deleteButton.classList.add(i);
                     
-                    deleteButton.addEventListener('click',function(){
-                    console.log("Delete Button clicked");
+                    // deleteButton.addEventListener('click',function(){
+                    // console.log("Delete Button clicked");
 
-                    // const myLibraryindex = myLibrary.indexOf(0);
-                    //     if (myLibraryindex > -1) { // only splice array when item is found
-                    //         myLibrary.splice(myLibrary, 1); // 2nd parameter means remove one item only
-                    //     }
-
-                    myLibrary.splice(2,1);
-                    console.log(myLibrary);
-
-
-                                                                        })
+                    // myLibrary.splice(2,1);
+                    // console.log(myLibrary);
+                    //                                                     })
+                    
+                    
+                    
                     newDiv.appendChild(deleteButton);
 
                     const readButton=document.createElement("button");
                     readButton.innerHTML="Book read";
                     readButton.classList.add("readButton");
                     newDiv.appendChild(readButton);
+
+                    deleteButton.addEventListener('click',(a) =>
+                    
+                    {
+                        // Get element class(es)
+                        let elementClass = a.target.className;
+                        // If element has class(es)
+                        if (elementClass !== '') {
+                        console.log(typeof(elementClass));
+                        myLibrary.splice(Number(elementClass),1);
+                        console.log(myLibrary);
+                        LibraryStatusDiv.textContent="Current list of available books in the Library database";
+                        bookInfoDisplay();
+
+
+                        
+                        }
+                        // If element has no classes
+                        else {
+                        console.log('An element without a class was clicked');
+                        }
+                    }
+                    );
 
 
                 }
