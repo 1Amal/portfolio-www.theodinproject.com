@@ -55,6 +55,7 @@ function addBookToLibrary()
 
         // bookInfoDisplay(myLibrary);
         // console.dir(myLibrary);
+        LibraryStatusDiv.textContent="Current list of available books in the Library database";
         bookInfoDisplay();
         
     }
