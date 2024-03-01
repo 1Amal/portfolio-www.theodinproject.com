@@ -131,7 +131,6 @@ function bookInfoDisplay()
 
                     const readButton=document.createElement("button");
                     readButton.innerHTML="Book read toggle";
-                    // readButton.classList.add("readButton");
                     readButton.classList.add(i);
                     newDiv.appendChild(readButton);
 
@@ -142,13 +141,11 @@ function bookInfoDisplay()
                         // If element has class(es)
                         if (elementClass !== '') {
                         console.log(elementClass);
-                        // myLibrary.splice(Number(elementClass),1);
                         console.log(myLibrary);
                         LibraryStatusDiv.textContent="Current list of available books in the Library database";
-                        var bookCard=(Number(elementClass));
-                        var bookReadCurrentStatus=myLibrary[(Number(elementClass))]['read'];
-                        // myLibrary[(Number(elementClass))].readStatusToggle
-                        // ((Number(elementClass)), myLibrary[(Number(elementClass))]['read']);
+                        var bookCard=(Number(elementClass)); // Get the Book Card class name
+                        var bookReadCurrentStatus=myLibrary[(Number(elementClass))]['read']; // Get the book read status
+
 
                         myLibrary[(Number(elementClass))].readStatusToggle(bookCard,bookReadCurrentStatus);
                         
@@ -163,7 +160,6 @@ function bookInfoDisplay()
                                             );
 
 
-
                 }
             }
 
@@ -174,12 +170,6 @@ bookInfoDisplay();
 
 //Following code will add an Event Listener to the Form Submit button
 submitButton.addEventListener('click',function(){
-    // event.preventDefault();
     addBookToLibrary();
 });
-
-// const amalsBook=new bookData("Amal","I wrote THis book", 34,"No");
-// myLibrary.push(amalsBook);
-
-// amalsBook.readStatusToggle();
 
