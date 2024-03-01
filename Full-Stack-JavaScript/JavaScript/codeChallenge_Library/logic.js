@@ -7,7 +7,7 @@
 6) Each book "book info Card" will have a button "Read" which will update the relevant object "book.read=yes". Then call up the function "bookInfoDisplay" to update the webpage. 
 */
 
-/* Pending Tasks
+/* Completed Tasks
 1) For "addBookToLibrary" enable code to receive four variables that will be converted to a object using "bookData" object constructor: Completed
 2) Add HTML input form with buttons : Completed
 3) Enable "addBookToLibrary" to received four variables from the HTML code : Completed
@@ -41,17 +41,14 @@ bookData.prototype.readStatusToggle=function(arrayNum,readStatus){
     if (readStatus==="Yes") // If Yes
     {
         myLibrary[arrayNum]['read']="No";
-            // console.log("Oh No ReadStatusToggle is No");
 
     }
 
     else if (readStatus==="No")
     {
         myLibrary[arrayNum]['read']="Yes";
-        // console.log("Oh Yes ReadStatusToggle is Yes");
     }
 
-    // myLibrary[arrayNum]['read']=readToggle;
     bookInfoDisplay();
 
 }
