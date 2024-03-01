@@ -13,7 +13,7 @@
 3) Enable "addBookToLibrary" to received four variables from the HTML code : Completed
 4) Add a "Delete" button and "Read" button: Completed
 5) Write code so "Delete" button deletes book from the array: Completed
-6) Write code so "Read" button change the status i.e. if current read=yes then change to read=no, vice versa
+6) Write code so "Read" button change the status i.e. if current read=yes then change to read=no, vice versa: Completed
 */
 
 
@@ -158,11 +158,8 @@ function bookInfoDisplay()
                         }
                     }
                                             );
-
-
                 }
             }
-
     }
 
 
@@ -172,4 +169,5 @@ bookInfoDisplay();
 submitButton.addEventListener('click',function(){
     addBookToLibrary();
 });
+
 
