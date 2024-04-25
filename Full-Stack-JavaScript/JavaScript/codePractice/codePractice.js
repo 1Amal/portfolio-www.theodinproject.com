@@ -3,8 +3,8 @@
 Code snippet evaluation space made by Amal 2024
 You can out put to the HTML page By;
 
-const codeOut=document.querySelector('.codeOutput')
-codeOut.innerHTML=[Code to be output];
+const codeOutput=document.querySelector('.codeOutput')
+codeOutput.textContent=[Code to be output];
 
 or
 console.log();
@@ -17,13 +17,283 @@ console.log();
                                                              | |             __/ | __/ |                                
                                                              |_|            |___/ |___/                                 
 */
+// DO NOT CHANGE BELOW CODE
 
-//*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.
+const codeOutput = document.querySelector(".codeOutput");
+const codeOutPutActivate=document.querySelector(".activateCodeOutput")
+codeOutPutActivate.textContent="Code Output Activated, to use the code out put assign required output to codeOut.textContent=[Code to be output];";
 
-const testing=function test1()
-{
-  console.log("Auto Function");
-}();
+
+//*.*.*.*.*.*.*.*.*.*.*.*.*.Enter the code below*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.
+
+function createUser (name) {
+  const discordName = "@" + name;
+
+  let reputation = 0;
+  const getReputation = () => reputation;
+  const giveReputation = () => reputation++;
+  const takeReputation=()=>reputation--;
+
+  return { name, discordName, getReputation, giveReputation, takeReputation };
+}
+
+const josh = createUser("josh");
+josh.giveReputation();
+josh.giveReputation();
+josh.takeReputation();
+
+console.log({
+  discordName: josh.discordName,
+  reputation: josh.getReputation()
+});
+// logs { discordName: "@josh", reputation: 2 }
+
+
+// const obj = { a: 1, b: 2,c:5 };
+// const { a, c } = obj;
+// // This creates two variables, a and b,
+// // which are equivalent to
+// // const a = obj.a;
+// // const b = obj.b;
+
+// const array = [1, 2, 3, 4, 5];
+// const [ zerothEle, firstEle ] = array;
+// // This creates zerothEle and firstEle, both of which point
+// // to the elements in the 0th and 1st indices of the array
+
+
+
+
+// const name = "Bob";
+// const age = 28;
+// const color = "red";
+
+// const nowFancyObject = { name, age, color };
+
+
+// console.log(nowFancyObject);
+// console.log({name, age, color});
+
+
+
+
+// let globalAge = 23; // This is a global variable
+
+// // This is a function - and hey, a curly brace indicating a block
+// function printAge (age) {
+//   var varAge = 34; // This is a function scoped variable
+
+//   // This is yet another curly brace, and thus a block
+//   if (age > 0) {
+//     // This is a block-scoped variable that exists
+//     // within its nearest enclosing block, the if's block
+//     const constAge = age * 2;
+//     console.log(constAge);
+//   }
+
+  // ERROR! We tried to access a block scoped variable
+  // not within its scope
+  // console.log(constAge);
+// }
+
+// printAge(globalAge);
+
+// ERROR! We tried to access a function scoped variable
+// outside the function it's defined in
+// console.log(varAge);
+
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.sayName = function() {
+//   console.log(`Hello, I'm ${this.name}!`);
+// };
+
+// function Player(name, marker) {
+//   this.name = name;
+//   this.marker = marker;
+// }
+
+// // Don't do this!
+// // Use Object.setPrototypeOf(Player.prototype, Person.prototype)
+// Player.prototype = Person.prototype;
+
+// function Enemy(name) {
+//   this.name = name;
+//   this.marker = '^';
+// }
+
+// // Not again!
+// // Use Object.setPrototypeOf(Enemy.prototype, Person.prototype)
+// Enemy.prototype = Person.prototype;
+
+// Enemy.prototype.sayName = function() {
+//   console.log('HAHAHAHAHAHA');
+// };
+
+// const carl = new Player('carl', 'X');
+// carl.sayName(); // Uh oh! this logs "HAHAHAHAHAHA" because we edited the sayName function!
+
+
+
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.sayName = function() {
+//   console.log(`Hello, I'm ${this.name}!`);
+// };
+
+// function Player(name, marker) {
+//   this.name = name;
+//   this.marker = marker;
+// }
+
+// Player.prototype.getMarker = function() {
+//   console.log(`My marker is '${this.marker}'`);
+// };
+
+// Object.getPrototypeOf(Player.prototype); // returns Object.prototype
+
+// // Now make `Player` objects inherit from `Person`
+// Object.setPrototypeOf(Player.prototype, Person.prototype);
+// Object.getPrototypeOf(Player.prototype); // returns Person.prototype
+
+// const player1 = new Player('steve', 'X');
+// const player2 = new Player('also steve', 'O');
+
+// player1.sayName(); // Hello, I'm steve!
+// player2.sayName(); // Hello, I'm also steve!
+
+// player1.getMarker(); // My marker is 'X'
+// player2.getMarker(); // My marker is 'O'
+
+
+
+// function score(quarter,score)
+// {
+//   this.quarter=quarter;
+//   this.score=score;
+
+//   this.scoreOutput=function(){
+//     return this.quarter+" is "+this.score;
+//     // return "Hello";
+
+//   }
+// }
+
+// const playerScore=new score(3,23);
+
+// console.log(playerScore.scoreOutput());
+// // playerScore.scoreOutput;
+
+// score.prototype.sayScore=function(){
+// return (`Hi Mate your score is ${this.score}`) 
+
+
+
+// }
+
+// // console.log(playerScore.sayScore());
+
+// Object.setPrototypeOf(Player.prototype, score.prototype);
+
+// console.log(player1.sayScore());
+
+// Player.prototype = Person.prototype;
+
+
+
+
+// function Player(name, marker) {
+//   this.name = name;
+//   this.marker = marker;
+//   this.sayName = function() {
+//     console.log(this.name)
+//   };
+// }
+
+// const player1 = new Player('steve', 'X');
+// const player2 = new Player('also steve', 'O');
+// player1.sayName(); // logs 'steve'
+// player2.sayName(); // logs 'also steve'
+
+
+// Player.prototype.sayHello = function() {
+//   console.log("Hello, I'm a player!");
+// };
+
+// Player.prototype.sayMarker=function(){
+//   console.log("Marker is" + this.marker);
+// };
+
+// player1.sayHello(); // logs "Hello, I'm a player!"
+// player2.sayHello(); // logs "Hello, I'm a player!"
+
+// player1.sayMarker();
+
+// player1.__proto__ === Player.prototype; // returns true
+// player2.__proto__ === Player.prototype; // returns true
+
+
+
+
+
+// function shoppingCart(itemName,ItemDescription,ItemPrice)
+// {
+//   this.itemName=itemName;
+//   this.ItemDescription=ItemDescription;
+//   this.ItemPrice=ItemPrice;
+//   this.itemInfo=function(){
+//     return this.itemName +" " + this.ItemDescription + " " + this.ItemPrice;
+//   };
+// }
+
+// const pixel8Phone=new shoppingCart("Pixel 8","The best Smart phone in the world",1000);
+// pixel8Phone.itemInfo();
+
+// const thinkPadLaptop=new shoppingCart("Thinkpad L390 Yoga Laptop ","Highly capable laptop when paired with Linus",300);
+// console.log(thinkPadLaptop.itemInfo());
+
+
+// function Player(name, marker) {
+//   this.name = name;
+//   this.marker = marker;
+//   this.sayName = function() {
+//     console.log(this.name)
+//   };
+//   this.sayMarker=function(){
+//     alert(this.name+" has a marker " + this.marker);
+//   };
+// }
+
+// const player1 = new Player('steve', 'X');
+// const player2 = new Player('also steve', 'O');
+// player1.sayName(); // logs 'steve'
+// player2.sayName(); // logs 'also steve'
+// player2.sayMarker();
+
+
+
+// function Player(name, marker) {
+//   this.name = name;
+//   this.marker = marker;
+// }
+
+// const player = new Player('Amal', 'X');
+
+// codeOutput.textContent=player.name;
+
+// console.log(player.name);
+
+
+
+
+// const testing=function test1()
+// {
+//   console.log("Auto Function");
+// }();
 
 // ('World');
 
