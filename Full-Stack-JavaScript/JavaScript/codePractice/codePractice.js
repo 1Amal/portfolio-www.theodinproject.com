@@ -26,26 +26,87 @@ codeOutPutActivate.textContent="Code Output Activated, to use the code out put a
 
 //*.*.*.*.*.*.*.*.*.*.*.*.*.Enter the code below*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.
 
-function createUser (name) {
-  const discordName = "@" + name;
+// function square(x) {
+//   return x * x;
+// }
 
-  let reputation = 0;
-  const getReputation = () => reputation;
-  const giveReputation = () => reputation++;
-  const takeReputation=()=>reputation--;
+square =(x)=>x*x;
+console.log(square(5));
 
-  return { name, discordName, getReputation, giveReputation, takeReputation };
-}
 
-const josh = createUser("josh");
-josh.giveReputation();
-josh.giveReputation();
-josh.takeReputation();
+// let user = {
+//   name: "John",
+//   surname: "Smith"
+// };
 
-console.log({
-  discordName: josh.discordName,
-  reputation: josh.getReputation()
-});
+// Object.defineProperty(user, 'fullName', {
+//   get() {
+//     return `${this.name} ${this.surname}`;
+//   },
+
+//   set(value) {
+//     [this.name, this.surname] = value.split(" ");
+//   }
+// });
+
+// alert(user.fullName); // John Smith
+
+// for(let key5 in user) alert(key5); // name, surname
+
+
+// function createUser (name) {
+//   const discordName = "@" + name;
+
+//   let reputation = 0;
+//   const getReputation = () => reputation;
+//   const giveReputation = () => reputation++;
+
+//   return { name, discordName, getReputation, giveReputation };
+// }
+
+// const josh = createUser("josh");
+// josh.giveReputation();
+// josh.giveReputation();
+
+// console.log({
+//   discordName: josh.discordName,
+//   reputation: josh.getReputation()
+// });
+// // logs { discordName: "@josh", reputation: 2 }
+// function createPlayer (name, level) {
+//   const { getReputation, giveReputation } = createUser(name);
+
+//   const increaseLevel = () => level++;
+//   return { name, getReputation, giveReputation, increaseLevel };
+// }
+
+// function createPlayer (name, level) {
+//   const user = createUser(name);
+
+//   const increaseLevel = () => level++;
+//   return Object.assign({}, user, { increaseLevel });
+// }
+
+// function createUser (name) {
+//   const discordName = "@" + name;
+
+//   let reputation = 0;
+//   const getReputation = () => reputation;
+//   const giveReputation = () => reputation++;
+//   const takeReputation=()=>reputation--;
+
+//   return { name, discordName, getReputation, giveReputation, takeReputation };
+// }
+
+// const josh = createUser("josh");
+// josh.giveReputation();
+// josh.giveReputation();
+// josh.takeReputation();
+
+// console.log({
+//   discordName: josh.discordName,
+//   reputation: josh.getReputation()
+// });
 // logs { discordName: "@josh", reputation: 2 }
 
 
