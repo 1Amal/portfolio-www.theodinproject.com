@@ -4,62 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validation Practice</title>
-    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div>
-    <h1>JavaScript Constraint Validation API Practice</h1>
+      <h1>JavaScript Constraint Validation API Practice</h1>
 
-    <ul>
-      <li>
-        Build a browser form which collects Email, Country, Zip Code, Password
-        and Password Confirmation fields.
-      </li>
-      <li>
-        It should use live inline validation to inform the user whether a field
-        is properly filled in or not. That means highlighting a field red and
-        providing a helpful error message until it has been filled in properly.
-      </li>
-      <li>
-        The form doesn’t need to actually submit, but you should give an error
-        message if the button is pushed with any active errors or unfilled
-        required fields.
-      </li>
-      <li>
-        For the sake of this lesson, make sure the &ltform&gt element has the
-        novalidate attribute which will allow you to do all of your validation
-        in your JavaScript files.
-      </li>
-      <li>
-        You can still use different &ltinput&gt types, but you will need to use
-        JavaScript to check and report their validity.
-      </li>
-      <li>
-        If all is well and the form is “submitted”, give the user a high five.
-      </li>
+      <ul>
+        <li>
+          Build a browser form which collects Email, Country, Zip Code, Password
+          and Password Confirmation fields.
+        </li>
+        <li>
+          It should use live inline validation to inform the user whether a
+          field is properly filled in or not. That means highlighting a field
+          red and providing a helpful error message until it has been filled in
+          properly.
+        </li>
+        <li>
+          The form doesn’t need to actually submit, but you should give an error
+          message if the button is pushed with any active errors or unfilled
+          required fields.
+        </li>
+        <li>
+          For the sake of this lesson, make sure the &ltform&gt element has the
+          novalidate attribute which will allow you to do all of your validation
+          in your JavaScript files.
+        </li>
+        <li>
+          You can still use different &ltinput&gt types, but you will need to
+          use JavaScript to check and report their validity.
+        </li>
+        <li>
+          If all is well and the form is “submitted”, give the user a high five.
+        </li>
+      </ul>
 
-    </ul>
-
-    <h2>Source Code<span><a href="https://github.com/1Amal/portfolio-www.theodinproject.com/blob/main/Full-Stack-JavaScript/Forms/Constraint%20Validation%20API%20-%20Form%20Practice/index.html">- Click Here</a> </span></h2>
-    <h2>Live Version<span> <a href="https://1amal.github.io/portfolio-www.theodinproject.com/Full-Stack-JavaScript/Forms/Constraint%20Validation%20API%20-%20Form%20Practice/index.html">- Click Here</a></span></h2>
-</div>
+      <h2>
+        Source Code<span
+          ><a
+            href="https://github.com/1Amal/portfolio-www.theodinproject.com/blob/main/Full-Stack-JavaScript/Forms/Constraint%20Validation%20API%20-%20Form%20Practice/index.html"
+            >- Click Here</a
+          >
+        </span>
+      </h2>
+      <h2>
+        Live Version<span>
+          <a
+            href="https://1amal.github.io/portfolio-www.theodinproject.com/Full-Stack-JavaScript/Forms/Constraint%20Validation%20API%20-%20Form%20Practice/index.html"
+            >- Click Here</a
+          ></span
+        >
+      </h2>
+    </div>
 
     <div>
-        <h1>Form</h1>
-        <div class="practiceFormDiv">
-            <form action="" method="get" id="practiceForm">
-                <div>
-                    <label for="countryName">Country Name</label>
-                    <select name="countryName" id="countryName">
-                        
-                        <option value="australia">Australia</option>
-                        <option value="srilanka">Sri Lanka</option>
-                        <option value="usa">USA</option>
-                    </select>
-                </div>
+      <h1>Form</h1>
+      <div class="practiceFormDiv">
+        <form action="" method="get" id="practiceForm">
+          <div class="row1">
+            <label for="countryName">Country Name: </label>
+            <select name="countryName" id="countryName">
+              <option value="australia">Australia</option>
+              <option value="srilanka">Sri Lanka</option>
+              <option value="usa">USA</option>
+            </select>
+          </div>
 
-            </form>
-        </div>
+          <div class="row2">
+            <label for="postCodes">Post Codes: </label>
+            <input type="text" id="postCodes" />
+          </div>
+
+          <div class="row3">
+            <label for="emailAddress">E-mail Address: </label>
+            <input type="email" id="emailAddress" />
+          </div>
+
+          <div class="row4">
+            <label for="password1stEnter">Password: </label>
+            <input type="password" id="password1stEnter" />
+          </div>
+
+          <div class="row5">
+            <label for="passwordConfirmation">Confirm Password: </label>
+            <input type="password" id="passwordConfirmation" />
+          </div>
+
+          <div class="row6">
+            <button id="submitButton" type="button">Submit Form</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="./logic.js"></script>
