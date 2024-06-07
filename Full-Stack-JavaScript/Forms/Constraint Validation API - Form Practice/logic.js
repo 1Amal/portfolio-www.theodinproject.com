@@ -8,6 +8,8 @@ function checkCountry() {
     if (selectCountry.validity.valid) {
       console.log(selectCountry.value);
       selectCountry.style.backgroundColor = "#40e716";
+
+      return true;
     } else if (selectCountry.value === "selectCountry") {
       console.log("Country value invalid");
     }
@@ -19,6 +21,7 @@ function postCodeCheck() {
   selectPostCode.addEventListener("input", (event) => {
     console.log("Execute postcode");
   });
+  return true;
 }
 
 function emailAddressCheck() {
@@ -26,6 +29,7 @@ function emailAddressCheck() {
   selectEmailAddress.addEventListener("input", (event) => {
     console.log("Execute Email Address");
   });
+  return true;
 }
 
 function passwordCheck() {
@@ -34,20 +38,20 @@ function passwordCheck() {
 
   if (selectPasswordInitial.value === selectPasswordRepeat.value) {
     console.log("Passwords Match");
+    return true;
   } else {
     console.log("Password Mismatch");
+    return false;
   }
 }
 
 function submitForm() {
   const buttonSelect = document.querySelector("#submitButton");
   buttonSelect.addEventListener("click", () => {
-    checkCountry();
-    postCodeCheck();
-    emailAddressCheck();
-    passwordCheck();
-
-    console.log("Country value invalid");
+    if (postCodeCheck() && emailAddressCheck() && passwordCheck()) {
+      console.log("All inputs valid");
+    }
+    console.log("Submit Button Clicked");
   });
 }
 

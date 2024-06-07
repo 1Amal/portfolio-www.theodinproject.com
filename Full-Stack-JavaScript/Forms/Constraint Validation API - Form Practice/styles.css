@@ -12,3 +12,16 @@
   row-gap: 10px;
   /* background-color: #40e716; */
 }
+
+input{
+    background-color: #a2a39c;
+    width:200px;
+}
+
+input:invalid{
+    background-color: #ff76a4;
+}
+
+input:valid{
+    background-color: #2dfd08;
+}
