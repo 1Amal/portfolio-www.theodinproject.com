@@ -61,10 +61,11 @@
     <div>
       <h1>Form</h1>
       <div class="practiceFormDiv">
-        <form action="" method="get" id="practiceForm">
+        <form action="" method="get" id="practiceForm" novalidate>
           <div class="row1">
             <label for="countryName">Country Name: </label>
             <select name="countryName" id="countryName">
+              <option value="selectCountry">Please Select Country</option>
               <option value="australia">Australia</option>
               <option value="srilanka">Sri Lanka</option>
               <option value="usa">USA</option>
@@ -82,8 +83,8 @@
           </div>
 
           <div class="row4">
-            <label for="password1stEnter">Password: </label>
-            <input type="password" id="password1stEnter" />
+            <label for="passwordInitial">Password: </label>
+            <input type="password" id="passwordInitial" />
           </div>
 
           <div class="row5">
