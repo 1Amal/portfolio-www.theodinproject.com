@@ -17,8 +17,9 @@ function checkCountry() {
 }
 
 function postCodeCheck() {
-  const postCodeError = document.querySelector("#postCodes + span.status");
   const selectPostCode = document.querySelector("#postCodes");
+  const postCodeError = document.querySelector("#postCodes + span.status");
+  
   let isPostCodeValid = selectPostCode.validity.valid;
 
   selectPostCode.addEventListener("input", (event) => {
@@ -39,18 +40,24 @@ function postCodeCheck() {
 
 function emailAddressCheck() {
   const selectEmailAddress = document.querySelector("#emailAddress");
-  let validEmailAddress = false;
+  const emailAddressError=document.querySelector("#emailAddress + span.status");
+  
+  let validEmailAddress = selectEmailAddress.validity.valid;
 
   selectEmailAddress.addEventListener("input", (event) => {
-    validEmailAddress.validity.valid;
+    validEmailAddress=selectEmailAddress.validity.valid;
 
     if (validEmailAddress) {
       console.log("Valid Email Address");
+      emailAddressError.innerText="Valid Email Address";
+      validEmailAddress=true;
     } else {
       console.log("INVALID Email Address");
+      emailAddressError.innerText="Invalid Email Address";
+      validEmailAddress=false;
     }
   });
-  return true;
+  return validEmailAddress;
 }
 
 function passwordCheck() {
