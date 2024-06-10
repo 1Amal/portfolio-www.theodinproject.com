@@ -10,18 +10,25 @@
   align-items: flex-start;
   align-content: space-between;
   row-gap: 10px;
-  /* background-color: #40e716; */
 }
 
-input{
-    background-color: #a2a39c;
-    width:200px;
+input {
+  background-color: #a2a39c;
+  width: 200px;
 }
 
-input:invalid{
-    background-color: #ff76a4;
+input:invalid {
+  background-color: #ff76a4;
 }
 
-input:valid{
-    background-color: #2dfd08;
+.invalid {
+  background-color: #ff76a4;
+}
+
+input:valid {
+  background-color: #aeffa0;
+}
+
+.valid {
+  background-color: #2dfd08;
 }

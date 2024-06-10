@@ -38,9 +38,14 @@ function passwordCheck() {
 
   if (selectPasswordInitial.value === selectPasswordRepeat.value) {
     console.log("Passwords Match");
+    selectPasswordInitial.style.backgroundColor = "#aeffa0";
+    selectPasswordRepeat.style.backgroundColor = "#aeffa0";
     return true;
   } else {
     console.log("Password Mismatch");
+    selectPasswordInitial.style.backgroundColor = "#ff76a4";
+    selectPasswordRepeat.style.backgroundColor = "#ff76a4";
+
     return false;
   }
 }
