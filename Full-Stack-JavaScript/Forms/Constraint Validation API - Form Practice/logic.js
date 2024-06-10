@@ -65,7 +65,16 @@ function emailAddressCheck() {
     if (validEmailAddress) {
       emailAddressError.innerText = "Valid Email Address";
       validEmailAddress = true;
-    } else {
+    } 
+    else if (selectEmailAddress.validity.typeMismatch)
+      {
+        emailAddressError.innerText = "E-Mail address format not Correct";
+        // selectEmailAddress.setCustomValidity("I am expecting an email address!");
+        // selectEmailAddress.reportValidity();
+        validEmailAddress = false;
+      }
+    
+    else {
       emailAddressError.innerText = "Invalid Email Address";
       validEmailAddress = false;
     }

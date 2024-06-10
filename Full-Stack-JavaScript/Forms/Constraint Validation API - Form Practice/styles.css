@@ -4,12 +4,21 @@
   color: #000000;
 }
 
+p * {
+  display: block;
+}
+
 #practiceForm {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-content: space-between;
   row-gap: 10px;
+
+  font: 1em sans-serif;
+  width: 200px;
+  padding: 0;
+  margin: 0 auto;
 }
 
 input {
@@ -34,5 +43,12 @@ input:valid {
 }
 
 .status {
-  background-color: #f2f26f;
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: rgb(9, 5, 5);
+  background-color: #fbfb4e;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
 }
