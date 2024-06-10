@@ -32,3 +32,8 @@ input:valid {
 .valid {
   background-color: #2dfd08;
 }
+
+.status
+{
+  background-color: #f2f26f;
+}

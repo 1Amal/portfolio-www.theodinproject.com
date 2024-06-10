@@ -66,30 +66,33 @@
             <label for="countryName">Country Name: </label>
             <select name="countryName" id="countryName">
               <option value="selectCountry">Please Select Country</option>
-              <option value="australia">Australia</option>
-              <option value="srilanka">Sri Lanka</option>
-              <option value="usa">USA</option>
+              <option value="australia" selected>Australia -> Victoria</option>
+
             </select>
           </div>
 
           <div class="row2">
             <label for="postCodes">Post Codes: </label>
-            <input type="number" id="postCodes" min="3" max="5" />
-          </div>
+            <input type="text" id="postCodes" minlength="4" maxlength="7" title="Please enter a post code"/>
+            <span class="status"></span>
+            </div>
 
           <div class="row3">
             <label for="emailAddress">E-mail Address: </label>
             <input type="email" id="emailAddress" />
+            <span class="status"></span>
           </div>
 
           <div class="row4">
             <label for="passwordInitial">Password: </label>
             <input type="password" id="passwordInitial" />
+            <span class="status"></span>
           </div>
 
           <div class="row5">
             <label for="passwordConfirmation">Confirm Password: </label>
             <input type="password" id="passwordConfirmation" />
+            <span class="status"></span>
           </div>
 
           <div class="row6">
