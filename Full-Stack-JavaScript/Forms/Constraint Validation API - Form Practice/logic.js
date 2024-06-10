@@ -44,7 +44,6 @@ function postCodeCheck() {
       postCodeError.innerText =
         "Post Code format Wrong, Victorian Post Codes need to be 4 digits from 3000 to 3999";
 
-
       isPostCodeValid = false;
     }
   });
@@ -65,16 +64,12 @@ function emailAddressCheck() {
     if (validEmailAddress) {
       emailAddressError.innerText = "Valid Email Address";
       validEmailAddress = true;
-    } 
-    else if (selectEmailAddress.validity.typeMismatch)
-      {
-        emailAddressError.innerText = "E-Mail address format not Correct";
-        // selectEmailAddress.setCustomValidity("I am expecting an email address!");
-        // selectEmailAddress.reportValidity();
-        validEmailAddress = false;
-      }
-    
-    else {
+    } else if (selectEmailAddress.validity.typeMismatch) {
+      emailAddressError.innerText = "E-Mail address format not Correct";
+      // selectEmailAddress.setCustomValidity("I am expecting an email address!");
+      // selectEmailAddress.reportValidity();
+      validEmailAddress = false;
+    } else {
       emailAddressError.innerText = "Invalid Email Address";
       validEmailAddress = false;
     }
