@@ -61,7 +61,7 @@
     <div>
       <h1>Form</h1>
       <div class="practiceFormDiv">
-        <form action="" method="get" id="practiceForm" novalidate>
+        <form action="" method="get" id="practiceForm">
           <div class="row1">
             <label for="countryName">Country Name: </label>
             <select name="countryName" id="countryName">
@@ -72,7 +72,13 @@
 
           <div class="row2">
             <label for="postCodes">Post Code: </label>
-            <input type="number" id="postCodes" min="3000" max="3999" />
+            <input
+              type="number"
+              id="postCodes"
+              min="3000"
+              max="3999"
+              required
+            />
             <span class="status"></span>
           </div>
 
@@ -84,13 +90,25 @@
 
           <div class="row4">
             <label for="passwordInitial">Password: </label>
-            <input type="password" id="passwordInitial" required />
+            <input
+              type="password"
+              id="passwordInitial"
+              minlength="6"
+              maxlength="20"
+              required
+            />
             <span class="status"></span>
           </div>
 
           <div class="row5">
             <label for="passwordConfirmation">Confirm Password: </label>
-            <input type="password" id="passwordConfirmation" required />
+            <input
+              type="password"
+              id="passwordConfirmation"
+              minlength="6"
+              maxlength="20"
+              required
+            />
             <span class="status"></span>
           </div>
 

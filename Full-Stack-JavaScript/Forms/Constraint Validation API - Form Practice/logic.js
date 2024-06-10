@@ -4,7 +4,6 @@ console.log("Script Loaded");
 function checkCountry() {
   const selectCountry = document.querySelector("#countryName");
   selectCountry.addEventListener("input", (event) => {
-    // console.log(countryCheck.value);
     if (selectCountry.validity.valid) {
       console.log(selectCountry.value);
       selectCountry.style.backgroundColor = "#40e716";
@@ -24,15 +23,28 @@ function postCodeCheck() {
 
   selectPostCode.addEventListener("input", (event) => {
     isPostCodeValid = selectPostCode.validity.valid;
+    const postCodes = {
+      vic: [
+        /^3[0-9]{3}$/,
+        "Post Code format Wrong, Victorian Post Codes need to be 4 digits from 3000 to 3999",
+      ],
+    };
 
-    if (isPostCodeValid) {
+    const constraint = postCodes["vic"][0];
+
+    console.log(constraint);
+
+    if (constraint.test(selectPostCode.value.toString())) {
       selectPostCode.style.backgroundColor = "#aeffa0";
       postCodeError.innerText = "Post Code format Correct";
+
       isPostCodeValid = true;
     } else {
       selectPostCode.style.backgroundColor = "#ff76a4";
       postCodeError.innerText =
         "Post Code format Wrong, Victorian Post Codes need to be 4 digits from 3000 to 3999";
+
+
       isPostCodeValid = false;
     }
   });
@@ -51,11 +63,9 @@ function emailAddressCheck() {
     validEmailAddress = selectEmailAddress.validity.valid;
 
     if (validEmailAddress) {
-      // console.log("Valid Email Address");
       emailAddressError.innerText = "Valid Email Address";
       validEmailAddress = true;
     } else {
-      // console.log("INVALID Email Address");
       emailAddressError.innerText = "Invalid Email Address";
       validEmailAddress = false;
     }
@@ -75,7 +85,6 @@ function passwordCheck() {
   );
 
   if (selectPasswordInitial.value === selectPasswordRepeat.value) {
-    // console.log("Passwords Match");
     selectPasswordInitial.style.backgroundColor = "#aeffa0";
     selectPasswordRepeat.style.backgroundColor = "#aeffa0";
 
@@ -84,7 +93,6 @@ function passwordCheck() {
 
     return true;
   } else {
-    // console.log("Password Mismatch");
     selectPasswordInitial.style.backgroundColor = "#ff76a4";
     selectPasswordRepeat.style.backgroundColor = "#ff76a4";
 
@@ -103,12 +111,12 @@ function submitForm() {
 
   buttonSelect.addEventListener("click", () => {
     if (postCodeCheck() && emailAddressCheck() && passwordCheck()) {
-      statusButtonSelect.innerText = "Form Submited Succesfully!";
+      statusButtonSelect.innerText = "High Five, Form Submitted Successfully!";
       console.log("All inputs valid");
     } else {
       console.log("All Input NOT Valid");
       statusButtonSelect.innerText =
-        "ERROR ! Form NOT Submited, Please correct the highlighted errors";
+        "ERROR ! Form NOT Submitted, Please correct the highlighted errors";
     }
   });
 }
