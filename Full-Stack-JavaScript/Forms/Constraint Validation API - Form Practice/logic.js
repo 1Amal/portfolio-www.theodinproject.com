@@ -19,7 +19,7 @@ function checkCountry() {
 function postCodeCheck() {
   const selectPostCode = document.querySelector("#postCodes");
   const postCodeError = document.querySelector("#postCodes + span.status");
-  
+
   let isPostCodeValid = selectPostCode.validity.valid;
 
   selectPostCode.addEventListener("input", (event) => {
@@ -31,7 +31,8 @@ function postCodeCheck() {
       isPostCodeValid = true;
     } else {
       selectPostCode.style.backgroundColor = "#ff76a4";
-      postCodeError.innerText = "Post Code format Wrong";
+      postCodeError.innerText =
+        "Post Code format Wrong, Victorian Post Codes need to be 4 digits from 3000 to 3999";
       isPostCodeValid = false;
     }
   });
@@ -40,21 +41,23 @@ function postCodeCheck() {
 
 function emailAddressCheck() {
   const selectEmailAddress = document.querySelector("#emailAddress");
-  const emailAddressError=document.querySelector("#emailAddress + span.status");
-  
+  const emailAddressError = document.querySelector(
+    "#emailAddress + span.status"
+  );
+
   let validEmailAddress = selectEmailAddress.validity.valid;
 
   selectEmailAddress.addEventListener("input", (event) => {
-    validEmailAddress=selectEmailAddress.validity.valid;
+    validEmailAddress = selectEmailAddress.validity.valid;
 
     if (validEmailAddress) {
-      console.log("Valid Email Address");
-      emailAddressError.innerText="Valid Email Address";
-      validEmailAddress=true;
+      // console.log("Valid Email Address");
+      emailAddressError.innerText = "Valid Email Address";
+      validEmailAddress = true;
     } else {
-      console.log("INVALID Email Address");
-      emailAddressError.innerText="Invalid Email Address";
-      validEmailAddress=false;
+      // console.log("INVALID Email Address");
+      emailAddressError.innerText = "Invalid Email Address";
+      validEmailAddress = false;
     }
   });
   return validEmailAddress;
@@ -62,17 +65,31 @@ function emailAddressCheck() {
 
 function passwordCheck() {
   const selectPasswordInitial = document.querySelector("#passwordInitial");
+  const errorPasswordInitial = document.querySelector(
+    "#passwordInitial+ span.status"
+  );
+
   const selectPasswordRepeat = document.querySelector("#passwordConfirmation");
+  const errorPasswordRepeat = document.querySelector(
+    "#passwordConfirmation + span.status"
+  );
 
   if (selectPasswordInitial.value === selectPasswordRepeat.value) {
-    console.log("Passwords Match");
+    // console.log("Passwords Match");
     selectPasswordInitial.style.backgroundColor = "#aeffa0";
     selectPasswordRepeat.style.backgroundColor = "#aeffa0";
+
+    errorPasswordInitial.innerText = "Passwords Match and OK to proceed";
+    errorPasswordRepeat.innerText = "Passwords Match and OK to proceed";
+
     return true;
   } else {
-    console.log("Password Mismatch");
+    // console.log("Password Mismatch");
     selectPasswordInitial.style.backgroundColor = "#ff76a4";
     selectPasswordRepeat.style.backgroundColor = "#ff76a4";
+
+    errorPasswordInitial.innerText = "Passwords Do Not Match";
+    errorPasswordRepeat.innerText = "Passwords Do Not Match";
 
     return false;
   }
@@ -80,11 +97,18 @@ function passwordCheck() {
 
 function submitForm() {
   const buttonSelect = document.querySelector("#submitButton");
+  const statusButtonSelect = document.querySelector(
+    "#submitButton + span.status"
+  );
+
   buttonSelect.addEventListener("click", () => {
     if (postCodeCheck() && emailAddressCheck() && passwordCheck()) {
+      statusButtonSelect.innerText = "Form Submited Succesfully!";
       console.log("All inputs valid");
     } else {
       console.log("All Input NOT Valid");
+      statusButtonSelect.innerText =
+        "ERROR ! Form NOT Submited, Please correct the highlighted errors";
     }
   });
 }
