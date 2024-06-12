@@ -5,20 +5,36 @@
     <title>Document</title>
   </head>
   <body>
-    <img src="#" />
+    <div>
+      <img src="#" />
+    </div>
+
+    <div>
+      <button id="fetchNewImageButton">Fetch New Image</button>
+    </div>
+
     <script>
       const img = document.querySelector("img");
+      const fetchNewImageButton = document.querySelector(
+        "#fetchNewImageButton"
+      );
 
-      fetch(
-        "https://api.giphy.com/v1/gifs/translate?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&s=goldenretrievers",
-        { mode: "cors" }
-      )
-      .then(function(response) {
-      return response.json();
-    })
-    .then(function(response) {
-        img.src = response.data.images.original.url;
-    });
+      function fetchNewImage() {
+        fetch(
+          "https://api.giphy.com/v1/gifs/translate?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&s=puppy",
+          { mode: "cors" }
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (response) {
+            img.src = response.data.images.original.url;
+          });
+      }
+
+      fetchNewImageButton.addEventListener("click", () => {
+        fetchNewImage();
+      });
     </script>
   </body>
 </html>
