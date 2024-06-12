@@ -10,30 +10,53 @@
     </div>
 
     <div>
+      <input id="searchNewImage" type="text" />
       <button id="fetchNewImageButton">Fetch New Image</button>
+      <p id="statusDisplay"></p>
     </div>
 
     <script>
       const img = document.querySelector("img");
+      const statusDisplay=document.querySelector("#statusDisplay");
+      const searchNewImage = document.querySelector("#searchNewImage");
+
+      let baseURL =
+        "https://api.giphy.com/v1/gifs/translate?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&s=";
+
       const fetchNewImageButton = document.querySelector(
         "#fetchNewImageButton"
       );
 
       function fetchNewImage() {
+        let searchInput = String(searchNewImage.value);
+        let searchTerm = baseURL + searchInput;
+        console.log(searchTerm);
+        
         fetch(
-          "https://api.giphy.com/v1/gifs/translate?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&s=puppy",
+          searchTerm,
           { mode: "cors" }
         )
           .then(function (response) {
+            // console.log(response);
             return response.json();
           })
           .then(function (response) {
+            console.log(response);
             img.src = response.data.images.original.url;
+            statusDisplay.innerText=response.meta.msg;
+          })
+
+          .catch(function (error){
+            console.log("Error detected");
+            // console.log(response);
+            statusDisplay.innerText="Status: Error detected";
+
           });
       }
 
       fetchNewImageButton.addEventListener("click", () => {
         fetchNewImage();
+        // console.log(response);
       });
     </script>
   </body>
