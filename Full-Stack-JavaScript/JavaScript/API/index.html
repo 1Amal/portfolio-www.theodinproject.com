@@ -17,7 +17,7 @@
 
     <script>
       const img = document.querySelector("img");
-      const statusDisplay=document.querySelector("#statusDisplay");
+      const statusDisplay = document.querySelector("#statusDisplay");
       const searchNewImage = document.querySelector("#searchNewImage");
 
       let baseURL =
@@ -31,32 +31,30 @@
         let searchInput = String(searchNewImage.value);
         let searchTerm = baseURL + searchInput;
         console.log(searchTerm);
-        
-        fetch(
-          searchTerm,
-          { mode: "cors" }
-        )
+
+        let fetchGiphy = fetch(searchTerm, { mode: "cors" })
           .then(function (response) {
-            // console.log(response);
             return response.json();
           })
           .then(function (response) {
             console.log(response);
             img.src = response.data.images.original.url;
-            statusDisplay.innerText=response.meta.msg;
+            statusDisplay.innerText = response.meta.msg;
           })
 
-          .catch(function (error){
+          .catch(function (error) {
             console.log("Error detected");
-            // console.log(response);
-            statusDisplay.innerText="Status: Error detected";
-
+            console.log(fetchGiphy);
+            statusDisplay.innerText = "Status: Error detected";
           });
+        fetchGiphy.finally(function () {
+          console.log("Promise Completed");
+          console.log(fetchGiphy.then());
+        });
       }
 
       fetchNewImageButton.addEventListener("click", () => {
         fetchNewImage();
-        // console.log(response);
       });
     </script>
   </body>
