@@ -27,31 +27,37 @@
         "#fetchNewImageButton"
       );
 
-      function fetchNewImage() {
+      async function fetchNewImage() {
         let searchInput = String(searchNewImage.value);
         let searchTerm = baseURL + searchInput;
         console.log(searchTerm);
 
-        let fetchGiphy = fetch(searchTerm, { mode: "cors" })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (response) {
-            console.log(response);
-            img.src = response.data.images.original.url;
-            statusDisplay.innerText = response.meta.msg;
-          })
-
-          .catch(function (error) {
-            console.log("Error detected");
-            console.log(fetchGiphy);
-            statusDisplay.innerText = "Status: Error detected";
-          });
-        fetchGiphy.finally(function () {
-          console.log("Promise Completed");
-          console.log(fetchGiphy.then());
-        });
+        let fetchGiphy = await fetch(searchTerm, { mode: "cors" });
+        const imageData = await fetchGiphy.json();
+        img.src = imageData.data.images.original.url;
+        statusDisplay.innerText = imageData.meta.msg;
       }
+
+      //Following code is using Promises and .then .catch
+        //   .then(function (response) {
+        //     return response.json();
+        //   })
+        //   .then(function (response) {
+        //     console.log(response);
+        //     img.src = response.data.images.original.url;
+        //     statusDisplay.innerText = response.meta.msg;
+        //   })
+
+        //   .catch(function (error) {
+        //     console.log("Error detected");
+        //     console.log(fetchGiphy);
+        //     statusDisplay.innerText = "Status: Error detected";
+        //   });
+        // fetchGiphy.finally(function () {
+        //   console.log("Promise Completed");
+        //   console.log(fetchGiphy.then());
+        // });
+    //   }
 
       fetchNewImageButton.addEventListener("click", () => {
         fetchNewImage();
