@@ -33,6 +33,20 @@ Write a function called sumRange. It will take a number and return the sum of al
 Sample: sumRange(3) returns 6, since 1 + 2 + 3 = 6.
 */
 
+function sumRange(number)
+{
+if (number===1)
+  {
+    return 1; 
+  }
+
+  else {
+    return number + sumRange(number-1);
+  }
+}
+
+// codeOutput.textContent=sumRange(4);
+
 /*
 Question 2: Power function
 Write a function called power which takes in a base and an exponent. If the exponent is 0, return 1.
@@ -46,6 +60,21 @@ console.log(power(2, 1)); // 2
 console.log(power(2, 0)); // 1
 */
 
+function power(base, exp)
+{
+  if (exp===0)
+    {
+      return 1
+    }
+
+    else {
+      return base * power(base,exp-1)
+    }
+}
+
+// codeOutput.textContent=power(10,2);
+
+
 
 /*
 Question 3: Calculate factorial
@@ -56,18 +85,51 @@ Sample:
 factorial(5); // 5 * 4 * 3 * 2 * 1 === 120
 */
 
+function factor(num)
+{
+  if (num==1)
+    {
+      return 1;
+    }
+    else{
+      return num * factor(num-1) 
+    }
+    
+}
+
+
+// codeOutput.textContent=factor(3);
+
 /*
 Question 4: Check all values in an array
 Write a function called all which accepts an array and a callback and returns true if every value in the array returns true when passed as parameter to the callback function
 
 Sample:
 
-var allAreLessThanSeven = all([1,2,9], function(num){
+
+*/
+
+var allAreLessThanSeven = all([1,2,5], function(num){
 	return num < 7;
 });
 
 console.log(allAreLessThanSeven); // false
-*/
+
+function all(array, callback){
+	var copy = copy || array.slice(); // shallow copies array
+
+	if(copy.length === 0) return true;
+
+	if(callback(copy[0])){
+		copy.shift(); // remove first element from array
+		return all(copy, callback);
+	} else {
+		return false;
+	}
+}
+
+console.log(allAreLessThanSeven); // false
+// codeOutput.textContent=allAreLessThanSeven;
 
 /*
 Question 5: Product of an array
@@ -78,6 +140,11 @@ Sample:
 var six = productOfArray([1,2,3]) // 6
 var sixty = productOfArray([1,2,3,10]) // 60
 */
+
+function productOfArray(arrayNum)
+{
+
+}
 
 /*
 Question 6: Search JS object
