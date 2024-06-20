@@ -113,7 +113,7 @@ var allAreLessThanSeven = all([1,2,5], function(num){
 	return num < 7;
 });
 
-console.log(allAreLessThanSeven); // false
+// console.log(allAreLessThanSeven); // false
 
 function all(array, callback){
 	var copy = copy || array.slice(); // shallow copies array
@@ -128,7 +128,7 @@ function all(array, callback){
 	}
 }
 
-console.log(allAreLessThanSeven); // false
+// console.log(allAreLessThanSeven); // false
 // codeOutput.textContent=allAreLessThanSeven;
 
 /*
@@ -141,9 +141,17 @@ var six = productOfArray([1,2,3]) // 6
 var sixty = productOfArray([1,2,3,10]) // 60
 */
 
-function productOfArray(arrayNum)
-{
+var six = productOfArray([1,2,3]) // 6
+var sixty = productOfArray([1,2,3,10]) // 60
 
+codeOutput.textContent=six +"  " + sixty;
+
+console.log(six, sixty);
+
+function productOfArray(array){
+	if(array.length === 0) return 1;
+
+	return array.shift() * productOfArray(array);
 }
 
 /*
@@ -151,7 +159,7 @@ Question 6: Search JS object
 Write a function called contains that searches for a value in a nested object. It returns true if the object contains that value.
 
 Sample:
-
+*/
 var nestedObject = {
     data: {
         info: {
@@ -167,37 +175,85 @@ var nestedObject = {
     }
 }
 
+
+
 let hasIt = contains(nestedObject, 44); // true
 let doesntHaveIt = contains(nestedObject, "foo"); // false
-*/
+
+function contains(object, searchValue) {
+  if (typeof object !== "object" || object === null) {
+    return object === searchValue;
+  }
+
+  for (const value of Object.values(object)) {
+    if (contains(value, searchValue)) {
+      console.log(value)
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(doesntHaveIt);
 
 /*
 Question 7: Parse a multi-dimensional array
 Given a multi-dimensional integer array, return the total number of integers stored inside this array
 
 Sample:
-
-var seven = totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]); // 7
 */
+var seven = totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]); // 7
+console.log(seven);
+
+function totalIntegers(array){
+	if(array.length === 0) return 0;
+
+	let total = 0;
+	let first = array.shift();
+
+	if (Array.isArray(first)){
+		total += totalIntegers(first); 
+	} else if (Number.isInteger(first)) {
+		total += 1;
+	}
+
+	return total + totalIntegers(array);
+}
 
 /*
 Question 8:
 Write a function that sums squares of numbers in list that may contain more lists
 
 Sample:
-
+*/  
 var l = [1,2,3]; 
-console.log(SumSquares(l)); // 1 + 4 + 9 = 14
+console.log(SumSquares(l)); // 14
 
 l = [[1,2],3]; 
-console.log(SumSquares(l)); // 1 + 4 + 9 = 14
+console.log(SumSquares(l)); // 14
 
 l = [[[[[[[[[1]]]]]]]]] 
-console.log(SumSquares(l)); // 1 = 1
+console.log(SumSquares(l)); // 1
 
 l = [10,[[10],10],[10]] 
-console.log(SumSquares(l)); // 100 + 100 + 100 + 100 = 400
-*/
+console.log(SumSquares(l)); // 400
+
+function SumSquares(array){
+	if(array.length === 0) return 0;
+	let total = 0;
+
+	for(let i = 0; i < array.length; i++){
+		if(Array.isArray(array[i])){
+			total += SumSquares(array[i]);
+		} 
+    else {
+			total += array[i] * array[i];
+		}
+		
+	}
+	return total;
+}
+
 
 
 /*
@@ -205,12 +261,14 @@ Question 9:
 The function should return an array containing repetitions of the number argument. For instance, replicate(3, 5) should return [5,5,5]. If the times argument is negative, return an empty array.
 
 Sample:
+*/
 
 console.log(replicate(3, 5)) // [5, 5, 5]
 console.log(replicate(1, 69)) // [69]
 console.log(replicate(-2, 6)) // []
-*/
 
-/*
+function replicate(times, number){
+	if(times <= 0) return [];
 
-*/
+	return [number].concat(replicate(times - 1, number));
+}
