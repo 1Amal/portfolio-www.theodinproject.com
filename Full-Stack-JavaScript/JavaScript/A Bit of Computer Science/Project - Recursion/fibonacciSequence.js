@@ -1,27 +1,42 @@
+//2024 Amal Kariyawasam, Fibonacci Number Calculation
 
-function fibs (num)
-{
-    console.log("Hello Node, This is Fibonacci !");
+// Using Iterative Method
+function fibs(num) {
+  console.log("Hello Node, This is Fibonacci using Iterative Method !");
 
-    // F(n)=F(n-1)+F(n-2)
-    let previousNum1=0;
-    let previousNum2=1;
-    let currentNum;
-    const fibonacciArray=[0,1];
+  let previousNum1 = 0;
+  let previousNum2 = 1;
+  let currentNum;
+  const fibonacciArray = [0, 1];
 
-    for (let i=2; i<num; i++)
-        {
+  for (let i = 2; i < num; i++) {
+    currentNum = previousNum1 + previousNum2;
+    previousNum1 = previousNum2;
+    previousNum2 = currentNum;
+    fibonacciArray.push(currentNum);
+  }
 
-            currentNum=previousNum1+previousNum2;
-            previousNum1=previousNum2;
-            previousNum2=currentNum;
-            fibonacciArray.push(currentNum);
-
-            
-        }
-
-
-        console.log(fibonacciArray);
+  console.log(fibonacciArray);
 }
 
-fibs (8);
+fibs(8);
+
+// Using Recursive Method
+
+function fibsRec(Fn) {
+  const fibonacciArray = [0, 1]; // Base cases
+
+  // Iteratively calculate and store Fibonacci numbers up to Fn
+  for (let i = 2; i < Fn; i++) {
+    // Check if the value is already calculated (in case of previous function calls)
+    if (fibonacciArray[i] === undefined) {
+      fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2];
+    }
+  }
+  console.log("Hello Node, This is Fibonacci using Recursive Method");
+  return fibonacciArray;
+}
+
+// Call the function with the desired nth term
+const result = fibsRec(8);
+console.log(result); // This will print [0, 1, 1, 2, 3, 5, 8, 13]
