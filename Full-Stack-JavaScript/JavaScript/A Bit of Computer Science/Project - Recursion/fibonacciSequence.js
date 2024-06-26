@@ -1,5 +1,11 @@
 //2024 Amal Kariyawasam, Fibonacci Number Calculation
 
+// Using iteration, write a function fibs which takes a number and returns an array containing that many numbers from the Fibonacci sequence. Using an example input of 8, this function should return the array [0, 1, 1, 2, 3, 5, 8, 13].
+// Now write another function fibsRec which solves the same problem recursively.
+// Test both versions of your functions by passing in various lengths as arguments
+// Explanation below link
+// https://www.scaler.com/topics/fibonacci-series-in-javascript/
+
 // Using Iterative Method
 function fibs(num) {
   console.log("Hello Node, This is Fibonacci using Iterative Method !");
