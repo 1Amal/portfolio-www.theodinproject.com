@@ -31,77 +31,39 @@ Extra Credit Tip: When you insert or remove a node, consider how it will affect 
 console.log("Project Linked Lists");
 
 class LinkedList {
+  // append(value) adds a new node containing value to the end of the list
+  append(value) {}
 
-// append(value) adds a new node containing value to the end of the list
-    append(value)
-    {
+  // prepend(value) adds a new node containing value to the start of the list
+  prepend(value) {}
 
-    }
+  // size returns the total number of nodes in the list
+  size() {}
 
-    // prepend(value) adds a new node containing value to the start of the list
-    prepend(value)
-    {
+  // head returns the first node in the list
+  head() {}
 
-    }
+  // tail returns the last node in the list
+  tail() {}
 
-    // size returns the total number of nodes in the list
-    size()
-    {
+  // at(index) returns the node at the given index
+  at(index) {}
 
-    }  
-    
-    // head returns the first node in the list
-    head()
-    {
+  // pop removes the last element from the list?
+  pop() {}
+  // contains(value) returns true if the passed in value is in the list and otherwise returns false.
+  contains(value) {}
 
-    }
+  // find(value) returns the index of the node containing value, or null if not found.
 
-    // tail returns the last node in the list
-    tail()
-    {
+  find(value) {}
 
-    }
-
-    // at(index) returns the node at the given index
-    at(index)
-    {
-
-    }
-
-    // pop removes the last element from the list?
-    pop()
-    {
-
-    }
-    // contains(value) returns true if the passed in value is in the list and otherwise returns false.
-    contains(value)
-    {
-
-    }
-
-    // find(value) returns the index of the node containing value, or null if not found.
-
-    find(value)
-    {
-
-    }
-
-s
-
-    toString()
-    {
-
-    }
-
+  toString() {}
 }
 
-
 class Node {
-    constructor()
-    {
-        this.value=null;
-        this.nextNode=null;
-
-    }
-
+  constructor() {
+    this.value = null;
+    this.nextNode = null;
+  }
 }
