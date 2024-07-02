@@ -38,7 +38,9 @@ class LinkedList {
   prepend(value) {}
 
   // size returns the total number of nodes in the list
-  size() {}
+  size() {
+    console.log("Size of the Linked List is: ")
+  }
 
   // head returns the first node in the list
   head() {}
@@ -67,3 +69,10 @@ class Node {
     this.nextNode = null;
   }
 }
+
+const newLinkedList=new LinkedList();
+const newNode=new Node();
+
+newLinkedList.size();
+
+newNode.value;
