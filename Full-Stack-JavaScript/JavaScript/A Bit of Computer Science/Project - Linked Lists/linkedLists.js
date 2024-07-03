@@ -39,7 +39,7 @@ class LinkedList {
 
   // size returns the total number of nodes in the list
   size() {
-    console.log("Size of the Linked List is: ")
+    console.log("Size of the Linked List is: ");
   }
 
   // head returns the first node in the list
@@ -64,15 +64,34 @@ class LinkedList {
 }
 
 class Node {
-  constructor() {
-    this.value = null;
-    this.nextNode = null;
+  constructor(value = null, nextNode = null) {
+    this.value = value;
+    this.nextNode = nextNode;
+  }
+
+  newNode(value, nextNode = null) {
+    return { value, nextNode };
   }
 }
 
-const newLinkedList=new LinkedList();
-const newNode=new Node();
+const newLinkedList = new LinkedList();
+const newNode = new Node();
 
 newLinkedList.size();
 
-newNode.value;
+console.log(newNode.newNode("TestNode", 2));
+
+const testObject = {
+  head: { data: 01 },
+  01: { data: 02 },
+  02: { data: 03 },
+  03: { data: 04 },
+};
+console.log(testObject);
+
+// delete testObject.data1;
+
+for (let x in testObject) {
+  console.log(testObject[x]);
+  // console.log(testObject[0])
+}
