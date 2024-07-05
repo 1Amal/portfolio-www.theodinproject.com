@@ -176,17 +176,20 @@ const list = new LinkedList();
 list.append(10); // Adds 10 to the end of the list
 list.append(20); // Adds 20 to the end of the list
 list.append(30); // Adds 30 to the end of the list
-list.prepend(5); // Adds 5 to the start of the list
-console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 20 ) -> ( 30 ) -> null
-console.log(list.size()); // Outputs: 4
+// list.prepend(5); // Adds 5 to the start of the list
+// console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 20 ) -> ( 30 ) -> null
+// console.log(list.size()); // Outputs: 4
 console.log(list.head().value); // Outputs: 5
-console.log(list.tail().value); // Outputs: 30
+// console.log(list.tail().value); // Outputs: 30
 console.log(list.at(2).value); // Outputs: 20
-list.pop(); // Removes the last element (30) from the list
-console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 20 ) -> null
-console.log(list.contains(10)); // Outputs: true
-console.log(list.find(20)); // Outputs: 2
-list.insertAt(15, 2); // Inserts 15 at index 2
+// list.pop(); // Removes the last element (30) from the list
+// console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 20 ) -> null
+// console.log(list.contains(10)); // Outputs: true
+// console.log(list.find(20)); // Outputs: 2
+// list.insertAt(15, 2); // Inserts 15 at index 2
 console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 15 ) -> ( 20 ) -> null
-list.removeAt(2); // Removes the element at index 2 (15)
-console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 20 ) -> null
+// list.removeAt(2); // Removes the element at index 2 (15)
+// console.log(list.toString()); // Outputs: ( 5 ) -> ( 10 ) -> ( 20 ) -> null
+
+console.log(list)
+
