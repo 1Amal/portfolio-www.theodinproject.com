@@ -165,7 +165,9 @@ test.set("apple", "greenify");
 test.set("banana", "brownify");
 
 // // Adding a new node to exceed load factor
-// test.set("moon", "silver");
+test.set("moon", "silver");
+test.set("moon2", "silver");
+test.set("moon3", "silver");
 
 // // Testing other methods
 console.log(test.get("apple")); // green
@@ -177,66 +179,3 @@ console.log(test.values()); // Array of values
 console.log(test.entries()); // Array of [key, value] pairs
 test.clear();
 console.log(test.length()); // 0
-
-// class HashMap {
-//   constructor() {
-//     this.newHashMap=[];
-//   }
-
-//   hash(key) {
-//     let hashCode = 0;
-
-//     const primeNumber = 31;
-//     for (let i = 0; i < key.length; i++) {
-//       hashCode = primeNumber * hashCode + key.charCodeAt(i);
-//     }
-
-//     return hashCode;
-//   }
-
-//   set(key, value)
-//   {
-
-//     // console.log();
-//     const capacity=0;
-//     const loadFactor=0.75;
-//     const currentBucketCapacity=capacity*loadFactor;
-//     const HashCode=this.hash(key);
-//     // this.HashMap=[HashCode]:{[key]:value};
-//     this.newHashMap.splice(0,0,"Hi Mate");
-
-//     return this.HashMap;
-
-//   }
-
-//   get (key)
-//   {
-// return this.HashMap;
-//   }
-
-//   //Use the following snippet whenever you access a bucket through an index. We want to throw an error if we try to access an out of bound index:
-//   checkBounds() {
-//     let index;
-//     let buckets;
-//     if (index < 0 || index >= buckets.length) {
-//       throw new Error("Trying to access index out of bound");
-//     }
-//   }
-// }
-
-// const test = new HashMap();
-
-// test.set('apple', 'red')
-// //  test.set('banana', 'yellow')
-// //  test.set('carrot', 'orange')
-// //  test.set('dog', 'brown')
-// //  test.set('elephant', 'gray')
-// //  test.set('frog', 'green')
-// //  test.set('grape', 'purple')
-// //  test.set('hat', 'black')
-// //  test.set('ice cream', 'white')
-// //  test.set('jacket', 'blue')
-// //  test.set('kite', 'pink')
-// //  test.set('lion', 'golden')
-
-// console.log(test);
