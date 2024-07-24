@@ -1,9 +1,9 @@
 TN:
-SF:capitalize.js
-FN:1,capitalize
+SF:reverseString.js
+FN:1,reverseString
 FNF:1
 FNH:1
-FNDA:1,capitalize
+FNDA:1,reverseString
 DA:1,1
 DA:2,1
 DA:3,1
