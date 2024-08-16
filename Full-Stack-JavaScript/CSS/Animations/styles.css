@@ -1,50 +1,88 @@
-h1{
-    color: #d64608;
+h1 {
+  color: #d64608;
 }
 
 .target {
-    transition-property: background-color;
-    transition-duration: 1s;
-    background-color: #e22121;
-  }
-  
-  .target:hover,
-  .target:focus {
-    background-color: #0ccd2f;
-  }
+  transition-property: background-color;
+  transition-duration: 1s;
+  background-color: #e22121;
+}
 
-  .box {
-    margin: 20px;
-    padding: 10px;
-    display: inline-block;
+.target:hover,
+.target:focus {
+  background-color: #0ccd2f;
+}
 
-    border-radius: 3rem;
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    font-size: 18px;
-    transition-property: background-color, font-size, transform, color;
-    transition-timing-function: ease-in-out;
-  }
-  
-  .transformed-state {
-    transform: rotate(270deg);
-    background-color: blue;
-    color: rgb(235, 100, 10);
-    font-size: 12px;
-    transition-property: background-color, font-size, transform, color;
-    transition-timing-function: ease-in-out;
-  }
-  
-  .duration-1 {
-    transition-duration: 0.5s;
-  }
-  
-  .duration-2 {
-    transition-duration: 2s;
-  }
-  
-  .duration-3 {
-    transition-duration: 4s;
-  }
-  
+.box {
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+
+  border-radius: 3rem;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  font-size: 18px;
+  transition-property: background-color, font-size, transform, color;
+  transition-timing-function: ease-in-out;
+}
+
+.transformed-state {
+  transform: rotate(270deg);
+  background-color: blue;
+  color: rgb(235, 100, 10);
+  font-size: 12px;
+  transition-property: background-color, font-size, transform, color;
+  transition-timing-function: ease-in-out;
+}
+
+.duration-1 {
+  transition-duration: 0.5s;
+  transition-delay: 1s;
+  transition-timing-function: cubic-bezier(0.21, 0.7, 0.3, 0.11);
+}
+
+.duration-2 {
+  transition-duration: 2s;
+  transition-delay: 0.5s;
+}
+
+.duration-3 {
+  transition-duration: 4s;
+  transition: width 2s, height 2s, background-color 2s, rotate 2s;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+a {
+  flex: 1;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 1.5s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  background-color: #38dc0f;
+  color: #333;
+}
+
+/* Ball */
+.ball {
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  background: #c00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 5s;
+}
