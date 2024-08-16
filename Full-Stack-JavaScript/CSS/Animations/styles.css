@@ -1,3 +1,50 @@
 h1{
     color: #d64608;
 }
+
+.target {
+    transition-property: background-color;
+    transition-duration: 1s;
+    background-color: #e22121;
+  }
+  
+  .target:hover,
+  .target:focus {
+    background-color: #0ccd2f;
+  }
+
+  .box {
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+
+    border-radius: 3rem;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    font-size: 18px;
+    transition-property: background-color, font-size, transform, color;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .transformed-state {
+    transform: rotate(270deg);
+    background-color: blue;
+    color: rgb(235, 100, 10);
+    font-size: 12px;
+    transition-property: background-color, font-size, transform, color;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .duration-1 {
+    transition-duration: 0.5s;
+  }
+  
+  .duration-2 {
+    transition-duration: 2s;
+  }
+  
+  .duration-3 {
+    transition-duration: 4s;
+  }
+  
