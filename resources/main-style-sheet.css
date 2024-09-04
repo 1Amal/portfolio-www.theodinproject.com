@@ -118,7 +118,7 @@ a:active {
 .mainWebsiteGridContainer {
   display: grid;
   grid-template:
-    "mainMenuContainer mainMenuContainer " 1fr
+    "nav-bar nav-bar nav-bar" 1fr
     "introductionContainer introductionContainer" 1fr
     "projectsContainer projectsContainer" 5fr
     "contactContainer contactContainer" 1fr
