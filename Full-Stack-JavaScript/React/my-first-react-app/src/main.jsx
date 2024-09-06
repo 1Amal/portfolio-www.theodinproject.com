@@ -11,6 +11,9 @@ import TodoList from "./Person.jsx";
 import AnimalsApp from "./Animals.jsx";
 import PackingList from "./PackingList.jsx";
 import DrinkList from "./Drinks.jsx";
+import List from "./People.jsx";
+import RecipeList from "./Reciepies.jsx";
+
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
@@ -27,6 +30,8 @@ createRoot(document.getElementById("root")).render(
     <AnimalsApp />
     <PackingList />
     <DrinkList/>
+    <List/>
+    <RecipeList/>
   </StrictMode>
 
 );
