@@ -33,7 +33,7 @@ const FunctionalInput = ({ name }) => {
           value={inputVal}
           onChange={handleInputChange}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Add Task</button>
       </form>
       <h4>All the tasks!</h4>
       {/* The list of all the To-Do's, displayed */}

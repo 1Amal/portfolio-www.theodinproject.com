@@ -1,17 +1,18 @@
 /* eslint-disable react/destructuring-assignment */
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class ClassInput extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      todos: ['Just some demo tasks', 'As an example'],
-      inputVal: '',
+      todos: ["Just some demo tasks", "As an example"],
+      inputVal: "Add a Task",
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteButton = this.deleteButton.bind(this);
   }
 
   handleInputChange(e) {
@@ -23,10 +24,23 @@ class ClassInput extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state);
     this.setState((state) => ({
       todos: state.todos.concat(state.inputVal),
-      inputVal: '',
+      inputVal: "",
     }));
+  }
+
+  deleteButton(buttonID) {
+    console.dir(buttonID);
+    console.log(this.state);
+    let toDoListIndexNo = this.state.todos.findIndex((checkForIndex) => {
+      return checkForIndex === buttonID;
+    });
+    console.log(toDoListIndexNo);
+    let newArray = this.state.todos.splice(toDoListIndexNo, 1);
+    this.setState((state) => ({ ...state, newArray }));
+    console.log(this.state);
   }
 
   render() {
@@ -44,13 +58,22 @@ class ClassInput extends Component {
             value={this.state.inputVal}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Submit</button>
+          <button type="submit">Add Task</button>
         </form>
         <h4>All the tasks!</h4>
         {/* The list of all the To-Do's, displayed */}
         <ul>
           {this.state.todos.map((todo) => (
-            <li key={todo}>{todo}</li>
+            <li key={todo}>
+              {todo}{" "}
+              <button
+                type="button"
+                id={todo}
+                onClick={() => this.deleteButton(todo)}
+              >
+                Delete
+              </button>
+            </li>
           ))}
         </ul>
       </section>
