@@ -1,10 +1,12 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from "react";
-import Count from './Count'
+import Count from "./Count";
 
 class ClassInput extends Component {
   constructor(props) {
     super(props);
+
+    this.editButtonName = "Edit Task";
 
     this.state = {
       todos: ["Just some demo tasks", "As an example"],
@@ -14,6 +16,7 @@ class ClassInput extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
+    this.editButton = this.editButton.bind(this);
   }
 
   handleInputChange(e) {
@@ -21,7 +24,6 @@ class ClassInput extends Component {
       ...state,
       inputVal: e.target.value,
     }));
-    
   }
 
   handleSubmit(e) {
@@ -31,6 +33,12 @@ class ClassInput extends Component {
       todos: state.todos.concat(state.inputVal),
       inputVal: "",
     }));
+  }
+
+  editButton(buttonID) {
+    console.log("Edit Button Clicked: " + buttonID);
+    // this.editButtonName="Resubmit"
+    this.setState((editButtonName) => (this.editButtonName = "Resubmit"));
   }
 
   deleteButton(buttonID) {
@@ -48,7 +56,7 @@ class ClassInput extends Component {
   render() {
     return (
       <section>
-        <Count TodoCount={this.state.todos.length}/>
+        <Count TodoCount={this.state.todos.length} />
         {/* eslint-disable-next-line react/prop-types */}
         <h3>{this.props.name}</h3>
         {/* The input field to enter To-Do's */}
@@ -68,14 +76,42 @@ class ClassInput extends Component {
         <ul>
           {this.state.todos.map((todo) => (
             <li key={todo}>
-              {todo}{" "}
-              <button
-                type="button"
-                id={todo}
-                onClick={() => this.deleteButton(todo)}
-              >
-                Delete
-              </button>
+              {this.editButtonName === "Edit Task" ? (
+                <div>
+                  {todo}{" "}
+                  <button
+                    type="button"
+                    id={todo}
+                    onClick={() => this.editButton(todo)}
+                  >
+                    {this.editButtonName}
+                  </button>
+                  <button
+                    type="button"
+                    id={todo}
+                    onClick={() => this.deleteButton(todo)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <label htmlFor="task-edit">Enter a task: </label>
+                  <input
+                    type="text"
+                    name="task-edit"
+                    value={this.state.inputVal}
+                    onChange={this.handleInputChange}
+                  />
+                  <button
+                    type="button"
+                    id={todo}
+                    onClick={() => this.editButton(todo)}
+                  >
+                    {this.editButtonName}
+                  </button>
+                </div>
+              )}{" "}
             </li>
           ))}
         </ul>
