@@ -13,10 +13,14 @@ class ClassInput extends Component {
       inputVal: "Add a Task",
     };
 
+    this.editTaskContent="";
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
     this.editButton = this.editButton.bind(this);
+    this.editTask=this.editTask.bind(this);
+    this.resubmitButtonClicked=this.resubmitButtonClicked.bind(this);
   }
 
   handleInputChange(e) {
@@ -37,8 +41,35 @@ class ClassInput extends Component {
 
   editButton(buttonID) {
     console.log("Edit Button Clicked: " + buttonID);
+    let toDoListIndexNo = this.state.todos.findIndex((checkForIndex) => {
+      return checkForIndex === buttonID;
+    });
+    console.log(toDoListIndexNo);
+    // let newArray = this.state.todos.splice(toDoListIndexNo, 1);
     // this.editButtonName="Resubmit"
     this.setState((editButtonName) => (this.editButtonName = "Resubmit"));
+    this.setState((editTaskContent)=>(this.editTaskContent=this.state.todos[toDoListIndexNo]));
+
+    console.log("EditTaskContent Value:"+this.editTaskContent)
+  }
+
+  editTask(editTaskInput)
+  {
+    this.setState((changeTaskContent)=>this.editTaskContent=editTaskInput.target.value);
+  }
+
+  resubmitButtonClicked(e)
+  {
+    e.preventDefault();
+    this.setState((state) => ({
+      todos: state.todos.concat(this.editTaskContent),
+      inputVal: "",
+    }));
+    
+    this.setState(()=>this.editButtonName="Edit Task 2");
+    
+
+    
   }
 
   deleteButton(buttonID) {
@@ -96,12 +127,13 @@ class ClassInput extends Component {
                 </div>
               ) : (
                 <div>
-                  <label htmlFor="task-edit">Enter a task: </label>
+                  <form onSubmit={this.resubmitButtonClicked}>
+                  <label htmlFor="task-edit">Change Task: </label>
                   <input
                     type="text"
                     name="task-edit"
-                    value={this.state.inputVal}
-                    onChange={this.handleInputChange}
+                    value={this.editTaskContent}//{this.state.inputVal}
+                    onChange={this.editTask}
                   />
                   <button
                     type="button"
@@ -110,6 +142,7 @@ class ClassInput extends Component {
                   >
                     {this.editButtonName}
                   </button>
+                  </form>
                 </div>
               )}{" "}
             </li>
