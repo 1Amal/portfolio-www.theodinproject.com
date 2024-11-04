@@ -1,8 +1,5 @@
-# React + Vite
+# Introduction
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In previous sections, we covered the fundamentals of testing with the Jest framework. As we transition to utilizing Vite for our development, we will adopt Vitest as our test runner. Vitest offers seamless integration with Vite, resulting in a faster and more efficient testing experience.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Additionally, we will enhance our testing capabilities by incorporating the React Testing Library (RTL). This will enable us to test our components more effectively and ensure that our application functions as intended.
