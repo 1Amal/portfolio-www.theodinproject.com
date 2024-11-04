@@ -7,20 +7,21 @@ class ClassInput extends Component {
     super(props);
 
     this.editButtonName = "Edit Task";
+    this.toDoListIndexNo;
 
     this.state = {
       todos: ["Just some demo tasks", "As an example"],
       inputVal: "Add a Task",
     };
 
-    this.editTaskContent="";
+    this.editTaskContent = "Hello";
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
     this.editButton = this.editButton.bind(this);
-    this.editTask=this.editTask.bind(this);
-    this.resubmitButtonClicked=this.resubmitButtonClicked.bind(this);
+    this.editTask = this.editTask.bind(this);
+    this.resubmitButtonClicked = this.resubmitButtonClicked.bind(this);
   }
 
   handleInputChange(e) {
@@ -41,35 +42,37 @@ class ClassInput extends Component {
 
   editButton(buttonID) {
     console.log("Edit Button Clicked: " + buttonID);
-    let toDoListIndexNo = this.state.todos.findIndex((checkForIndex) => {
+    this.toDoListIndexNo = this.state.todos.findIndex((checkForIndex) => {
       return checkForIndex === buttonID;
     });
-    console.log(toDoListIndexNo);
-    // let newArray = this.state.todos.splice(toDoListIndexNo, 1);
-    // this.editButtonName="Resubmit"
+    console.log(this.toDoListIndexNo);
+
+    
+    
+    // this.setState(
+    //   (editTaskContent) =>
+    //     (this.editTaskContent = this.state.todos[this.toDoListIndexNo])
+    // );
+
+    console.log("EditTaskContent Value:" + this.editTaskContent);
     this.setState((editButtonName) => (this.editButtonName = "Resubmit"));
-    this.setState((editTaskContent)=>(this.editTaskContent=this.state.todos[toDoListIndexNo]));
-
-    console.log("EditTaskContent Value:"+this.editTaskContent)
   }
 
-  editTask(editTaskInput)
-  {
-    this.setState((changeTaskContent)=>this.editTaskContent=editTaskInput.target.value);
+  editTask(editTaskInput) {
+    this.setState(
+      () => (this.editTaskContent = editTaskInput.target.value)
+    );
+    console.log(this.editTaskContent )
   }
 
-  resubmitButtonClicked(e)
-  {
+  resubmitButtonClicked(e) {
     e.preventDefault();
-    this.setState((state) => ({
-      todos: state.todos.concat(this.editTaskContent),
-      inputVal: "",
-    }));
-    
-    this.setState(()=>this.editButtonName="Edit Task 2");
-    
+    let newArray = this.state.todos.splice(this.toDoListIndexNo, 1);
+    this.setState((state) => ({ ...state, newArray }));
+    console.log(this.state);
 
-    
+    this.setState(() => (this.editButtonName = "Edit Task"));
+    console.log(this.state);
   }
 
   deleteButton(buttonID) {
@@ -128,20 +131,21 @@ class ClassInput extends Component {
               ) : (
                 <div>
                   <form onSubmit={this.resubmitButtonClicked}>
-                  <label htmlFor="task-edit">Change Task: </label>
-                  <input
-                    type="text"
-                    name="task-edit"
-                    value={this.editTaskContent}//{this.state.inputVal}
-                    onChange={this.editTask}
-                  />
-                  <button
-                    type="button"
-                    id={todo}
-                    onClick={() => this.editButton(todo)}
-                  >
-                    {this.editButtonName}
-                  </button>
+                    <label htmlFor="task-edit">{this.editTaskContent} </label>
+                    <input
+                      id={todo}
+                      type="text"
+                      name="task-edit"
+                      value={this.editTaskContent} //{this.state.inputVal}
+                      onChange={this.editTask}
+                    />
+                    <button
+                      type="submit"
+                      id={todo}
+                      //onClick={() => this.resubmitButtonClicked()}
+                    >
+                      {this.editButtonName}
+                    </button>
                   </form>
                 </div>
               )}{" "}
