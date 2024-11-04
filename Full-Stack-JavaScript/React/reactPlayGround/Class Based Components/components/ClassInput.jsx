@@ -8,13 +8,12 @@ class ClassInput extends Component {
 
     this.editButtonName = "Edit Task";
     this.toDoListIndexNo;
+    this.editTaskContent = "Hello";
 
     this.state = {
       todos: ["Just some demo tasks", "As an example"],
       inputVal: "Add a Task",
     };
-
-    this.editTaskContent = "Hello";
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,44 +46,46 @@ class ClassInput extends Component {
     });
     console.log(this.toDoListIndexNo);
 
-    
-    
-    // this.setState(
-    //   (editTaskContent) =>
-    //     (this.editTaskContent = this.state.todos[this.toDoListIndexNo])
-    // );
-
+    this.editTaskContent = this.state.todos[this.toDoListIndexNo];
+    this.editTaskContent = this.state.todos[this.toDoListIndexNo];
+    this.editButtonName = "Change Task";
+    this.setState({});
     console.log("EditTaskContent Value:" + this.editTaskContent);
-    this.setState((editButtonName) => (this.editButtonName = "Resubmit"));
+    console.log(this.state);
   }
 
   editTask(editTaskInput) {
-    this.setState(
-      () => (this.editTaskContent = editTaskInput.target.value)
-    );
-    console.log(this.editTaskContent )
+    this.editTaskContent = editTaskInput.target.value;
+    this.setState({});
+    console.log(this.editTaskContent);
+    console.log(this.state);
   }
 
   resubmitButtonClicked(e) {
     e.preventDefault();
+
+    console.log(this.state);
+    this.editButtonName = "Edit Task";
+    this.editTaskContent;
     let newArray = this.state.todos.splice(this.toDoListIndexNo, 1);
     this.setState((state) => ({ ...state, newArray }));
-    console.log(this.state);
+    this.setState((state) => ({
+      todos: state.todos.concat(this.editTaskContent),
+      inputVal: "",
+    }));
 
-    this.setState(() => (this.editButtonName = "Edit Task"));
     console.log(this.state);
   }
 
   deleteButton(buttonID) {
     console.dir(buttonID);
     console.log(this.state);
-    let toDoListIndexNo = this.state.todos.findIndex((checkForIndex) => {
+    let toDoListIndexNoDelete = this.state.todos.findIndex((checkForIndex) => {
       return checkForIndex === buttonID;
     });
-    console.log(toDoListIndexNo);
-    let newArray = this.state.todos.splice(toDoListIndexNo, 1);
+    console.log(toDoListIndexNoDelete);
+    let newArray = this.state.todos.splice(toDoListIndexNoDelete, 1);
     this.setState((state) => ({ ...state, newArray }));
-    console.log(this.state);
   }
 
   render() {
@@ -136,7 +137,7 @@ class ClassInput extends Component {
                       id={todo}
                       type="text"
                       name="task-edit"
-                      value={this.editTaskContent} //{this.state.inputVal}
+                      value={this.editTaskContent}
                       onChange={this.editTask}
                     />
                     <button
