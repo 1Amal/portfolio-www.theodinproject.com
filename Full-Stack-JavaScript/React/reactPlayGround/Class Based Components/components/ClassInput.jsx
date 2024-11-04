@@ -143,7 +143,6 @@ class ClassInput extends Component {
                     <button
                       type="submit"
                       id={todo}
-                      //onClick={() => this.resubmitButtonClicked()}
                     >
                       {this.editButtonName}
                     </button>
