@@ -22,7 +22,6 @@ section > * {
   background-color: #111;
   box-shadow: #444 0px 0.2rem 0.5rem;
 }
-
 h3 {
   font-family: 'Titan One', cursive;
   font-weight: 300;
@@ -50,6 +49,13 @@ ul {
   margin: 0 0 0.5rem 0;
   padding-bottom: 0.25rem;
   border-bottom: #111 1px solid;
+}
+h1{
+  color: rgb(240, 73, 35);
+}
+
+p{
+  color:aliceblue;
 }
 
 li {
