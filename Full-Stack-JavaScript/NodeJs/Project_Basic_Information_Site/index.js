@@ -6,7 +6,7 @@ http
   .createServer(function (req, res) {
     let q = url.parse(req.url, true);
     let fileName = "." + q.pathname + ".html";
-    console.log(q.pathname);
+    console.log("URL Path: " + q.pathname);
 
     if (q.pathname === "/") {
       fs.readFile("index.html", function (err, data) {
@@ -17,9 +17,11 @@ http
     } else {
       fs.readFile(fileName, function (err, data) {
         if (err) {
-          res.writeHead(404, { "Content-Type": "text/html" });
-          res.write("Hey");
-          return res.end("404 Not Found");
+          fs.readFile("404.html", function (err, data) {
+            res.writeHead(404, { "Content-Type": "text/html" });
+            res.write(data);
+            return res.end();
+          });
         } else {
           res.writeHead(200, { "Content-Type": "text/html" });
           res.write(data);
