@@ -1,18 +1,11 @@
 // routes/authorRouter.js
 const { Router } = require("express");
-const {getAuthorById}=require('../controllers/authorController');
+const { getAuthorById } = require("../controllers/authorController");
 
 const authorRouter = Router();
 
 authorRouter.get("/", (req, res) => res.send("All authors"));
-// authorRouter.get("/:authorId", (req, res) => {
-//   const { authorId } = req.params;
-//   res.send(`Author ID: ${authorId}`);
- 
-// });
 
-authorRouter.get('/:authorID',getAuthorById);
-
-
+authorRouter.get("/:authorID", getAuthorById);
 
 module.exports = authorRouter;

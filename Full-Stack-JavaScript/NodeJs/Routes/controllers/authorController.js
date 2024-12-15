@@ -5,18 +5,16 @@ const asyncHandler = require("express-async-handler");
 
 const CustomNotFoundError = require("../errors/CustomNotFoundError");
 
-
 const getAuthorById = asyncHandler(async (req, res) => {
-    const { authorId } = req.params;
-    console.log(authorId)
-    const author = await db.getAuthorById(Number(authorId));
-  
-    if (!author) {
-      throw new CustomNotFoundError("Author Not Found Mate");
-      
-    }
-  
+  const { authorID } = req.params;
+  console.log(req.params);
+  const author = await db.getAuthorById(Number(authorID));
+
+  if (!author) {
+    throw new CustomNotFoundError("Author Not Found Mate");
+  } else {
     res.send(`Author Name: ${author.name}`);
-  });
+  }
+});
 
 module.exports = { getAuthorById };
