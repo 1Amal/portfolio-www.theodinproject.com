@@ -1,0 +1,13 @@
+<ul>
+  <li><a href="./about.ejs">About</a></li>
+  <li>
+    <a href="https://www.theodinproject.com/lessons/nodejs-views"
+      >The Odin Project Views Lesson</a
+    >
+  </li>
+</ul>
+<ul>
+  <% for (let i=0; i < footerBottom.length; i++){ %>
+  <li><%=footerBottom[i]%></li>
+  <% } %>
+</ul>

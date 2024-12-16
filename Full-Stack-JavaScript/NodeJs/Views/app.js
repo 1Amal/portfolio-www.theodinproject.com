@@ -8,6 +8,8 @@ const links = [
 
 const users = ["Rose", "Cake", "Biff"];
 
+const footerBottom = ["Have", "an", "Awesome", "Day"];
+
 const path = require("node:path");
 
 const assetsPath = path.join(__dirname, "public");
@@ -18,8 +20,20 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
   //   res.send("NodeJs Views Lesson");
-  res.render("index", { links: links, users: users });
+  res.render("index", {
+    links: links,
+    users: users,
+    footerBottom: footerBottom,
+  });
   // console.log(message)
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", {
+    version: "(V22.12.0)",
+    links: links,
+    footerBottom: footerBottom,
+  });
 });
 
 app.listen(PORT, () => {
