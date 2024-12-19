@@ -36,15 +36,10 @@
       /><br />
 
       <label for="age">Age: </label><br />
-      <input
-        type="number"
-        name="age"
-        value="<%=user.number %>"
-        id="age"
-      /><br />
+      <input type="number" name="age" value="<%= user.age %>" id="age" /><br />
 
       <label for="bio">Bio:</label> <br />
-      <textarea name="bio" id="bio" value="<%=user.bio %>"></textarea> <br />
+      <textarea name="bio" id="bio"><%= user.bio %></textarea> <br />
 
       <button type="submit">Update User</button>
     </form>
