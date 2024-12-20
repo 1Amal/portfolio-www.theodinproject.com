@@ -104,3 +104,11 @@ exports.usersDeletePost = (req, res) => {
   usersStorage.deleteUser(req.params.id);
   res.redirect("/");
 };
+
+
+exports.usersSearch=(req,res)=>{
+// usersStorage.searchUser(req.params.id);
+const {name, email}=req.query;
+console.log(email);
+res.redirect("search");
+};
