@@ -6,6 +6,7 @@ exports.usersListGet = (req, res) => {
     title: "User list",
     users: usersStorage.getUsers(),
   });
+  console.log(usersStorage);
 };
 
 exports.usersCreateGet = (req, res) => {
@@ -39,9 +40,14 @@ const validateUser = [
     .withMessage(`Last name ${alphaErr}`)
     .isLength({ min: 1, max: 10 })
     .withMessage(`Last name ${lengthErr}`),
-  body("email").trim(),
-  body("age").trim(),
-  body("bio").trim(),
+  body("email").trim().isEmail().withMessage("Incorrect e-mail format"),
+  body("age")
+    .isInt({ min: 18, max: 120 })
+    .withMessage("Age Should be between 18 and 120"),
+  body("bio")
+    .trim()
+    .isLength({ max: 200 })
+    .withMessage("Bio Should contain less than 200 characters"),
 ];
 
 // We can pass an entire array of middleware validations to our controller.
