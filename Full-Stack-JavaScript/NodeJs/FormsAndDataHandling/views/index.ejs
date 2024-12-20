@@ -5,12 +5,23 @@
     <title><%= title %></title>
   </head>
   <body>
+    <div>
+      <h1>Search for Users</h1>
+      <form action="/search" method="GET">
+        <label for="name">Name: </label> <br />
+        <input type="text" name="name" if="name" /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" name="email" id="email" /><br />
+        <button type="submit">Search</button>
+      </form>
+    </div>
     <h1><%= title %></h1>
     <!-- In views/index.ejs -->
     <ul>
       <% if (locals.users) {%> <% users.forEach(function(user) { %>
       <li>
-        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %> E-Mail: <%= user.email%> Age: <%= user.age %> Bio: <%= user.bio %>
+        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
+        E-Mail: <%= user.email%> Age: <%= user.age %> Bio: <%= user.bio %>
       </li>
       <a href="/<%= user.id %>/update">Update</a>
       <!-- This time we're sending a POST request to our route, so we need a form. -->
