@@ -6,7 +6,7 @@ exports.usersListGet = (req, res) => {
     title: "User list",
     users: usersStorage.getUsers(),
   });
-  console.log(usersStorage);
+  // console.log(usersStorage);
 };
 
 exports.usersCreateGet = (req, res) => {
@@ -110,9 +110,8 @@ exports.usersSearch = (req, res) => {
   const { name, email } = req.query;
 
   res.render("search", {
-    users: name,
-    email: email,
-    users: usersStorage.getUsers(),
+    searchTermName: name,
+    searchTermEmail: email,
+    users: usersStorage.searchUser(name, email),
   });
-  // console.log(users.UsersStorage["storage"]["0"]["firstName"]);
 };

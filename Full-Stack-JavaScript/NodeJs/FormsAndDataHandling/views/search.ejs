@@ -10,12 +10,24 @@
 
     <div>
       <h1>Search Results</h1>
-      <h3>Results for search term: <%= locals.users || locals.email%></h3>
-      <p><%= users.age%></p>
-      <p>Name: <%=locals.users%></p>
-      <p>E-Mail: <%= locals.email %></p>
-      <p>Age: <%locals.age%></p>
-      <p>Bio: <%=locals.bio %></p>
+      <h3>
+        Results for search term: <%= locals.searchTermName||
+        locals.searchTermEmail%>
+      </h3>
+
+      <p>
+        <span><em>Name: </em></span><%=locals.users?.firstName || "Not Found"%>
+        <%=locals.users?.lastName || ""%>
+      </p>
+      <p>
+        <span><em>E-Mail: </em></span> <%=locals.users?.email || "Not Found" %>
+      </p>
+      <p>
+        <span><em>Age: </em></span> <%=locals.users?.age || "Not Found"%>
+      </p>
+      <p>
+        <span><em>Bio: </em></span> <%=locals.users?.bio || "Not Found"%>
+      </p>
     </div>
   </body>
 </html>
