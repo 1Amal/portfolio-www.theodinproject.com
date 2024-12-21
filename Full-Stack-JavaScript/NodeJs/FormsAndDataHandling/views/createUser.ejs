@@ -10,18 +10,40 @@
 
     <form action="/create" method="POST">
       <label for="firstName">First Name: </label> <br />
-      <input type="text" name="firstName" id="firstName" required /><br />
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        value="JeanLuc"
+        required
+      /><br />
       <label for="lastName">Last Name: </label> <br />
-      <input type="text" name="lastName" id="lastName" required /> <br />
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        value="Picard"
+        required
+      />
+      <br />
       <label for="email">Email: </label>
       <br />
-      <input type="email" name="email" id="email" required /><br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        value="picard@startrek.fed"
+        required
+      /><br />
 
       <label for="age">Age: </label><br />
-      <input type="number" name="age" id="age" /><br />
+      <input type="number" name="age" id="age" value="40" /><br />
 
       <label for="bio">Bio:</label> <br />
-      <textarea name="bio" id="bio"></textarea> <br />
+      <textarea name="bio" id="bio">
+Commanding officer of the Federation starship USS Enterprise (NCC-1701-D)</textarea
+      >
+      <br />
 
       <button type="submit">Submit</button>
     </form>

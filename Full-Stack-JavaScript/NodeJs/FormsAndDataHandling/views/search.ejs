@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search User results</title>
-</head>
-<body>
+  </head>
+  <body>
+    <a href="/">Home</a>
+
     <div>
-        <h1>Search Results</h1>
-        <a href="/">Home</a>
+      <h1>Search Results</h1>
+      <h3>Results for search term: <%= locals.users || locals.email%></h3>
+      <p><%= users.age%></p>
+      <p>Name: <%=locals.users%></p>
+      <p>E-Mail: <%= locals.email %></p>
+      <p>Age: <%locals.age%></p>
+      <p>Bio: <%=locals.bio %></p>
     </div>
-</body>
+  </body>
 </html>
