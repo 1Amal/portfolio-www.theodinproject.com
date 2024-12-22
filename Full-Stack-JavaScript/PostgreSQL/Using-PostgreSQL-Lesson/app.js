@@ -1,22 +1,14 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 const port = 3000;
 
-app.set("view enginer","ejs");
+app.use("/", usersRouter);
+const usersRouter = require("./routes/userRouter");
 
-app.get('/', (req, res) => {
-    res.send('usernames will be logged here - wip');
-});
-
-app.get('/new',(req,res)=>{
-    
-});
-
-app.post('/new',(req,res)=>{
-    console.log("username to be saved: ", req.body.username)
-});
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
