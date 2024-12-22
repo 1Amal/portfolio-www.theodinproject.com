@@ -1,19 +1,13 @@
 const { Router } = require("express");
 
-// const usersController = require("../controllers/userController");
+const usersController = require("../controllers/userController");
 
 const usersRouter = Router();
 
-usersRouter.get("/", (req, res) => {
-  res.send("usernames will be logged here - wip");
-});
+usersRouter.get("/", usersController.usersCreateGet);
 
-usersRouter.get("/new", (req, res) => {
-  res.render("new");
-});
+usersRouter.get("/new", usersController.usersGetNewForm);
 
-usersRouter.post("/new", (req, res) => {
-  console.log("username to be saved: ", req.body.username);
-});
+usersRouter.post("/new", usersController.usersPostNewForm);
 
 module.exports = usersRouter;
