@@ -23,8 +23,18 @@ async function searchForUserName(username) {
   }
 }
 
+async function deleteAllUserNamesQueryDb() {
+  try {
+    await pool.query("DELETE FROM usernames");
+  } catch (err) {
+    console.error("Error Deleting from usernames", err);
+    throw err;
+  }
+}
+
 module.exports = {
   getAllUsernames,
   insertUsername,
   searchForUserName,
+  deleteAllUserNamesQueryDb,
 };

@@ -12,4 +12,6 @@ usersRouter.post("/new", usersController.createUsernamePost);
 
 usersRouter.get("/search", usersController.searchForUserNameGet);
 
+usersRouter.get("/delete", usersController.deleteAllUserNames);
+
 module.exports = usersRouter;

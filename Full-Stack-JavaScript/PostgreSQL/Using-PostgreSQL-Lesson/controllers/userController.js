@@ -22,9 +22,16 @@ async function searchForUserNameGet(req, res) {
   res.render("search", { SearchResult: result });
 }
 
+async function deleteAllUserNames(req, res) {
+  const { deleteCommand } = req.query;
+  let result = await db.deleteAllUserNamesQueryDb();
+  res.redirect("/");
+}
+
 module.exports = {
   getUsernames,
   createUsernameGet,
   createUsernamePost,
   searchForUserNameGet,
+  deleteAllUserNames,
 };
