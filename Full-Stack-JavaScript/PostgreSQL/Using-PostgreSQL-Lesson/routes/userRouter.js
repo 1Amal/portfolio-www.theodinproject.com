@@ -10,4 +10,6 @@ usersRouter.get("/new", usersController.createUsernameGet);
 
 usersRouter.post("/new", usersController.createUsernamePost);
 
+usersRouter.get("/search", usersController.searchForUserNameGet);
+
 module.exports = usersRouter;

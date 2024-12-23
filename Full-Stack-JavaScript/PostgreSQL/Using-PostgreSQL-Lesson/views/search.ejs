@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+  </head>
+  <body>
+    <div>
+      <h1>Search for Users</h1>
+      <form type="GET" action="/search">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" />
+        <button type="submit">Search</button>
+      </form>
+
+      <div>
+        <h1>Search Results:</h1>
+        <% if (SearchResult.length>0){ %>
+        <ul>
+          <% SearchResult.forEach(result=>{ %>
+          <li><%=result.username%></li>
+
+          <%})%>
+        </ul>
+
+        <%} else{ %>
+        <h1>No Results Found</h1>
+        <%}%>
+      </div>
+    </div>
+  </body>
+</html>
