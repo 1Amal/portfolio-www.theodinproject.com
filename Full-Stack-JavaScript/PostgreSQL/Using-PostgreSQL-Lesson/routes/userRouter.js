@@ -4,10 +4,10 @@ const usersController = require("../controllers/userController");
 
 const usersRouter = Router();
 
-usersRouter.get("/", usersController.usersCreateGet);
+usersRouter.get("/", usersController.getUsernames);
 
-usersRouter.get("/new", usersController.usersGetNewForm);
+usersRouter.get("/new", usersController.createUsernameGet);
 
-usersRouter.post("/new", usersController.usersPostNewForm);
+usersRouter.post("/new", usersController.createUsernamePost);
 
 module.exports = usersRouter;
