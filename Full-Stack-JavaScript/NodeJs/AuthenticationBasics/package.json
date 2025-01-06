@@ -1,0 +1,20 @@
+{
+  "name": "authenticationbasics",
+  "version": "1.0.0",
+  "description": "TOP Authentication basics lesson",
+  "license": "ISC",
+  "author": "Amal",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.13.1"
+  }
+}
