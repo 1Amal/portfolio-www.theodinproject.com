@@ -5,10 +5,17 @@ const { Pool } = require("pg");
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require("passport-local").Strategy;
+
+require("dotenv").config();
 
 const pool = new Pool({
-  // add your configuration
+  host: process.env.HOST,
+  user: process.env.USER,
+  database: process.env.DATABASE_NAME,
+  password: process.env.INVENTORY_DATABASE_PASSWORD,
+  port: process.env.DATABASE_PORT,
+  ssl:false
 });
 
 const app = express();
@@ -20,5 +27,19 @@ app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => res.render("index"));
+
+app.get("/sign-up", (req, res) => res.render("sign-up-form"));
+
+app.post("/sign-up", async (req, res, next) => {
+  try {
+    await pool.query("INSERT INTO users (username, password) VALUES ($1, $2)", [
+      req.body.username,
+      req.body.password,
+    ]);
+    res.redirect("/");
+  } catch (err) {
+    return next(err);
+  }
+});
 
 app.listen(3000, () => console.log("app listening on port 3000!"));
