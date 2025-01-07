@@ -7,6 +7,8 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
+const bcrypt = require("bcryptjs");
+
 require("dotenv").config();
 
 const pool = new Pool({
@@ -32,16 +34,35 @@ app.get("/", (req, res) => {
 
 app.get("/sign-up", (req, res) => res.render("sign-up-form"));
 
+//Without bcrypt Encryption
+// app.post("/sign-up", async (req, res, next) => {
+//   try {
+//     await pool.query("INSERT INTO users (username, password) VALUES ($1, $2)", [
+//       req.body.username,
+//       req.body.password,
+//     ]);
+//     res.redirect("/");
+//   } catch (err) {
+//     return next(err);
+//   }
+// });
+
 app.post("/sign-up", async (req, res, next) => {
-  try {
-    await pool.query("INSERT INTO users (username, password) VALUES ($1, $2)", [
-      req.body.username,
-      req.body.password,
-    ]);
-    res.redirect("/");
-  } catch (err) {
-    return next(err);
-  }
+  bcrypt.hash(req.body.password, 10, async (err, hashedPassword) => {
+    if (err) {
+      return next(err);
+    }
+
+    try {
+      await pool.query(
+        "INSERT INTO users (username, password) VALUES ($1, $2)",
+        [req.body.username, hashedPassword]
+      );
+      res.redirect("/");
+    } catch (err) {
+      return next(err);
+    }
+  });
 });
 
 app.post(
@@ -61,6 +82,29 @@ app.get("/log-out", (req, res, next) => {
   });
 });
 
+//Without bcrypt Encryption
+// passport.use(
+//   new LocalStrategy(async (username, password, done) => {
+//     try {
+//       const { rows } = await pool.query(
+//         "SELECT * FROM users WHERE username = $1",
+//         [username]
+//       );
+//       const user = rows[0];
+
+//       if (!user) {
+//         return done(null, false, { message: "Incorrect username" });
+//       }
+//       if (user.password !== password) {
+//         return done(null, false, { message: "Incorrect password" });
+//       }
+//       return done(null, user);
+//     } catch (err) {
+//       return done(err);
+//     }
+//   })
+// );
+
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
@@ -73,7 +117,10 @@ passport.use(
       if (!user) {
         return done(null, false, { message: "Incorrect username" });
       }
-      if (user.password !== password) {
+
+      const match = await bcrypt.compare(password, user.password);
+      if (!match) {
+        // passwords do not match!
         return done(null, false, { message: "Incorrect password" });
       }
       return done(null, user);
