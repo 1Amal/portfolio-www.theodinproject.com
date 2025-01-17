@@ -14,6 +14,10 @@ The first step when using Prisma Client is installing the @prisma/client npm pac
 npm install @prisma/client
 ```
 
+``` prisma
+npx prisma generate
+```
+
 ## Using Prisma Client to send queries to your database
 
 Once Prisma Client has been generated, you can import it in your code and send queries to your database. This is what the setup code looks like.
