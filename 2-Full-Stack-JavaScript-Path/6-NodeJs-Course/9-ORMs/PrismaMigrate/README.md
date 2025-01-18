@@ -4,6 +4,11 @@ https://www.prisma.io/docs/orm/prisma-migrate/getting-started
 
 1. Create a Prisma schema:
 
+``` npx
+
+npx prisma init --datasource-provider postgresql
+```
+
 2. Create the first migration:
 
 ``` prisma

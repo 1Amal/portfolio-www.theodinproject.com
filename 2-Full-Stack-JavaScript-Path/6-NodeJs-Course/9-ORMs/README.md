@@ -8,7 +8,23 @@ https://www.prisma.io/docs/orm/overview/introduction/what-is-prisma
 
 ## Generating Prisma Client
 
+Install Prisma
+
+``` npm
+npm init -y
+
+npm i --save-dev prisma
+```
+
+Create a Prisma schema:
+
+``` npx
+
+npx prisma init --datasource-provider postgresql
+```
+
 The first step when using Prisma Client is installing the @prisma/client npm package:
+
 
 ```npm
 npm install @prisma/client
