@@ -16,6 +16,8 @@ npm init -y
 npm i --save-dev prisma
 ```
 
+In VScode install the Prisma extension for code formatting and other Prisma supported development tools
+
 Create a Prisma schema:
 
 ``` npx
@@ -55,7 +57,7 @@ Retrieve all User records from the database
 const allUsers = await prisma.user.findMany()
 ```
 
-nclude the posts relation on each returned User object
+Include the posts relation on each returned User object
 
 ```prisma
 // Run inside `async` function
