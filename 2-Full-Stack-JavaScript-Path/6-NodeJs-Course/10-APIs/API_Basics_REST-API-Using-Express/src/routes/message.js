@@ -1,10 +1,11 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid'; // Correct import
 import { Router } from "express";
 
 const router = Router();
 
 router.get("/", (req, res) => {
   return res.send(Object.values(req.context.models.messages));
+
 });
 
 router.get("/:messageId", (req, res) => {
