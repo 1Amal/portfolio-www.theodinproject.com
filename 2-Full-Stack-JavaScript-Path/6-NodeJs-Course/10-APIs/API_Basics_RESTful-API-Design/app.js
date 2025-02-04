@@ -1,32 +1,57 @@
-const express = require('express');
-// const bodyParser = require('body-parser');
+const express = require("express");
+
+const apicache = require("apicache"); //simple in-memory cache
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/articles', (req, res) => {
-  const articles = [];
-  // code to retrieve an article...
-  res.json(articles);
+let cache = apicache.middleware;
+app.use(cache("5 minutes"));
+
+// employees data in a database
+const employees = [
+  { firstName: "Jane", lastName: "Smith", age: 20 },
+  //...
+  { firstName: "John", lastName: "Smith", age: 30 },
+  { firstName: "Mary", lastName: "Green", age: 50 },
+];
+
+app.get("/employees", (req, res) => {
+  const { firstName, lastName, age } = req.query;
+  let results = [...employees];
+  if (firstName) {
+    results = results.filter((r) => r.firstName === firstName);
+  }
+
+  if (lastName) {
+    results = results.filter((r) => r.lastName === lastName);
+  }
+
+  if (age) {
+    results = results.filter((r) => +r.age === +age);
+  }
+  res.json(results);
 });
 
-app.post('/articles', (req, res) => {
-  // code to add a new article...
-  res.json(req.body);
+app.get("/employees", (req, res) => {
+  res.json(employees);
 });
 
-app.put('/articles/:id', (req, res) => {
-  const { id } = req.params;
-  // code to update an article...
-  res.json(req.body);
-});
+//Versioning our APIs
 
-app.delete('/articles/:id', (req, res) => {
-  const { id } = req.params;
-  // code to delete an article...
-  res.json({ deleted: id });
-});
+app.get('/v1/employees', (req, res) => {
+    const employees = [];
+    // code to get employees
+    res.json(employees);
+  });
+  
+  app.get('/v2/employees', (req, res) => {
+    const employees = [];
+    // different code to get employees
+    res.json(employees);
+  });
+  
 
-app.listen(3000, () => console.log('server started'));
+app.listen(3000, () => console.log("server started"));
